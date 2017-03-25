@@ -73,7 +73,7 @@
                         </div>
                         <div class="form-group">
                             <label for="pwd">Confirm Password:</label>
-                            <input type="password" Class="form-control" id="Cpwd" name="cPassword" placeholder="Confirm password"/>
+                            <input type="password" Class="form-control" id="Cpassword" name="cPassword" placeholder="Confirm password"/>
                         </div>
 
                         <!--Button-->
