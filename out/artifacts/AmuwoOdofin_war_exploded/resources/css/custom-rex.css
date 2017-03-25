@@ -1,0 +1,41 @@
+.custom-width{
+	max-width:100%;
+}
+.topRow{
+	padding-top:0;
+	margin-left: -15px;
+	margin-right: -15px;
+}
+.eventsection{
+	max-height: 550px;
+	overflow-y: scroll;
+}
+
+.logout-btn{
+    background-color: transparent;
+    border:none;
+}
+.logout-btn:active{
+    border: none;
+}
+.navbar-inverse .navbar-nav > li > a{ /* navbar font*/
+    color: #ffffff;
+    font-family: 'Sansita', sans-serif; /* to be paired with Open-sans*/
+}
+.side-content ul{
+	list-style: none;
+    padding-left: 0;
+}
+.side-content ul li{
+    padding: 10px 15px;
+}
+.side-content ul li a{
+	color: #FFFFFF;
+	text-decoration: none;
+	padding:10px 15px;
+	font-family: Sansita, sans-serif;
+}
+.side-content ul li:hover{
+    background-color: #0f0f0f;
+    border-left: 5px solid #289fd6;
+}

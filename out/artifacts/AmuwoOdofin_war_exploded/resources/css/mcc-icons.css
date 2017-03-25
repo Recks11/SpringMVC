@@ -1,0 +1,502 @@
+@font-face {
+    font-family: 'icomoon';
+    src:    url('../fonts/icomoon.eot?poym3f');
+    src:    url('../fonts/icomoon.eot?poym3f#iefix') format('embedded-opentype'),
+        url('../fonts/icomoon.ttf?poym3f') format('truetype'),
+        url('../fonts/icomoon.woff?poym3f') format('woff'),
+        url('../fonts/icomoon.svg?poym3f#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'mcc-icons';
+    src:    url('../fonts/mcc-icons.eot?i7wxjf');
+    src:    url('../fonts/mcc-icons.eot?i7wxjf#iefix') format('embedded-opentype'),
+        url('../fonts/mcc-icons.ttf?i7wxjf') format('truetype'),
+        url('../fonts/mcc-icons.woff?i7wxjf') format('woff'),
+        url('../fonts/mcc-icons.svg?i7wxjf#mcc-icons') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Use the following CSS code if you want to use data attributes for inserting your icons */
+[data-icon]:before {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'mcc-icons' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Use the following CSS code if you want to have a class per icon */
+/*
+Instead of a list of all class selectors,
+you can use the generic selector below, but it's slower:
+[class*="mcc-icon-"] {
+*/
+.mcc-icon-transport, .mcc-icon-education, .mcc-icon-libraries, .mcc-icon-business, .mcc-icon-bins, .mcc-icon-house, .mcc-icon-spray-paint, .mcc-icon-leisure, .mcc-icon-sad-child, .mcc-icon-vimeo, .mcc-icon-flickr, .mcc-icon-fr, .mcc-icon-facebook, .mcc-icon-twitter, .mcc-icon-twitter-alt, .mcc-icon-ballot, .mcc-icon-notes, .mcc-icon-church, .mcc-icon-street-stand, .mcc-icon-beer, .mcc-icon-id, .mcc-icon-building-money, .mcc-icon-shop-money, .mcc-icon-museums, .mcc-icon-parks, .mcc-icon-trainer, .mcc-icon-satchel, .mcc-icon-special-stall, .mcc-icon-market-stall, .mcc-icon-diploma, .mcc-icon-baby-bottle, .mcc-icon-teddy, .mcc-icon-megaphone, .mcc-icon-padlock, .mcc-icon-flag, .mcc-icon-vandalism, .mcc-icon-first-aid, .mcc-icon-child, .mcc-icon-sad-adult, .mcc-icon-rent, .mcc-icon-rent-sign, .mcc-icon-tools, .mcc-icon-house-search, .mcc-icon-semi-detached, .mcc-icon-taxi, .mcc-icon-hackney-taxi, .mcc-icon-hackney-taxi-alt, .mcc-icon-blueprint, .mcc-icon-survey, .mcc-icon-house-plan, .mcc-icon-bin-brush, .mcc-icon-report-rubbish, .mcc-icon-report-traffic, .mcc-icon-send-bill, .mcc-icon-wave, .mcc-icon-open-shop, .mcc-icon-cv, .mcc-icon-book-stack, .mcc-icon-rubber-stamp, .mcc-icon-russian-dolls, .mcc-icon-search-detail, .mcc-icon-library-card, .mcc-icon-blue-badge, .mcc-icon-credit-card, .mcc-icon-parking-map, .mcc-icon-coach, .mcc-icon-money-house, .mcc-icon-purse, .mcc-icon-calculator, .mcc-icon-easel, .mcc-icon-maths-tools, .mcc-icon-map-marked, .mcc-icon-tin-can, .mcc-icon-report-bin, .mcc-icon-calendar, .mcc-icon-new-bin, .mcc-icon-voucher, .mcc-icon-money, .mcc-icon-email, .mcc-icon-folder, .mcc-icon-credit-cards, .mcc-icon-signature, .mcc-icon-eyesore, .mcc-icon-benefits, .mcc-icon-have-your-say, .mcc-icon-people-and-communities:before, .mcc-icon-benefits:before, .mcc-icon-council-tax:before, .mcc-icon-work:before, .mcc-icon-schools--education:before, .mcc-icon-benefits-and-support:before, .mcc-icon-roads-parking-and-transport:before, .mcc-icon-planning-and-regeneration:before, mcc-icon-social-services-and-health:before, [class^="mcc-icon-"]:before, [class*=" mcc-icon-"]:before,
+.mcc-icon-100011:before, .mcc-icon-200016:before, .mcc-icon-200062:before, .mcc-icon-100008:before, .mcc-icon-200084:before, .mcc-icon-100007:before, .mcc-icon-200028:before, .mcc-icon-100009:before, .mcc-icon-100010:before, .mcc-icon-100002:before, .mcc-icon-200066:before, .mcc-icon-500203:before, .mcc-icon-200030:before,  .mcc-icon-200094:before, .mcc-icon-500207:before, .mcc-icon-100005:before, .mcc-icon-100006:before, .mcc-icon-200008:before, .mcc-icon-200048:before, .mcc-icon-health-and-wellbeing:before, .mcc-icon-500161:before, .mcc-icon-payments:before, .mcc-icon-make-payments:before {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'mcc-icons' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.mcc-icon-100011:before,
+.mcc-icon-roads-parking-and-transport:before,
+.mcc-icon-transport:before {
+	content: "\e603";
+}
+.mcc-icon-200016:before,
+.mcc-icon-children-and-childcare:before,
+.mcc-icon-education:before {
+	content: "\e001";
+}
+.mcc-icon-200062:before,
+.mcc-icon-libraries:before {
+	content: "\e002";
+}
+.mcc-icon-100008:before,
+.mcc-icon-work-jobs-training-and-advice:before,
+.mcc-icon-work:before,
+.mcc-icon-business:before {
+	content: "\e003";
+}
+.mcc-icon-200084:before,
+.mcc-icon-bins-rubbish-and-recycling:before,
+.mcc-icon-bins:before {
+	content: "\e004";
+}
+.mcc-icon-100007:before,
+.mcc-icon-200028:before,
+.mcc-icon-house:before,
+.mcc-icon-homes-and-property:before,
+.mcc-icon-council-tax:before {
+	content: "\e005";
+}
+.mcc-icon-spray-paint:before {
+	content: "\e006";
+}
+.mcc-icon-100009:before,
+.mcc-icon-sports-leisure-and-culture:before,
+.mcc-icon-sports-clubs-and-leisure-centres:before,
+.mcc-icon-leisure:before {
+	content: "\e007";
+}
+.mcc-icon-100010:before,
+.mcc-icon-social-services-and-health:before,
+.mcc-icon-sad-child:before {
+	content: "\e008";
+}
+.mcc-icon-vimeo:before {
+	content: "\e009";
+}
+.mcc-icon-flickr:before {
+	content: "\e00a";
+}
+.mcc-icon-fr:before {
+	content: "\e00b";
+}
+.mcc-icon-facebook:before {
+	content: "\e00c";
+}
+.mcc-icon-twitter:before {
+	content: "\e00d";
+}
+.mcc-icon-twitter-alt:before {
+	content: "\e00e";
+}
+.mcc-icon-ballot:before {
+	content: "\e00f";
+}
+.mcc-icon-notes:before {
+	content: "\e010";
+}
+.mcc-icon-church:before {
+	content: "\e011";
+}
+.mcc-icon-street-stand:before {
+	content: "\e012";
+}
+.mcc-icon-beer:before {
+	content: "\e013";
+}
+.mcc-icon-200063:before,
+.mcc-icon-licences-and-permits:before,
+.mcc-icon-id:before {
+	content: "\e014";
+}
+.mcc-icon-building-money:before {
+	content: "\e015";
+}
+.mcc-icon-100002:before,
+.mcc-icon-business-and-investment:before,
+.mcc-icon-shop-money:before {
+	content: "\e016";
+}
+.mcc-icon-200048:before,
+.mcc-icon-health-and-wellbeing:before {
+	content: "\e024";
+}
+.mcc-icon-200024:before,
+.mcc-icon-consultations-and-surveys:before {
+	content: "\e055";
+}
+.mcc-icon-500161:before,
+.mcc-icon-payments:before,
+.mcc-icon-make-payments:before {
+	content: "\e056";
+}
+.mcc-icon-museums:before {
+	content: "\e017";
+}
+.mcc-icon-parks:before {
+	content: "\e018";
+}
+.mcc-icon-trainer:before {
+	content: "\e019";
+}
+.mcc-icon-satchel:before {
+	content: "\e01a";
+}
+.mcc-icon-special-stall:before {
+	content: "\e01b";
+}
+.mcc-icon-200066:before,
+.mcc-icon-markets:before,
+.mcc-icon-market-stall:before {
+	content: "\e01c";
+}
+.mcc-icon-500203:before,
+.mcc-icon-births-marriages-deaths-and-nationality:before,
+.mcc-icon-diploma:before {
+	content: "\e01d";
+}
+.mcc-icon-baby-bottle:before {
+	content: "\e01e";
+}
+.mcc-icon-teddy:before {
+	content: "\e01f";
+}
+.mcc-icon-megaphone:before {
+	content: "\e020";
+}
+.mcc-icon-padlock:before {
+	content: "\e021";
+}
+.mcc-icon-flag:before {
+	content: "\e022";
+}
+.mcc-icon-200030:before,
+.mcc-icon-antisocial-behaviour:before,
+.mcc-icon-anti-social-behaviour-crime-and-nuisance:before,
+.mcc-icon-vandalism:before {
+	content: "\e023";
+}
+.mcc-icon-first-aid:before {
+	content: "\e024";
+}
+.mcc-icon-child:before {
+	content: "\e025";
+}
+.mcc-icon-sad-adult:before {
+	content: "\e026";
+}
+.mcc-icon-rent:before {
+	content: "\e027";
+}
+.mcc-icon-rent-sign:before {
+	content: "\e028";
+}
+.mcc-icon-tools:before {
+	content: "\e029";
+}
+.mcc-icon-house-search:before {
+	content: "\e02a";
+}
+.mcc-icon-semi-detached:before {
+	content: "\e02b";
+}
+.mcc-icon-taxi:before {
+	content: "\e02c";
+}
+.mcc-icon-hackney-taxi:before {
+	content: "\e02d";
+}
+.mcc-icon-200094:before,
+.mcc-icon-taxis-and-private-hire:before,
+.mcc-icon-hackney-taxi-alt:before {
+	content: "\e02e";
+}
+.mcc-icon-blueprint:before {
+	content: "\e02f";
+}
+.mcc-icon-survey:before {
+	content: "\e030";
+}
+.mcc-icon-500207:before,
+.mcc-icon-planning-and-regeneration:before,
+.mcc-icon-house-plan:before {
+	content: "\e031";
+}
+.mcc-icon-bin-brush:before {
+	content: "\e032";
+}
+.mcc-icon-report-rubbish:before {
+	content: "\e033";
+}
+.mcc-icon-report-traffic:before {
+	content: "\e034";
+}
+.mcc-icon-send-bill:before {
+	content: "\e035";
+}
+.mcc-icon-wave:before {
+	content: "\e036";
+}
+.mcc-icon-open-shop:before {
+	content: "\e037";
+}
+.mcc-icon-cv:before {
+	content: "\e038";
+}
+.mcc-icon-book-stack:before {
+	content: "\e039";
+}
+.mcc-icon-rubber-stamp:before {
+	content: "\e03a";
+}
+.mcc-icon-russian-dolls:before {
+	content: "\e03b";
+}
+.mcc-icon-search-detail:before {
+	content: "\e03c";
+}
+.mcc-icon-library-card:before {
+	content: "\e03d";
+}
+.mcc-icon-blue-badge:before {
+	content: "\e03e";
+}
+.mcc-icon-credit-card:before {
+	content: "\e03f";
+}
+.mcc-icon-parking-map:before {
+	content: "\e040";
+}
+.mcc-icon-coach:before {
+	content: "\e041";
+}
+.mcc-icon-money-house:before {
+	content: "\e042";
+}
+.mcc-icon-purse:before {
+	content: "\e043";
+}
+.mcc-icon-calculator:before {
+	content: "\e044";
+}
+.mcc-icon-easel:before {
+	content: "\e045";
+}
+.mcc-icon-100005:before,
+.mcc-icon-schools-and-education:before,
+.mcc-icon-education-and-schools:before,
+.mcc-icon-maths-tools:before {
+	content: "\e046";
+}
+.mcc-icon-map-marked:before {
+	content: "\e047";
+}
+.mcc-icon-tin-can:before {
+	content: "\e048";
+}
+.mcc-icon-report-bin:before {
+	content: "\e049";
+}
+.mcc-icon-calendar:before {
+	content: "\e04b";
+}
+.mcc-icon-new-bin:before {
+	content: "\e04c";
+}
+.mcc-icon-voucher:before {
+	content: "\e04d";
+}
+.mcc-icon-money:before {
+	content: "\e04e";
+}
+.mcc-icon-email:before {
+	content: "\e04f";
+}
+.mcc-icon-folder:before {
+	content: "\e050";
+}
+.mcc-icon-credit-cards:before {
+	content: "\e051";
+}
+.mcc-icon-signature:before {
+	content: "\e052";
+}
+.mcc-icon-100006:before,
+.mcc-icon-environmental-problems-and-eyesores:before,
+.mcc-icon-eyesore:before {
+	content: "\e04a";
+}
+.mcc-icon-200008:before,
+.mcc-icon-benefits-and-support:before,
+.mcc-icon-benefits:before {
+	content: "\e056";
+}
+.mcc-icon-have-your-say:before {
+	content: "\e055";
+}
+.mcc-icon-100003:before,
+.mcc-icon-people-and-communities:before {
+	content: "\e053";
+}
+.mcc-icon-100004:before,
+.mcc-icon-council-and-democracy:before {
+	content: "\e057";
+}
+.mcc-icon-contract-signature:before {
+	content: "\e054";
+}
+.mcc-icon-cycling:before {
+	content: "\e058";
+}
+.mcc-icon-bus-car:before {
+	content: "\e000";
+}
+.mcc-icon-public-health:before {
+	content: "\e604";
+}
+.mcc-icon-healthy-lifestyles:before {
+	content: "\e611";
+}
+.mcc-icon-health-protection:before {
+	content: "\e612";
+}
+.mcc-icon-health-wellbeing:before {
+	content: "\e613";
+}
+.mcc-icon-pests:before {
+	content: "\e605";
+}
+.mcc-icon-parking-public-areas:before {
+	content: "\e606";
+}
+.mcc-icon-marriage-partnership:before {
+	content: "\e607";
+}
+.mcc-icon-managing-social-care:before {
+	content: "\e608";
+}
+.mcc-icon-events-tourism:before {
+	content: "\e609";
+}
+.mcc-icon-energy-efficiency:before {
+	content: "\e60a";
+}
+.mcc-icon-empty-homes:before {
+	content: "\e60b";
+}
+.mcc-icon-disputes-conflict:before {
+	content: "\e60c";
+}
+.mcc-icon-christmas:before {
+	content: "\e60d";
+}
+.mcc-icon-central-library:before {
+	content: "\e60e";
+}
+.mcc-icon-bin-wagon:before {
+	content: "\e60f";
+}
+.mcc-icon-clean-city:before {
+	content: "\e610";
+}
+.mcc-icon-bricks:before {
+	content: "\e600";
+}
+.mcc-icon-flower:before {
+	content: "\e601";
+}
+.mcc-icon-hands:before {
+	content: "\e602";
+}
+.mcc-icon-third-row-budget:before {
+	content: "\e614";
+}
+.mcc-icon-third-row-christmas:before {
+	content: "\e615";
+}
+.mcc-icon-third-row-clean-city:before {
+	content: "\e616";
+}
+.mcc-icon-third-row-grow:before {
+	content: "\e617";
+}
+.mcc-icon-third-row-helping:before {
+	content: "\e618";
+}
+.mcc-icon-third-row-ballot-box:before {
+	content: "\e619";
+}
+.mcc-icon-clock:before {
+	content: "\e61a";
+}
+.mcc-icon-instagram:before {
+    content: "\e900";
+}
+.mcc-icon-bulletin:before {
+    content: "\e901";
+}
+.mcc-icon-linkedin:before {
+    content: "\e902";
+}
+.mcc-icon-youtube:before {
+    content: "\e903";
+}
+
+/* Icon moon social icons */
+
+[class^="iconmoon-"], [class*=" iconmoon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-pinterest-p:before {
+    content: "\e900";
+}
+.icon-facebook:before {
+    content: "\ea90";
+}
+.icon-twitter:before {
+    content: "\ea96";
+}

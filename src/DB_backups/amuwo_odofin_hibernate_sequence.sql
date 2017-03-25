@@ -1,0 +1,1 @@
+INSERT INTO amuwo_odofin.hibernate_sequence (next_val) VALUES (50);

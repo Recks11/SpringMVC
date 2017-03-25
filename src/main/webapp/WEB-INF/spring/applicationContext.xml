@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:security="http://www.springframework.org/schema/security"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd">
+
+    <bean id="propertyConfiguration"
+          class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer"
+          p:location="classpath:hibernate.properties"/>
+
+    <bean id="dataSource"
+          class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="${jdbc.driverClassName}"/>
+        <property name="url" value="${jdbc.url}"/>
+        <property name="username" value="${jdbc.username}"/>
+        <property name="password" value="${jdbc.password}"/>
+    </bean>
+
+    <bean id="sessionFactory"
+          class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
+        <property name="dataSource" ref="dataSource"/>
+        <property name="hibernateProperties">
+            <props>
+                <prop key="hibernate.dialect">${hibernate.dialect}</prop>
+                <prop key="hibernate.hbm2ddl.auto">${hibernate.hbm2ddl.auto}</prop>
+                <prop key="show_sql">${hibernate.show_sql}</prop>
+                <prop key="hibernate.format_sql">${hibernate.format_sql}</prop>
+                <prop key="connection.pool_size">${connection.pool_size}</prop>
+                <prop key="current_session_context_class">${hibernate.session_context_class}</prop>
+            </props>
+        </property>
+        <property name="packagesToScan">
+            <list>
+                <value>com.egov.mvc</value>
+                <value>com.egov.mvc.controllers</value>
+            </list>
+        </property>
+    </bean>
+    <bean class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor" />
+
+    <bean id="transactionManager" class="org.springframework.orm.hibernate5.HibernateTransactionManager">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+
+    <bean id="administrationBean"
+          class="com.egov.mvc.data.Models.userClasses.Administration"/>
+
+    <bean id="eventsBean"
+          class="com.egov.mvc.data.Models.Events"/>
+
+    <security:http auto-config="true">
+        <security:intercept-url pattern="/admin/**" access="hasRole('ADMIN')" />
+        <security:intercept-url pattern="/services/jobs/**" access="hasRole('USER')||hasRole('BLOGGER')||hasRole('REPORTER')" />
+        <security:intercept-url pattern="/Blogger/**" access="hasRole('BLOGGER')" />
+        <security:intercept-url pattern="/Reporter/**" access="hasRole('REPORTER')" />
+        <security:form-login
+                login-page="/login"
+                default-target-url="/admin/dashboard"
+                authentication-failure-url="/login?error"
+                authentication-success-handler-ref="AuthenticationSuccessHandler"
+                username-parameter="username"
+                password-parameter="password"/>
+        <security:logout
+                logout-url="/logout"
+                logout-success-url="/home" />
+    </security:http>
+
+    <bean id="AuthenticationSuccessHandler"
+                class= "com.egov.mvc.data.Models.components.UrlAuthenticationSuccessHandler" />
+
+    <security:authentication-manager>
+        <security:authentication-provider>
+            <security:jdbc-user-service data-source-ref="dataSource"
+                                        authorities-by-username-query = "SELECT username, authority FROM authorities WHERE username = ?"
+                                        users-by-username-query="SELECT username, password, enabled FROM users WHERE username = ? " />
+        </security:authentication-provider>
+    </security:authentication-manager>
+
+
+</beans>

@@ -1,0 +1,504 @@
+#element::-webkit-scrollbar{
+    display: none;
+}
+.no-pad{padding:0;}
+.no-top-pad{padding-top: 0;}
+.no-left-pad{padding-left: 0;}
+.no-right-pad{padding-right:0;}
+.no-bottom-pad{padding-bottom:0;}
+.no-margin{margin: 0;}
+.no-top-margin{margin-top:0;}
+.no-left-margin{margin-left:0;}
+.no-right-margin{margin-right: 0}
+.no-bottom-margin{margin-bottom: 0}
+.form-control:focus{
+    border-color: springgreen;
+    outline: 0;
+}
+/*********************************
+Not really mine :)
+*********************************/
+.feed-item{
+    border-bottom: 2px solid #5cb85c;
+}
+.feed-item:before, .feed-item:after {
+    content: " ";
+    display: block;
+    height: 3px;
+}
+.feed-item .icon {
+    color: black;
+    font-size: 16px;
+    height: 28px;
+    line-height: 28px;
+    padding-left: 11px;
+    position: relative;
+    text-align: center;
+    vertical-align: middle;
+    width: 28px;
+    z-index: 1;
+}
+.pull-left {
+    float: left;
+}
+.feed-item-body {
+    margin-left: 0px;
+    padding-top: 3px;
+    vertical-align: bottom;
+}
+.feed-item-body .time {
+    color: #5cb85c;
+    font-size: 11.05px;
+    line-height: 1.5em;
+}
+.feed
+{
+    height: 350px;
+    overflow: hidden;
+    position: relative;
+    width: auto;
+    /*! color: blue; */
+}
+/*********************************
+End Of Not really mine :)
+*********************************/
+/*********************************
+Mobile First
+**********************************/
+/*About*/
+@media screen and (max-width: 810px) {
+    .scrosection{
+        margin-left: 90px;
+    }
+    .nav-pills, .nav-pills li{
+        width:80px;
+        z-index: 1;
+    }
+    #myScrollspy ul li a{
+        width:80px;
+        padding:5px 0;
+    }
+    .navbar-inverse .navbar-nav .open .dropdown-menu > li > a{
+        color: #ffffff;
+    }
+    .navbar-inverse .navbar-nav .open .dropdown-menu > li > a:focus,
+    .navbar-inverse .navbar-nav .open .dropdown-menu > li > a:hover{
+        background-color: #0C320F;
+    }
+}
+/*End About*/
+@media screen and (max-width: 768px){
+    .row{
+        margin-left: 0;
+    }
+    /*Home*/
+    .overflow{
+        overflow-y: scroll;
+        max-height:400px;
+        margin-top: 30px;
+    }
+    /*End Home*/
+}
+/*End Mobile FIrst*/
+/*********************************
+Navbar Style
+**********************************/
+.navbar{
+    background-color: RGBA(13, 132, 16, 0);
+    color: #ffffff;
+    border:0 solid;
+}
+.navbar-inverse .navbar-brand{ /*amuwo E-Gov font*/
+    color: #ffffff;
+}
+.navbar-inverse .navbar-nav > li > a{ /* navbar font*/
+    color: #ffffff;
+    font-family: 'Sansita', sans-serif; /* to be paired with Open-sans*/
+}
+
+.navbar-inverse .in{ /* Responsive navbar background */
+    background-color: RGBA(12, 50, 15,0.7);
+}
+#myNavbar ul li:hover{
+    background-color:springgreen;
+}
+.navbar-inverse .navbar-nav > .open > a,
+.navbar-inverse .navbar-nav > .open > a:focus,
+.navbar-inverse .navbar-nav > .open > a:hover{
+    background-color: springgreen;
+}
+
+.navbar-nav .open .dropdown-menu{
+    background-color: springgreen;
+}
+.dropdown-menu>li>a>:focus,
+.dropdown-menu>li>a>:hover{
+    color: black;
+}
+.navbar-inverse .navbar-toggle{
+    border-color: #fff;
+}
+.navbar-inverse .navbar-toggle:focus,
+.navbar-inverse .navbar-toggle:hover{
+    background-color: springgreen;
+}
+.top-nav-collapse {
+    padding: 0;
+    background: rgba(13,132,16, 0.6);
+}
+.logout-btn{
+    border: none;
+    background-color: transparent;
+}
+.logout-drop{
+    max-width: 100px;
+    min-width: 100px;
+}
+/*End Navbar styles*/
+/*********************************
+home.html
+**********************************/
+.drop {
+    background-color: springgreen;
+}
+.drop li a{
+    padding: 8px;
+    font-family: 'Sansita', sans-serif;
+    background-color: springgreen;
+    color: #ffffff;
+}
+/*Start Banner styles*/
+#banner{
+    background: url('../images/back1.jpg') no-repeat fixed;
+    background-size: cover;
+    min-height: 650px;
+    position: relative;
+}
+/* News And Events */
+.pan-heading{
+    background-color: #5cb85c;
+}
+
+.pan-heading .panel-title{
+    color: #FFFFFF;
+}
+.pan-body{
+    max-height:350px;
+    min-height:350px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+.sansita strong{
+    font-size: 15px;
+}
+.description{
+    color: #5cb85c;
+    font-size: 14px;
+    font-weight: 100;
+    font-family: 'fedra', 'Helvetica Neue', 'Helvetica';
+}
+.sansita .title{
+    font-weight:bold;
+    font-family: Sansita, sans-serif;
+}
+/*end news and events*/
+.middle{
+    padding-top: 180px;
+    font-family: 'Sansita', sans-serif;
+}
+.bg-color {
+    background-color: RGBA(13, 132, 16, 0.50);
+    min-height: 650px;
+}
+.homeSection{
+    width:900px;
+}
+.innertext{
+    color: #9d9d9d;
+}
+.innertext{
+    color: #ffffff;
+}
+.innertext h1{
+    font-family: 'Sansita', sans-serif;
+    font-size: 35px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+.innertext p{
+    font-family: 'Sansita', serif;
+    font-size: x-large;
+}
+.padsection{
+    padding: 40px 20px 20px 20px;
+}
+.drop li a{
+    text-align: center;
+}
+/*end Banner styles*/
+
+/* News And Events */
+.overflow{
+    overflow-y: scroll;
+    max-height:350px;
+    padding:0;
+}
+.overflow > h1{
+    margin-top:0;
+}
+.events{
+    padding-left: 15px;
+}
+.inform1{
+    background-color: #f9f9f9;
+}
+.inform2{
+    background-color: #f9f9f9;
+}
+.greyoad{
+    background-color: rgba(0,0,0,0.2);
+}
+/*welcome*/
+#welcome{
+    font-family: 'Sansita', sans-serif;
+    background-color: #F3F4F8;
+}
+.wel-head{
+    padding-bottom: 20px;
+}
+/*end welcome*/
+/*footer*/
+#footer{
+    background-color: #5cb85c;
+    padding: 30px;
+    font-family: 'Sansita', sans-serif;
+    color: white;
+}
+#footer .topfoot .container .col-md-4 .foothead{
+    height: 50px;
+    font-family: 'Sansita', sans-serif;
+}
+.infosec{
+    padding-bottom: 10px;
+}
+.social-icon{
+    list-style: none;
+    font-size: large;
+    height: 50px;
+    padding-left: 0;
+}
+.social-icon li{
+    float: left;
+    width: 50px;
+    height:50px;
+    line-height: 50px;
+    text-align: center;
+    margin-right: 5px;
+    border-radius: 50px;
+}
+.social-icon a{
+    text-decoration: none;
+    font-size: 25px;
+    color: #fff;
+}
+.bg-lightblue{
+    background-color: #3498DB;
+}
+.bg-red{
+    background-color: red;
+}
+.bg-white{
+    background-color: white;
+    border-radius: 20px;
+}
+.bg-white > .soc{
+    color: black;
+    font-size: 50px;
+}
+.br-radius-zero {
+    border-radius: 0;
+}
+.msgbtn{
+    color: #5cb85c;
+}
+.report{
+    padding-top: 20px;
+}
+.topfoot{
+    padding-bottom: 10px;
+}
+.bottomfoot{
+    padding: 10px;
+    border-top: 1px solid white;
+}
+.credits a{
+    color: #ffffff;
+}
+/*end footer*/
+/*********************************
+end Home.html
+**********************************/
+/*********************************
+about.html
+**********************************/
+.n-home{
+    background-color: RGBA(13, 132, 16, 0.50);
+}
+.about{
+    background-color: #F3F4F8;
+    font-family: 'Sansita', sans-serif;
+}
+.cont{
+    padding-top: 50px;
+}
+ul.nav-pills {
+    top: 60px;
+    position: fixed;
+}
+#myScrollspy ul li{
+    width:150px;
+
+}
+#myScrollspy ul li.active a{
+    background-color: springgreen;
+    color: white;
+}
+#myScrollspy ul li a:hover{
+    background-color: springgreen;
+    color: white;
+}
+#myScrollspy ul li a{
+    color: black;
+    background: rgba(13,132,16, 0.4);
+}
+.scrosection{
+    padding: 25px;
+}
+.scrosection p,.scrosection ol li,.scrosection ul li{
+    font-family: "Microsoft JhengHei", sans-serif;
+    /*font-family: "Open Sans", sans-serif;*/
+}
+#section2,#section4,#section6,#section8{
+    background-color: #ffffff;
+}
+#section1,#section3,#section5,#section7{
+
+}
+#section8 ul{
+    text-decoration: dashed;
+}
+/*********************************
+end About.html
+**********************************/
+/*********************************
+Gallery.html
+**********************************/
+/*********************************
+Gallery.html
+**********************************/
+/*********************************
+Services.html
+**********************************/
+
+.mcc-icon-maths-tools{
+    font-size: 50px;
+}
+.jumbotron{
+    margin-bottom: 0;
+}
+.jumbotron .container span{
+    font-size: 180px;
+}
+.panel{
+
+    box-shadow:0 0 2px rgba(0,0,0,.2);
+    border-color: #5cb85c;
+}
+.service-head{
+    background-color: RGBA(13, 132, 16, 0.50);
+    font-family: 'Sansita', sans-serif;
+    color: #ffffff;
+}
+.service-inner{
+    padding:40px;
+}
+.serv-head{
+    /*padding: 20px;*/
+    max-height: 130px;
+    min-height: 130px;
+}
+.row{
+    padding-top: 20px;
+    width:100%
+}
+.row .serv-panel .serv-head{
+    color: #fff;
+    background-color: RGBA(13, 132, 16, 0.50);
+    border-color: #5cb85c;
+    font-size: 20px;
+}
+.spec-cas{ /*special cases where mcc icons are too large*/
+    position: relative;
+    /*top: -28px;*/
+}
+.row .serv-panel .serv-head span{
+    font-size: 80px;
+}
+
+.row .serv-panel .serv-body ul li a{
+    text-decoration: none;
+    color: #000000;
+    font-weight: 100;
+    font-size:15px;
+    font-family: 'fedra', 'Helvetica Neue', 'Helvetica';
+    margin-left: 4%;
+}
+.row .serv-panel .serv-body ul li{
+    list-style: none;
+    padding:8px;
+    line-height: 20px;
+}
+.row .serv-panel .serv-body ul li:first-child{
+    padding-top: 20px;
+}
+.row .serv-panel .serv-body ul li:last-child{
+    padding-bottom: 20px;
+}
+.row .serv-panel .serv-body ul li:hover{
+    background-color: #F3F4F8;
+}
+.row .serv-panel .serv-body ul{
+    padding-left:0;
+    margin-bottom: 0;
+}
+.serv-body{
+    padding: 0;
+}
+.sec1{
+    background: url('../images/back1.jpg') no-repeat fixed;
+    background-size: cover;
+    min-height: 100%;
+    position: relative;
+}
+.bg-trans{
+    background-color: rgba(0,0,0,0.4);
+}
+.row-1{
+    padding-top: 50px;
+}
+.row-3{
+    padding-bottom: 50px;
+}
+/*********************************
+end Services.html
+**********************************/
+.height{
+    min-height:650px;
+}
+/**********************************
+Administration.jsp
+***********************************/
+.tableOverflow{
+    max-height:400px;
+    overflow-x: scroll;
+}

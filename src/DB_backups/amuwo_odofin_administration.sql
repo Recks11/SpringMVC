@@ -1,0 +1,13 @@
+INSERT INTO amuwo_odofin.administration (administratorId, designation, email, name, phoneNumber) VALUES (3, 'Dept.', 'dept@scam.com', 'Debra', '23497866543');
+INSERT INTO amuwo_odofin.administration (administratorId, designation, email, name, phoneNumber) VALUES (4, 'Dept.', 'dept@scam.com', 'Debr', '23497866543');
+INSERT INTO amuwo_odofin.administration (administratorId, designation, email, name, phoneNumber) VALUES (6, 'Dept.', 'dept@scam.com', 'Debr5', '23497866543');
+INSERT INTO amuwo_odofin.administration (administratorId, designation, email, name, phoneNumber) VALUES (7, 'Shit', 'fart@cake.com', 'Fart Cakes', '23499876554');
+INSERT INTO amuwo_odofin.administration (administratorId, designation, email, name, phoneNumber) VALUES (8, 'World', 'fart@cake.com', 'Sturdy Boss', 'effr');
+INSERT INTO amuwo_odofin.administration (administratorId, designation, email, name, phoneNumber) VALUES (9, 'home', 'red@color.com', 'Fool', '3466787687');
+INSERT INTO amuwo_odofin.administration (administratorId, designation, email, name, phoneNumber) VALUES (10, 'Road', 'Titt@slutwhore.com', 'Clean', '23480997765');
+INSERT INTO amuwo_odofin.administration (administratorId, designation, email, name, phoneNumber) VALUES (11, 'dummy', 'dummy', 'dummy', 'dummy');
+INSERT INTO amuwo_odofin.administration (administratorId, designation, email, name, phoneNumber) VALUES (12, 'Bexticus', 'TiTs@BrEaSts.CoM', 'Luminous', '23490855631');
+INSERT INTO amuwo_odofin.administration (administratorId, designation, email, name, phoneNumber) VALUES (13, 'Wrrf', 'rex@fmail.com', 'qq', '12245646');
+INSERT INTO amuwo_odofin.administration (administratorId, designation, email, name, phoneNumber) VALUES (14, 'World', 'fart@cake.com', 'Sturdy Boss', '099554366');
+INSERT INTO amuwo_odofin.administration (administratorId, designation, email, name, phoneNumber) VALUES (20, 'Fool', 'Fool@gmail.com', 'Lol', '0802235842');
+INSERT INTO amuwo_odofin.administration (administratorId, designation, email, name, phoneNumber) VALUES (32, 'ctytct', 'rex@fmail.com', 'res', '4567890-90908');

@@ -1,0 +1,2 @@
+INSERT INTO amuwo_odofin.report (id, description, name, emailAddress) VALUES (33, 'This is very frustating, i tried to fix it since Morning but it didnt do SHIT. But now i realised it was kinda  my Fault', 'Rex', 'rexijie@gmail.com');
+INSERT INTO amuwo_odofin.report (id, description, name, emailAddress) VALUES (46, 'I''m not happy with the news section it says lorem and some bull s**t and i don''t like that... Fix it please', 'Rex Ijiekhuamen', 'rexijie@gmail.com');
