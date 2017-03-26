@@ -44,6 +44,6 @@ public class EventsDaoImpl implements EventsDao {
 
     @Override
     public List getAllEvents(){
-        return sessionFactory.getCurrentSession().createQuery("from Events order by id asc").list();
+        return sessionFactory.getCurrentSession().createQuery("from Events order by id desc").list();
     }
 }
