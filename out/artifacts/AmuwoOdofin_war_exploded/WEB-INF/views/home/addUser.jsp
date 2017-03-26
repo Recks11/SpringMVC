@@ -48,7 +48,7 @@
                             <label for="Phone">Contact:</label>
                             <form:input path="contact" type="text" cssClass="form-control" id="Phone" placeholder="Phone Number"/>
                         </div>
-                        <!--set enabled | set is reporter | set isblogger-->
+                        <!--set enabled | set is reporter | set isBlogger-->
                         <h1 style="margin-top:50px;"> Address </h1>
                         <div class="form-group">
                             <label for="hnumber">House Number:</label>
@@ -73,7 +73,7 @@
                         </div>
                         <div class="form-group">
                             <label for="pwd">Confirm Password:</label>
-                            <input type="password" Class="form-control" id="Cpwd" name="cPassword" placeholder="Confirm password"/>
+                            <input type="password" Class="form-control" id="Cpassword" name="cPassword" placeholder="Confirm password"/>
                         </div>
 
                         <!--Button-->

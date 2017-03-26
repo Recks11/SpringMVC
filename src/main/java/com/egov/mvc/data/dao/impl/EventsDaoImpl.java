@@ -15,8 +15,12 @@ import java.util.List;
 @Repository
 public class EventsDaoImpl implements EventsDao {
 
+    private final SessionFactory sessionFactory;
+
     @Autowired
-    private SessionFactory sessionFactory;
+    public EventsDaoImpl(SessionFactory sessionFactory) {
+        this.sessionFactory = sessionFactory;
+    }
 
     @Override
     public Events getEventById(Long id) {
@@ -40,6 +44,6 @@ public class EventsDaoImpl implements EventsDao {
 
     @Override
     public List getAllEvents(){
-        return sessionFactory.getCurrentSession().createQuery("from Events ").list();
+        return sessionFactory.getCurrentSession().createQuery("from Events order by id asc").list();
     }
 }

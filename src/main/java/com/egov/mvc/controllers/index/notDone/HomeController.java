@@ -25,16 +25,20 @@ import java.util.List;
 public class HomeController {
 
 
-    @Autowired
-    private userDao userDao;
+    private final userDao userDao;
+
+    private final ReportsService reportsService;
+
+    private final EventsService eventsService;
+
+    private Report rep = new Report();
 
     @Autowired
-    private ReportsService reportsService;
-
-    @Autowired
-    private EventsService eventsService;
-
-    Report rep = new Report();
+    public HomeController(userDao userDao, ReportsService reportsService, EventsService eventsService) {
+        this.userDao = userDao;
+        this.reportsService = reportsService;
+        this.eventsService = eventsService;
+    }
 
     @RequestMapping("/home")
     public String showHome(Model model){
