@@ -29,6 +29,10 @@
             </div>
         </div>
     </div>
+        <div class="row">
+            <div class="col-sm-6">//Rex would put the users login info here and remove the 10 days data below and the thing beside it lol</div>
+            <div class="col-sm-6">//Rex would put the users login info here and remove the 10 days data below and the thing beside it lol</div>
+        </div>
     <div class="row">
         <div class="col-md-8">
             <div class="panel panel-primary">
@@ -139,18 +143,6 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-lg-12">
-            <div class="panel panel-primary">
-                <div class="panel-heading">
-                    <h3 class="panel-title"><i class="fa fa-bar-chart-o"></i> Traffic Sources One month tracking </h3>
-                </div>
-                <div class="panel-body">
-                    <div id="shieldui-grid1"></div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="row">
         <div class="col-lg-4">
             <div class="panel panel-primary">
                 <div class="panel-heading">
@@ -207,10 +199,7 @@
                         <a data-toggle="tab" href="#stats">Users</a>
                     </li>
                     <li class="">
-                        <a data-toggle="tab" href="#report">Favorites</a>
-                    </li>
-                    <li class="">
-                        <a data-toggle="tab" href="#dropdown1">Commenters</a>
+                        <a data-toggle="tab" href="#report"> Posts </a>
                     </li>
                 </ul>
             </header>
@@ -261,7 +250,7 @@
                     </ul>
                 </div>
                 <div class="tab-pane" id="report">
-                    <h5 class="tab-header"><i class="fa fa-star fa-2x"></i> Popular contacts</h5>
+                    <h5 class="tab-header"><i class="fa fa-star fa-2x"></i> latest posts </h5>
                     <ul class="news-list news-list-no-hover">
                         <li>
                             <i class="fa fa-user fa-4x pull-left"></i>
@@ -340,60 +329,6 @@
                                         <i class="fa fa-envelope-o"></i>
                                         Message
                                     </button>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-                <div class="tab-pane" id="dropdown1">
-                    <h5 class="tab-header"><i class="fa fa-comments fa-2x"></i> Top Commenters</h5>
-                    <ul class="news-list">
-                        <li>
-                            <i class="fa fa-user fa-4x pull-left"></i>
-                            <div class="news-item-info">
-                                <div class="name"><a href="#">Edin Garey</a></div>
-                                <div class="comment">
-                                    Nemo enim ipsam voluptatem quia voluptas sit aspernatur
-                                    aut odit aut fugit,sed quia
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <i class="fa fa-user fa-4x pull-left"></i>
-                            <div class="news-item-info">
-                                <div class="name"><a href="#">Firel Lund</a></div>
-                                <div class="comment">
-                                    Duis aute irure dolor in reprehenderit in voluptate velit
-                                    esse cillum dolore eu fugiat.
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <i class="fa fa-user fa-4x pull-left"></i>
-                            <div class="news-item-info">
-                                <div class="name"><a href="#">Jessica Desingter</a></div>
-                                <div class="comment">
-                                    Excepteur sint occaecat cupidatat non proident, sunt in
-                                    culpa qui officia deserunt.
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <i class="fa fa-user fa-4x pull-left"></i>
-                            <div class="news-item-info">
-                                <div class="name"><a href="#">Novel Forel</a></div>
-                                <div class="comment">
-                                    Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque.
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <i class="fa fa-user fa-4x pull-left"></i>
-                            <div class="news-item-info">
-                                <div class="name"><a href="#">Wedol Reier</a></div>
-                                <div class="comment">
-                                    Laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis
-                                    et quasi.
                                 </div>
                             </div>
                         </li>

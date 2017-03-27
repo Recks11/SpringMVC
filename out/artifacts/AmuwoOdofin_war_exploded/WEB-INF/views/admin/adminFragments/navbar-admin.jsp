@@ -24,8 +24,8 @@
             <li class=""><a href="<spring:url value="/admin/dashboard"/>"><i class="fa fa-bullseye"></i>  Dashboard</a></li>
 
             <li class="">
-                <a data-toggle="collapse" data-parent="#accordion" href="#collapse0"><i class="fa fa-tasks"></i>  News</a>
-                <div id="collapse0" class="panel-collapse collapse">
+                <a data-toggle="collapse" data-parent="#accordion" href="#news"><i class="fa fa-tasks"></i>  News</a>
+                <div id="news" class="panel-collapse collapse">
                     <div class="side-content">
                         <ul>
                             <li><a href="<spring:url value="/admin/articles"/>"><i class="fa fa-tasks"></i> View News</a></li>
@@ -35,8 +35,8 @@
             </li>
 
             <li class="">
-                <a data-toggle="collapse" data-parent="#accordion" href="#collapse1"><i class="fa fa-globe"></i>  Events</a>
-                <div id="collapse1" class="panel-collapse collapse">
+                <a data-toggle="collapse" data-parent="#accordion" href="#events"><i class="fa fa-globe"></i>  Events</a>
+                <div id="events" class="panel-collapse collapse">
                     <div class="side-content">
                         <ul>
                             <li><a href="<spring:url value="/admin/events"/>"><i class="fa fa-tasks"></i> Add/Edit Events</a></li>
@@ -46,8 +46,8 @@
             </li>
 
             <li class="">
-                <a data-toggle="collapse" data-parent="#accordion" href="#collapse2"><i class="fa fa-book"></i>  Blogs</a>
-                <div id="collapse2" class="panel-collapse collapse">
+                <a data-toggle="collapse" data-parent="#accordion" href="#blogs"><i class="fa fa-book"></i>  Blogs</a>
+                <div id="blogs" class="panel-collapse collapse">
                     <div class="side-content">
                         <ul>
                             <li><a href="<spring:url value="/admin/blogs"/>"><i class="fa fa-book"></i> View Blogs</a></li>
@@ -57,8 +57,8 @@
             </li>
 
             <li class="">
-                <a data-toggle="collapse" data-parent="#accordion" href="#collapse3"><i class="fa fa-user"></i>  Users</a>
-                <div id="collapse3" class="panel-collapse collapse">
+                <a data-toggle="collapse" data-parent="#accordion" href="#users"><i class="fa fa-user"></i>  Users</a>
+                <div id="users" class="panel-collapse collapse">
                     <div class="side-content">
                         <ul>
                             <li><a href="<spring:url value="/users/all"/>"><i class="fa fa-user"></i> All Users</a></li>
@@ -70,7 +70,18 @@
                 </div>
             </li>
 
-            <li class=""><a href="forms.html"><i class="fa fa-list-ol"></i>  Forms</a></li>
+            <li class="">
+                <a data-toggle="collapse" data-parent="#accordion" href="#administration"><i class="fa fa-handshake-o"></i>  Administration</a>
+                <div id="administration" class="panel-collapse collapse">
+                    <div class="side-content">
+                        <ul>
+                            <li><a href="<spring:url value="/admin/addAdministration"/>"><i class="fa fa-plus"></i> Department</a></li>
+                            <li><a href="<spring:url value="/admin/removeAdministration"/>"><i class="fa fa-minus"></i> Department</a></li>
+                            <li><a href="<spring:url value="/admin/viewAdministration"/>"><i class="fa fa-eye"></i> View Department</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </li>
 
         </ul>
 

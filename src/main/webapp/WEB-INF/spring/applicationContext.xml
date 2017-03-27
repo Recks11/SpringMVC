@@ -52,6 +52,7 @@
     <security:http auto-config="true">
         <security:intercept-url pattern="/admin/**" access="hasRole('ADMIN')" />
         <security:intercept-url pattern="/services/jobs/**" access="hasRole('USER')||hasRole('BLOGGER')||hasRole('REPORTER')" />
+        <security:intercept-url pattern="/services/bins/**" access="hasRole('USER')||hasRole('BLOGGER')||hasRole('REPORTER')" />
         <security:intercept-url pattern="/Blogger/**" access="hasRole('BLOGGER')" />
         <security:intercept-url pattern="/Reporter/**" access="hasRole('REPORTER')" />
         <security:form-login

@@ -41,11 +41,13 @@ public class user {
     private Boolean enabled;
 
     @OneToOne
-    @JoinColumn(name = "addressId")
+    @JoinColumn(name = "addressId", nullable = false,
+                foreignKey = @ForeignKey (name="ADDRESS_FK"))
     private houseAddress houseaddress;
 
     @OneToOne
-    @JoinColumn(name = "authorityId")
+    @JoinColumn(name = "authorityId", nullable = false,
+            foreignKey = @ForeignKey (name="AUTHORITY_FK"))
     private authorities authorities;
 
 
