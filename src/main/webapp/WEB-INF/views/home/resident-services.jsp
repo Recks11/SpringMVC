@@ -2,7 +2,7 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 
-<html lang=>
+<html lang="EN-us">
   <head>
     <title>E-gov</title>
       <jsp:include page="../fragments/imports.jsp" />
@@ -40,8 +40,8 @@
                       <div class="panel-body serv-body">
                           <ul>
                               <li><a href="<spring:url value="/services/jobs/"/> ">Vacancies</a></li>
-                              <li><a href="<spring:url value="/services/volunteer"/>">Volunteer</a></li>
-                              <li><a href="<spring:url value="/services/internships"/>">Internships</a></li>
+                              <li><a href="<spring:url value="/services/jobs/volunteer"/>">Volunteer</a></li>
+                              <li><a href="<spring:url value="/services/jobs/internships"/>">Internships</a></li>
                           </ul>
                       </div>
                   </div>
@@ -121,8 +121,8 @@
                       <div class="panel-heading serv-head text-center"><span class="mcc-icon-libraries"></span><div>YOUR COUNCIL</div></div>
                       <div class="panel-body serv-body">
                           <ul>
-                              <li><a href="#">Administration</a></li>
-                              <li><a href="#">Directory</a></li>
+                              <li><a href="<spring:url value="/council/administration"/>">Administration</a></li>
+                              <li><a href="<spring:url value="/council/directory"/>">Directory</a></li>
                           </ul>
                       </div>
                   </div>
