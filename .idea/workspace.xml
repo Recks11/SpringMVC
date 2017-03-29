@@ -1379,7 +1379,7 @@
       <workItem from="1490657440929" duration="3122000" />
       <workItem from="1490730899565" duration="3671000" />
       <workItem from="1490744395798" duration="4023000" />
-      <workItem from="1490751474645" duration="8043000" />
+      <workItem from="1490751474645" duration="8060000" />
     </task>
     <task id="LOCAL-00001" summary="changed Cpwd to password">
       <created>1490469558462</created>
@@ -1437,11 +1437,18 @@
       <option name="project" value="LOCAL" />
       <updated>1490760645035</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Added JPA dependency&#10;Added BinCollectorController&#10;Mapped Controller To userIndex View&#10;Added Classes For Bin collection section for both users and bin collectors{&#10;Bins&#10;BinsDao&#10;BinsDaoImpl&#10;BinsService&#10;BinsServiceImpl&#10;:)&#10;}">
+      <created>1490760793358</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1490760793358</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="401282000" />
+    <option name="totallyTimeSpent" value="401299000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
