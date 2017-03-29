@@ -52,6 +52,7 @@ public class UrlAuthenticationSuccessHandler
         boolean isAdmin = false;
         boolean isBlogger = false;
         boolean isUser = false;
+        boolean isBin = false;
         Collection<? extends GrantedAuthority> authorities
          = authentication.getAuthorities();
         for (GrantedAuthority grantedAuthority : authorities) {
@@ -60,6 +61,9 @@ public class UrlAuthenticationSuccessHandler
                 break;
             }if (grantedAuthority.getAuthority().equals("ROLE_USER")) {
                 isUser = true;
+                break;
+            }if (grantedAuthority.getAuthority().equals("ROLE_BIN")) {
+                isBin = true;
                 break;
             }if (grantedAuthority.getAuthority().equals("ROLE_BLOGGER")) {
                 isBlogger = true;
@@ -76,6 +80,8 @@ public class UrlAuthenticationSuccessHandler
             return "/admin/";
         } else if (isUser) {
             return "/home";
+        } else if (isBin) {
+            return "/Bins/";
         } else if (isBlogger) {
             return "/Blogger/";
         } else {
