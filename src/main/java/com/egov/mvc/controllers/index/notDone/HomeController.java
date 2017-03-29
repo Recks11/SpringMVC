@@ -1,7 +1,6 @@
 package com.egov.mvc.controllers.index.notDone;
 
 import com.egov.mvc.data.Models.Report;
-import com.egov.mvc.data.Models.userClasses.user;
 import com.egov.mvc.data.dao.userDao;
 import com.egov.mvc.data.services.EventsService;
 import com.egov.mvc.data.services.ReportsService;
@@ -14,8 +13,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * Created by Ijiekhuamen Rex
@@ -43,7 +42,8 @@ public class HomeController {
     @RequestMapping("/home")
     public String showHome(Model model){
         model.addAttribute("Report", new Report());
-        model.addAttribute("events", eventsService.getAllEvents());
+        List event4List = (List) eventsService.getAllEvents().stream().limit(4).collect(Collectors.toList());
+        model.addAttribute("events", event4List);
         return "home/index";
     }
 

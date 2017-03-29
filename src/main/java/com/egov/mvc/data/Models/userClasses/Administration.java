@@ -1,10 +1,5 @@
 package com.egov.mvc.data.Models.userClasses;
 
-import org.hibernate.annotations.NaturalId;
-import org.hibernate.annotations.NotFound;
-import org.hibernate.annotations.NotFoundAction;
-import org.springframework.format.annotation.NumberFormat;
-
 import javax.persistence.*;
 
 /**

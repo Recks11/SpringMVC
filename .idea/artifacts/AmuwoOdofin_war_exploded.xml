@@ -53,6 +53,13 @@
           <element id="library" level="project" name="Maven: org.springframework.security:spring-security-core:4.2.2.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework.security:spring-security-web:4.2.2.RELEASE" />
           <element id="library" level="application" name="Spring-Security-4.2.2.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-dao:2.0.8" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-jpa:2.0.8" />
+          <element id="library" level="project" name="Maven: org.aspectj:aspectjrt:1.8.10" />
+          <element id="library" level="project" name="Maven: org.slf4j:jcl-over-slf4j:1.7.24" />
+          <element id="library" level="project" name="Maven: org.slf4j:slf4j-api:1.7.24" />
+          <element id="library" level="project" name="Maven: org.springframework.data:spring-data-commons:1.13.1.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework.data:spring-data-jpa:1.11.1.RELEASE" />
         </element>
       </element>
     </root>
