@@ -27,7 +27,8 @@ public class Bins {
     @Temporal(TemporalType.DATE)
     @Column(name="requestDate")
     private Date date;
-// approved Date
+
+// approved Date?
 
     @NotBlank
     @Column(name = "request", nullable= false)

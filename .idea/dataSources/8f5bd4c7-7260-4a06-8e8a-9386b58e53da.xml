@@ -82,6 +82,7 @@ authority</ColNames>
       <DataType>bigint(20)|0</DataType>
       <NotNull>1</NotNull>
     </column>
+<<<<<<< HEAD
     <column id="36" parent="14" name="request">
       <Position>2</Position>
       <DataType>varchar(255)|0</DataType>
@@ -95,6 +96,21 @@ authority</ColNames>
     <column id="38" parent="14" name="requestDate">
       <Position>4</Position>
       <DataType>date|0</DataType>
+=======
+    <column id="36" parent="14" name="date">
+      <Position>2</Position>
+      <DataType>date|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="37" parent="14" name="request">
+      <Position>3</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="38" parent="14" name="userID">
+      <Position>4</Position>
+      <DataType>int(11)|0</DataType>
+>>>>>>> e590456769fd02da181438fcfe28aaf7bfc95d7f
       <NotNull>1</NotNull>
     </column>
     <index id="39" parent="14" name="USERID_FK">
