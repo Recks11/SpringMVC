@@ -29,10 +29,42 @@
             </div>
         </div>
     </div>
-        <div class="row">
-            <div class="col-sm-6">//Rex would put the users login info here and remove the 10 days data below and the thing beside it lol</div>
-            <div class="col-sm-6">//Rex would put the users login info here and remove the 10 days data below and the thing beside it lol</div>
+        <!---->
+        <div class="row text-center" style="margin-bottom: 30px">
+            <div class="col-md-6 no-pad">
+                <div class = "col-sm-6">
+                    <div class="admin-dashboard-item bg-blue">
+                        <p>Total Number Of Users</p>
+                        <i class="fa fa-globe admin-icon pull-left"></i>
+                        <div class="pull-right admin-number">${number}</div>
+                    </div>
+                </div>
+                <div class = "col-sm-6">
+                    <div class="admin-dashboard-item bg-red">
+                        <p>Role change requests</p>
+                        <i class="fa fa-user admin-icon pull-left"></i>
+                        <div class="pull-right admin-number">999</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 no-pad">
+                <div class = "col-sm-6">
+                    <div class="admin-dashboard-item bg-green">
+                        <p>Bloggers & Reporters</p>
+                        <i class="fa fa-user admin-icon pull-left"></i>
+                        <div class="pull-right admin-number">${numberBandR}</div>
+                    </div>
+                </div>
+                <div class = "col-sm-6">
+                    <div class="admin-dashboard-item bg-white">
+                        <p>Number of Registered Organisations</p>
+                        <i class="fa fa-user admin-icon pull-left"></i>
+                        <div class="pull-right admin-number">999</div>
+                    </div>
+                </div>
+            </div>
         </div>
+        <!---->
     <div class="row">
         <div class="col-md-8">
             <div class="panel panel-primary">

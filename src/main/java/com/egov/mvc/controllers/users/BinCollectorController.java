@@ -8,6 +8,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import java.util.List;
 
 /**
  * Created by Ijiekhuamen Rex
@@ -38,9 +41,19 @@ public class BinCollectorController {
         return "users/userIndex";
     }
 
+    @RequestMapping("/viewRequests")
+    public String viewRequests(Model model){
+        model.addAttribute("BinRequest", binsService.getAllRequests());
+        return "users/Bins/binRequests";
+    }
 
 
 
+    @RequestMapping("/responseBody")
+    public @ResponseBody
+    List responseBody(){
+        return  binsService.getAllRequests();
+    }
 
     @ModelAttribute("Bin")
     public void setLinks(Model model){

@@ -53,4 +53,14 @@ public class userServiceImpl implements userService {
     public void setRole(String username, String role) {
         userDao.setRole(username, role);
     }
+
+    @Transactional
+    public int numberOfBloggers() {
+        return userDao.numberOfBloggers();
+    }
+
+    @Transactional
+    public int numberOfReporters() {
+        return userDao.numberOfReporters();
+    }
 }

@@ -1,7 +1,10 @@
 package com.egov.mvc.controllers.admin;
 
 import com.egov.mvc.data.Models.Events;
+import com.egov.mvc.data.services.BlogService;
 import com.egov.mvc.data.services.EventsService;
+import com.egov.mvc.data.services.ReportsService;
+import com.egov.mvc.data.services.userService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
@@ -22,17 +25,19 @@ import javax.validation.Valid;
 @RequestMapping(value = "/admin")
 public class adminController {
 
-    @Autowired
-    private EventsService eventsService;
+    private final EventsService eventsService;
 
-    @Autowired
+    private final userService userService;
+
     private Events event;
 
     @Autowired
-    public adminController(EventsService eventsService, Events event) {
+    public adminController(EventsService eventsService, userService userService, Events event) {
         this.eventsService = eventsService;
+        this.userService = userService;
         this.event = event;
     }
+
 
     @RequestMapping
     public String admin(Authentication authentication){
@@ -40,7 +45,12 @@ public class adminController {
     }
 
     @RequestMapping("/dashboard")
-    public String adminHome(){
+    public String adminHome(Model model){
+
+        int NumberOfBloggersAndReporters = userService.numberOfBloggers() + userService.numberOfReporters();
+        int NumberOfUsers = userService.getAllUsers().size();
+        model.addAttribute("numberBandR",NumberOfBloggersAndReporters);
+        model.addAttribute("number", NumberOfUsers);
         return "admin/adminindex";
     }
 

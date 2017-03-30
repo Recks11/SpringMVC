@@ -55,4 +55,5 @@ public class BinsServiceImpl implements BinsService{
     public List<Bins> getAllRequests() {
         return binsDao.getAllRequests();
     }
+
 }

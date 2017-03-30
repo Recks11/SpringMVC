@@ -23,4 +23,8 @@ public interface userDao {
     void deleteUser(int Id);
 
     void setRole(String username, String role);
+
+    int numberOfBloggers();
+
+    int numberOfReporters();
 }

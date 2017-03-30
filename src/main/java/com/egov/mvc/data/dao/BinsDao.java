@@ -24,5 +24,4 @@ public interface BinsDao{
 
     List<Bins> getAllRequests();
 
-
 }

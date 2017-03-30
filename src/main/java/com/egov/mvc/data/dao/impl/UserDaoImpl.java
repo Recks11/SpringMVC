@@ -80,4 +80,21 @@ public class UserDaoImpl implements userDao {
         a.setAuthority(role);
         sessionFactory.getCurrentSession().update(user);
     }
+
+    @Override
+    public int numberOfBloggers() {
+
+        return  sessionFactory.getCurrentSession().createQuery("from authorities where authority = ?")
+                .setParameter(0, "ROLE_BLOGGER")
+                .list()
+                .size();
+    }
+
+    @Override
+    public int numberOfReporters() {
+        return sessionFactory.getCurrentSession().createQuery("from authorities where authority = ?")
+                .setParameter(0, "ROLE_REPORTER")
+                .list()
+                .size();
+    }
 }

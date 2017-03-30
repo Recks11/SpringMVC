@@ -3,6 +3,7 @@ package com.egov.mvc.data.dao.impl;
 import com.egov.mvc.data.Models.Bins;
 import com.egov.mvc.data.Models.userClasses.user;
 import com.egov.mvc.data.dao.BinsDao;
+import org.hibernate.Criteria;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -51,6 +52,9 @@ public class BinsDaoImpl implements BinsDao{
 
     @Override
     public List<Bins> getAllRequests(){
-        return sessionFactory.getCurrentSession().createQuery("from Bins").list();
+
+        Criteria criteria = sessionFactory.getCurrentSession().createCriteria(Bins.class);
+        return criteria.list();
     }
+
 }
