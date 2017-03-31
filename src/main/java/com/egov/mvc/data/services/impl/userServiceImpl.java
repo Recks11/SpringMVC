@@ -23,7 +23,6 @@ public class userServiceImpl implements userService {
         this.userDao = userDao;
     }
 
-
     @Transactional
     public void addUser(user usr) {
         userDao.addUser(usr);

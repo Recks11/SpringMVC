@@ -412,7 +412,7 @@ Services.html
 .panel{
 
     box-shadow:0 0 2px rgba(0,0,0,.2);
-    border-color: #5cb85c;
+    /*border-color: #5cb85c;*/
 }
 .service-head{
     background-color: RGBA(13, 132, 16, 0.50);
@@ -489,6 +489,21 @@ Services.html
 .row-3{
     padding-bottom: 50px;
 }
+.serv-head .inPanel{
+    padding-top:22px;
+}
+.userserv-head{
+    background-color: RGBA(13, 132, 16, 0.65);
+    min-height:187px;
+}
+.userserv-head a{
+    text-decoration: none;
+    color: white;
+}
+.serv-panel > .userserv-head:hover{
+    background-color: RGBA(0, 157, 50, 0.75);
+}
+
 /*********************************
 end Services.html
 **********************************/

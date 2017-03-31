@@ -18,8 +18,12 @@ import java.util.List;
 @Service
 public class loggedinServiceImpl implements loggedinService {
 
+    private final logintimestampDao login;
+
     @Autowired
-    private logintimestampDao login;
+    public loggedinServiceImpl(logintimestampDao login) {
+        this.login = login;
+    }
 
     @Transactional
     public void addtimestamp(logintimestamp logintimestamp) {

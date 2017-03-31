@@ -55,6 +55,9 @@
                             <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                                 <i class="fa fa-user"></i> ${pageContext.request.userPrincipal.name} <span class="caret"></span></a>
                             <ul class="dropdown-menu drop logout-drop">
+                                <security:authorize access="hasRole('ROLE_USER')">
+                                <li><a href="<spring:url value="/newRole"/>">Change Role</a></li>
+                                </security:authorize>
                                 <li><a>
                                     <c:url var="logoutUrl" value="/logout"/>
                                     <form:form action="${logoutUrl}" method="post" cssStyle="margin-bottom: 0;padding: 7px 0 7px;">

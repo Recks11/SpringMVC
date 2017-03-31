@@ -1,10 +1,7 @@
 package com.egov.mvc.controllers.admin;
 
 import com.egov.mvc.data.Models.Events;
-import com.egov.mvc.data.services.BlogService;
-import com.egov.mvc.data.services.EventsService;
-import com.egov.mvc.data.services.ReportsService;
-import com.egov.mvc.data.services.userService;
+import com.egov.mvc.data.services.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
@@ -29,10 +26,16 @@ public class adminController {
 
     private final userService userService;
 
+    private final loggedinService loggedinService;
+
+    private final roleChangeService roleService;
+
     private Events event;
 
     @Autowired
-    public adminController(EventsService eventsService, userService userService, Events event) {
+    public adminController(roleChangeService roleService, EventsService eventsService, userService userService, Events event, loggedinService loggedinService) {
+        this.roleService = roleService;
+        this.loggedinService = loggedinService;
         this.eventsService = eventsService;
         this.userService = userService;
         this.event = event;
@@ -41,6 +44,7 @@ public class adminController {
 
     @RequestMapping
     public String admin(Authentication authentication){
+        loggedinService.getTimeStamp(authentication);
         return "redirect:/admin/dashboard";
     }
 
@@ -49,8 +53,10 @@ public class adminController {
 
         int NumberOfBloggersAndReporters = userService.numberOfBloggers() + userService.numberOfReporters();
         int NumberOfUsers = userService.getAllUsers().size();
+        int NumberOfRequests = roleService.getAllRequests().size();
         model.addAttribute("numberBandR",NumberOfBloggersAndReporters);
         model.addAttribute("number", NumberOfUsers);
+        model.addAttribute("numberRequests", NumberOfRequests);
         return "admin/adminindex";
     }
 

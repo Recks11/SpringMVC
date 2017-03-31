@@ -48,4 +48,13 @@ public class authorities {
     public void setAuthority(String authority) {
         this.authority = authority;
     }
+
+    @Override
+    public String toString() {
+        return "authorities{" +
+                "authorityId=" + authorityId +
+                ", username='" + username + '\'' +
+                ", authority='" + authority + '\'' +
+                '}';
+    }
 }

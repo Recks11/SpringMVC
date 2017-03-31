@@ -148,19 +148,19 @@ public class user {
         this.authorities = authorities;
     }
 
-//    public List<Blog> getBlogs() {
-//        return blogs;
-//    }
-//
-//    public void setBlogs(List<Blog> blogs) {
-//        this.blogs = blogs;
-//    }
-//
-//    public List<News> getArticles() {
-//        return articles;
-//    }
-//
-//    public void setArticles(List<News> articles) {
-//        this.articles = articles;
-//    }
+    @Override
+    public String toString() {
+        return "user{" +
+                "userID=" + userID +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", email='" + email + '\'' +
+                ", contact='" + contact + '\'' +
+                ", username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", enabled=" + enabled +
+                ", houseaddress=" + houseaddress +
+                ", authorities=" + authorities +
+                '}';
+    }
 }

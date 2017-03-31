@@ -60,4 +60,14 @@ public class houseAddress {
     public void setCity(String city) {
         this.city = city;
     }
+
+    @Override
+    public String toString() {
+        return "houseAddress{" +
+                "addressId=" + addressId +
+                ", housenumber='" + housenumber + '\'' +
+                ", streetName='" + streetName + '\'' +
+                ", city='" + city + '\'' +
+                '}';
+    }
 }

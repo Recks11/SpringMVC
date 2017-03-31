@@ -1,18 +1,19 @@
 package com.egov.mvc.controllers.index.notDone;
 
 import com.egov.mvc.data.Models.Report;
+import com.egov.mvc.data.Models.components.RoleChange;
+import com.egov.mvc.data.dao.roleChangeDao;
 import com.egov.mvc.data.dao.userDao;
 import com.egov.mvc.data.services.EventsService;
 import com.egov.mvc.data.services.ReportsService;
+import com.egov.mvc.data.services.roleChangeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
+import java.security.Principal;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -29,6 +30,9 @@ public class HomeController {
     private final ReportsService reportsService;
 
     private final EventsService eventsService;
+
+    @Autowired
+    private roleChangeService roleService;
 
     private Report rep = new Report();
 
@@ -62,6 +66,42 @@ public class HomeController {
                 break;
         }
         return "redirect:/home";
+    }
+
+    @RequestMapping("/newRole")
+    public String newRole(){
+        return "home/newRole";
+    }
+
+    @GetMapping("/newRole/blog")
+    public String bloggerRequest(Principal principal, RoleChange roleChange, Model model){
+
+        String user = principal.getName();
+        roleChange.setUsr(roleService.getUserByName(user));
+        roleChange.setRole("ROLE_BLOGGER");
+        if(roleService.findRoleByUsername(user) != null){
+            model.addAttribute("RequestExists", "error");
+            model.addAttribute("requestrole", "Blogger");
+            return "home/newRole";
+        }else{
+        roleService.newRoleRequest(roleChange);
+            return "redirect:/home";
+        }
+    }
+    @GetMapping("/newRole/reporter")
+    public String reporterRequest(Principal principal, RoleChange roleChange, Model model){
+
+        String username = principal.getName();
+        roleChange.setUsr(roleService.getUserByName(username));
+        roleChange.setRole("ROLE_REPORTER");
+        if(roleService.findRoleByUsername(username) != null) {
+            model.addAttribute("RequestExists", "error");
+            model.addAttribute("requestrole", "Reporter");
+            return "home/newRole";
+        }else {
+            roleService.newRoleRequest(roleChange);
+            return "redirect:/home";
+        }
     }
 
 }

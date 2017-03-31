@@ -43,7 +43,7 @@
                     <div class="admin-dashboard-item bg-red">
                         <p>Role change requests</p>
                         <i class="fa fa-user admin-icon pull-left"></i>
-                        <div class="pull-right admin-number">999</div>
+                        <div class="pull-right admin-number">${numberRequests}</div>
                     </div>
                 </div>
             </div>
@@ -371,5 +371,6 @@
     </div>
     </div>
 </div>
+<script src=""></script>
 </body>
 </html>

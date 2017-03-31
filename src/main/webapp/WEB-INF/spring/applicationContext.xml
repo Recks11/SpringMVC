@@ -17,6 +17,31 @@
         <property name="password" value="${jdbc.password}"/>
     </bean>
 
+    <!--<bean id="entityManagerFactory"-->
+          <!--class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">-->
+        <!--<property name="packagesToScan" value="com.egov.mvc"/>-->
+        <!--<property name="dataSource" ref="dataSource"/>-->
+        <!--<property name="jpaVendorAdapter">-->
+            <!--<bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">-->
+                <!--<property name="generateDdl" value="true"/>-->
+                <!--<property name="showSql" value="true"/>-->
+            <!--</bean>-->
+        <!--</property>-->
+        <!--<property name="jpaProperties">-->
+            <!--<props>-->
+                <!--<prop key="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</prop>-->
+                <!--<prop key="hibernate.show_sql">true</prop>-->
+                <!--<prop key="hibernate.format_sql">false</prop>-->
+                <!--<prop key="hibernate.hbm2ggl.auto">update</prop>-->
+            <!--</props>-->
+        <!--</property>-->
+    <!--</bean>-->
+
+    <!--&lt;!&ndash;JPA TRANSACTION MANAGER AUTO&ndash;&gt;-->
+    <!--<bean id="jpaTransactionManager2" class="org.springframework.orm.jpa.JpaTransactionManager">-->
+        <!--<property name="entityManagerFactory" ref="entityManagerFactory"/>-->
+    <!--</bean>-->
+
     <bean id="sessionFactory"
           class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
         <property name="dataSource" ref="dataSource"/>
@@ -60,7 +85,7 @@
                 login-page="/login"
                 default-target-url="/admin/dashboard"
                 authentication-failure-url="/login?error"
-                authentication-success-handler-ref="AuthenticationSuccessHandler"
+                authentication-success-handler-ref="authenticationSuccessHandler"
                 username-parameter="username"
                 password-parameter="password"/>
         <security:logout
@@ -68,7 +93,7 @@
                 logout-success-url="/home" />
     </security:http>
 
-    <bean id="AuthenticationSuccessHandler"
+    <bean id="authenticationSuccessHandler"
                 class= "com.egov.mvc.data.Models.components.UrlAuthenticationSuccessHandler" />
 
     <security:authentication-manager>
