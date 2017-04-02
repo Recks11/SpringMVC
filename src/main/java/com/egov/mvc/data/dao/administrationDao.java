@@ -15,5 +15,6 @@ public interface administrationDao{
     void delete(int administration);
     Administration getAdministrator(int administratorId);
     List getAllAdministrators();
+   // Administration getLatestMember();
 
 }

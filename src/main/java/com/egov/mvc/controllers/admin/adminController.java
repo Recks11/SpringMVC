@@ -1,17 +1,19 @@
 package com.egov.mvc.controllers.admin;
 
 import com.egov.mvc.data.Models.Events;
+import com.egov.mvc.data.Models.userClasses.Administration;
 import com.egov.mvc.data.services.*;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.support.PagedListHolder;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.validation.Errors;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.ServletRequestUtils;
+import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
 /**
@@ -22,23 +24,26 @@ import javax.validation.Valid;
 @RequestMapping(value = "/admin")
 public class adminController {
 
+    private final AdministrationService administrationService;
+    private Administration administration;
     private final EventsService eventsService;
-
     private final userService userService;
-
     private final loggedinService loggedinService;
-
     private final roleChangeService roleService;
-
+    private PagedListHolder pagedListHolder;
     private Events event;
-
     @Autowired
-    public adminController(roleChangeService roleService, EventsService eventsService, userService userService, Events event, loggedinService loggedinService) {
+    public adminController(roleChangeService roleService, EventsService eventsService, userService userService,
+                           Events event, loggedinService loggedinService, PagedListHolder pagedListHolder,
+                           AdministrationService administrationService, Administration administration) {
         this.roleService = roleService;
         this.loggedinService = loggedinService;
         this.eventsService = eventsService;
         this.userService = userService;
         this.event = event;
+        this.pagedListHolder = pagedListHolder;
+        this.administrationService = administrationService;
+        this.administration = administration;
     }
 
 
@@ -61,10 +66,22 @@ public class adminController {
     }
 
     @RequestMapping("/events")
-    public String home(Model model){
+    public String home(HttpServletRequest request,Model model){
+
+        pagedListHolder = new PagedListHolder(eventsService.getAllEvents());
+        int page = ServletRequestUtils.getIntParameter(request, "page", 0);
+        pagedListHolder.setPage(page);
+        pagedListHolder.setPageSize(3);
         model.addAttribute("Events", event);
-        model.addAttribute("allEvent", eventsService.getAllEvents());
+        model.addAttribute("allEvent", pagedListHolder);
         return "admin/events";
+    }
+
+    @RequestMapping("/addAdministration")
+    public String addDirectory(Model model){
+        model.addAttribute("administration", administration);
+        model.addAttribute("newEntry", administrationService.getAllAdministrators().get(0));
+        return "admin/department";
     }
 
     @PostMapping("/events.io")
@@ -95,5 +112,25 @@ public class adminController {
         return "redirect:/admin/events";
     }
 
+
+    @RequestMapping(value="/crud.io", method = RequestMethod.POST)
+    public String crud(@ModelAttribute("administration") Administration admini, BindingResult result,
+                       @RequestParam String action, Model model){
+
+        if(result.hasErrors()){ return "";}
+        switch (action.toLowerCase()){
+            case "add":
+                administrationService.add(admini);
+                this.administration = admini;
+                break;
+            case "edit":
+                administrationService.edit(admini);
+                this.administration = admini;
+                break;
+        }
+        model.addAttribute("administration", admini);
+        model.addAttribute("administrationList", administrationService.getAllAdministrators());
+        return "redirect:/admin/addAdministration";
+    }
 
 }

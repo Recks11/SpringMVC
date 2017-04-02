@@ -6,14 +6,14 @@
 <html lang="en-US">
   <head>
     <title>E-gov</title>
-      <jsp:include page="../fragments/imports.jsp" />
+      <jsp:include page="../../fragments/imports.jsp" />
       <script src="<spring:url value="/resources/js/custom.js"/>"></script>
   </head>
   <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
   <!-- Banner and Navbar -->
   <section id="banner" class="banner">
       <div class="bg-color">
-              <jsp:include page="../fragments/navbar-services.jsp"/>
+              <jsp:include page="../../fragments/navbar-services.jsp"/>
           <div class="container" style="width: 750px;">
               <div class="row">
                   <div class="middle">
@@ -165,6 +165,6 @@
           </div>
       </section>
   </section>
-  <jsp:include page="../fragments/footer-form.jsp"/>
+  <jsp:include page="../../fragments/footer-form.jsp"/>
 </body>
 </html>

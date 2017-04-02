@@ -10,11 +10,11 @@
 <html>
 <head>
     <title>About</title>
-    <jsp:include page="../fragments/imports.jsp"/>
+    <jsp:include page="../../fragments/imports.jsp"/>
     <script src="<spring:url value="/resources/js/custom.js"/>"></script>
 </head>
 <body id="myPage" data-spy="scroll" data-target="#myScrollspy" data-offset="60" class="about">
-<jsp:include page="../fragments/navbar.jsp"/>
+<jsp:include page="../../fragments/navbar.jsp"/>
 <div class="container cont">
     <div class="row">
         <nav class="col-sm-3 text-center" id="myScrollspy">
@@ -227,6 +227,6 @@
     <%--Replace with Db retrievable data--%>
 
 
-<jsp:include page="../fragments/footer-1.jsp"/>
+<jsp:include page="../../fragments/footer-1.jsp"/>
 </body>
 </html>

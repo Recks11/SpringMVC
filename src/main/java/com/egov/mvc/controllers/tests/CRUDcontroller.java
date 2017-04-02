@@ -33,33 +33,33 @@ public class CRUDcontroller {
         model.addAttribute("administrationList", administrationService.getAllAdministrators());
         return "administration";
     }
-
-    @RequestMapping(value="/crud.io", method = RequestMethod.POST)
-    public String crud(@ModelAttribute("administration") Administration admini, BindingResult result,
-                       @RequestParam String action, Model model){
-
-        if(result.hasErrors()){ return "";}
-        switch (action.toLowerCase()){
-            case "add":
-                administrationService.add(admini);
-                this.administration = admini;
-                break;
-            case "edit":
-                administrationService.edit(admini);
-                this.administration = admini;
-                break;
-            case "delete":
-                administrationService.delete(admini.getAdministratorId());
-                this.administration = admini;
-                break;
-            case "search":
-                Administration searchedAdmin = administrationService.getAdministrator(admini.getAdministratorId());
-                this.administration = searchedAdmin!=null ? searchedAdmin : new Administration();
-                break;
-        }
-        model.addAttribute("administration", admini);
-        model.addAttribute("administrationList", administrationService.getAllAdministrators());
-        return "redirect:/tests/administration"+"#administrationSection";
-    }
+//
+//    @RequestMapping(value="/crud.io", method = RequestMethod.POST)
+//    public String crud(@ModelAttribute("administration") Administration admini, BindingResult result,
+//                       @RequestParam String action, Model model){
+//
+//        if(result.hasErrors()){ return "";}
+//        switch (action.toLowerCase()){
+//            case "add":
+//                administrationService.add(admini);
+//                this.administration = admini;
+//                break;
+//            case "edit":
+//                administrationService.edit(admini);
+//                this.administration = admini;
+//                break;
+//            case "delete":
+//                administrationService.delete(admini.getAdministratorId());
+//                this.administration = admini;
+//                break;
+//            case "search":
+//                Administration searchedAdmin = administrationService.getAdministrator(admini.getAdministratorId());
+//                this.administration = searchedAdmin!=null ? searchedAdmin : new Administration();
+//                break;
+//        }
+//        model.addAttribute("administration", admini);
+//        model.addAttribute("administrationList", administrationService.getAllAdministrators());
+//        return "redirect:/tests/administration"+"#administrationSection";
+//    }
 
 }

@@ -11,10 +11,10 @@
 <html>
 <head>
     <title>Admin</title>
-    <jsp:include page="adminFragments/imports-admin.jsp"/>
+    <jsp:include page="../../fragments/adminFragments/imports-admin.jsp"/>
 </head>
 <body>
-<jsp:include page="adminFragments/navbar-admin.jsp"/>
+<jsp:include page="../../fragments/adminFragments/navbar-admin.jsp"/>
 <div id="wrapper">
     <div class="container custom-width">
     <div class="row">
@@ -22,10 +22,8 @@
             <h1>Dashboard <small>Statistics and more</small></h1>
             <div class="alert alert-dismissable alert-warning">
                 <button data-dismiss="alert" class="close" type="button">&times;</button>
-                Welcome to the admin dashboard! Feel free to review all pages and modify the layout to your needs.
+                Welcome to the admin dashboard!
                 <br />
-                This theme uses the <a href="https://www.shieldui.com">ShieldUI</a> JavaScript library for the
-                additional data visualization and presentation functionality illustrated here.
             </div>
         </div>
     </div>

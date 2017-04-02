@@ -9,15 +9,24 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="core" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="tg" tagdir="/WEB-INF/tags" %>
 
 <html>
 <head>
     <title>Admin</title>
-    <jsp:include page="../admin/adminFragments/imports-admin.jsp"/>
+    <jsp:include page="../../fragments/adminFragments/imports-admin.jsp"/>
 </head>
 <body>
 <div id="wrapper">
-<jsp:include page="../admin/adminFragments/navbar-admin.jsp"/>
+<jsp:include page="../../fragments/adminFragments/navbar-admin.jsp"/>
+
+    <jsp:useBean id="allEvent" scope="request"
+                 type="org.springframework.beans.support.PagedListHolder" />
+
+    <c:url value="/admin/events" var="pagedLink">
+        <c:param name="page" value="~"/>
+    </c:url>
 
     <div class="container custom-width">
         <div class="row topRow">
@@ -29,6 +38,7 @@
                                 <label for="ID">ID</label>
                                 <form:input path="id" cssClass="form-control" id="ID" placeholder="Event ID"/>
                             </div>
+
                             <label for="date">Date</label><!--outside becus of the input field-->
                             <div class="form-group input-group date" data-provide="datepicker">
                                 <form:input path="date"  cssClass="form-control" id="datepicker" placeholder="Date"/>
@@ -37,20 +47,24 @@
                                 </div>
                                 <form:errors path="date"/>
                             </div>
+
                             <div class="form-group">
                                 <label for="title">Title</label>
                                 <form:input path="title"  cssClass="form-control" id="title" placeholder="Title"/>
                                 <form:errors path="title"/>
                             </div>
+
                             <div class="form-group">
                                 <label for="description">Description</label>
                                 <form:input path="description" cssClass="form-control" id="description" placeholder="Description"/>
                                 <form:errors path="description"/>
                             </div>
+
                             <div class="form-group">
                                 <label for="content">Content</label>
                                 <form:textarea path="content" cssClass="form-control" id="content" rows="5" placeholder="Whats doing on?"></form:textarea>
                             </div>
+
                             <div class="text-center">
                                 <div class= col-xs-3><form:button name="action" class= "btn btn-success btn-lg" value="post">Post</form:button> </div>
                                 <div class= col-xs-3><form:button name="action" class= "btn btn-info btn-lg" value="search">Search</form:button> </div>
@@ -67,7 +81,7 @@
                     <div class="col-xs-12">
                         <h3 class="no-top-margin">Events</h3>
                         <div class="eventsection">
-                            <core:forEach items="${allEvent}" var="event">
+                            <core:forEach items="${allEvent.pageList}" var="event">
                                 <div class="panel panel-default" id="events-panel">
                                     <div class="panel-heading">${event.title}
                                         <button type="button" class="close" data-target="#events-panel" data-dismiss="alert"> <span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
@@ -82,6 +96,7 @@
                         </div>
                     </div>
                 </div>
+                <tg:pagination pagedList="${allEvent}" pagedLink="${pagedLink}"/>
             </div>
         </div>
     </div>

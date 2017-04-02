@@ -5,12 +5,12 @@
 <html lang=>
   <head>
     <title>E-gov</title>
-      <jsp:include page="../fragments/imports.jsp" />
+      <jsp:include page="../../fragments/imports.jsp" />
       <script src="<spring:url value="/resources/js/custom-serv-reg.js"/>"></script>
   </head>
   <body id="myPage" class="about">
   <section class="sec1">
-  <jsp:include page="../fragments/navbar-services.jsp"/>
+  <jsp:include page="../../fragments/navbar-services.jsp"/>
       <div class="jumbotron service-head">
           <div class="container service-inner">
               <h1><span class="fa fa-user"></span><div>Bloggers</div></h1>
@@ -42,6 +42,6 @@
           </div>
       </div>
   </section>
-  <jsp:include page="../fragments/footer-form.jsp"/>
+  <jsp:include page="../../fragments/footer-form.jsp"/>
 </body>
 </html>

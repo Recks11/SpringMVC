@@ -12,7 +12,7 @@
 <html>
 <head>
     <title>Admin</title>
-    <jsp:include page="../fragments/imports.jsp"/>
+    <jsp:include page="../../fragments/imports.jsp"/>
     <link rel="stylesheet" href="<spring:url value="/resources/css/login-form.css"/>" type="text/css" >
 </head>
 <body class="bod">

@@ -11,12 +11,12 @@
 <html>
 <head>
     <title>E-Gov Administration</title>
-    <jsp:include page="../fragments/imports.jsp"/>
+    <jsp:include page="../../fragments/imports.jsp"/>
     <script src="<spring:url value="/resources/js/custom-serv-reg.js"/>"></script>
 </head>
 <body>
 <section class="sec1">
-    <jsp:include page="../fragments/navbar-services.jsp"/>
+    <jsp:include page="../../fragments/navbar-services.jsp"/>
     <div class="jumbotron service-head">
         <div class="container service-inner">
             <h1><span class="mcc-icon-council-and-democracy"></span><div>ADMINISTRATION</div></h1>
@@ -32,7 +32,7 @@
             </div>
             <div class="col-md-4" style="margin: 0 auto;">
                 <div class = "image-box">
-                    <img src="images/1.jpg" class="imag-responsive" alt="Administration - IMAGE" width="100%" height="auto">
+                    <img src="" class="img-responsive" alt="Administration - IMAGE" width="100%" height="auto">
                     <div class="roles text-center">
                         <p>IJIEKHUAMEN REX</p>
                         <p> C.E.O</p>
@@ -59,6 +59,6 @@
         </div>
     </div>
 </section>
-<jsp:include page="../fragments/footer-1.jsp"/>
+<jsp:include page="../../fragments/footer-1.jsp"/>
 </body>
 </html>

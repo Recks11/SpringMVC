@@ -13,7 +13,7 @@
 <html>
 <head>
     <title>Title</title>
-    <jsp:include page="fragments/imports.jsp"/>
+    <jsp:include page="../fragments/imports.jsp"/>
     <script src="<spring:url value="/resources/js/custom-serv-reg.js"/>"></script>
 </head>
 <body>
@@ -27,7 +27,7 @@
     </tr>
     </thead>
     <tbody>
-    <c:forEach items="#{users}" var="user">
+    <c:forEach items="${users}" var="user">
     <tr>
         <td>${user.firstName}</td>
         <td>${user.lastName}</td>
@@ -36,6 +36,6 @@
     </c:forEach>
     </tbody>
 </table>
-    <jsp:include page="fragments/footer-1.jsp"/>
+    <jsp:include page="../fragments/footer-1.jsp"/>
 </body>
 </html>

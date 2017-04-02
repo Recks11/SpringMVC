@@ -11,10 +11,10 @@
 <html>
 <head>
     <title>${title.toUpperCase()}</title>
-    <jsp:include page="../../admin/adminFragments/imports-admin.jsp"/>
+    <jsp:include page="../../../fragments/adminFragments/imports-admin.jsp"/>
 </head>
 <body>
-<jsp:include page="../../fragments/userFragments/navbar-user.jsp"/>
+<jsp:include page="../../../fragments/userFragments/navbar-user.jsp"/>
 <div id="wrapper">
     <div class="container custom-width">
         <div class="row">
@@ -22,7 +22,7 @@
                 <form:form action="post.io" method="post" modelAttribute="Blog">
                     <div class="form-group">
                         <label for="headline">UserId</label>
-                        <form:input path="Id" cssClass="form-control" id="headline" placeholder="Id" disabled="true"/>
+                        <form:input path="id" cssClass="form-control" id="headline" placeholder="Id" disabled="true"/>
                     </div>
                     <div class="form-group">
                         <label for="headline">Headline</label>

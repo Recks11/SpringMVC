@@ -10,10 +10,10 @@
 <html>
 <head>
     <title>Title</title>
-    <jsp:include page="../fragments/imports.jsp"/>
+    <jsp:include page="../../fragments/imports.jsp"/>
 </head>
 <body>
-<jsp:include page="../fragments/navbar.jsp"/>
+<jsp:include page="../../fragments/navbar.jsp"/>
 <section style="margin-top:50px">
     <div class="container">
         <div class="jumbotron">
@@ -25,6 +25,6 @@
 
 
 
-<jsp:include page="../fragments/footer-1.jsp"/>
+<jsp:include page="../../fragments/footer-1.jsp"/>
 </body>
 </html>

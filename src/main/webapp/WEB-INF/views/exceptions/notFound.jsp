@@ -10,11 +10,11 @@
 <html>
 <head>
     <title>Error</title>
-    <jsp:include page="../fragments/imports.jsp"/>
+    <jsp:include page="../../fragments/imports.jsp"/>
     <script src="<spring:url value="/resources/js/custom.js"/>"></script>
 </head>
 <body id="myPage" data-spy="scroll" data-target="#myScrollspy" data-offset="60" class="about">
-<jsp:include page="../fragments/navbar.jsp"/>
+<jsp:include page="../../fragments/navbar.jsp"/>
 <section style="margin-top:50px">
 <div class="container">
 <div class="jumbotron" style="overflow-x: auto">

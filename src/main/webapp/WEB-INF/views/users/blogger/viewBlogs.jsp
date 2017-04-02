@@ -5,10 +5,10 @@
 <html>
 <head>
     <title>${userAccess.toUpperCase()}</title>
-    <jsp:include page="../../admin/adminFragments/imports-admin.jsp"/>
+    <jsp:include page="../../../fragments/adminFragments/imports-admin.jsp"/>
 </head>
 <body>
-<jsp:include page="../../fragments/userFragments/navbar-user.jsp"/>
+<jsp:include page="../../../fragments/userFragments/navbar-user.jsp"/>
 <div id="wrapper">
     <div class="container custom-width">
         <div class="row">

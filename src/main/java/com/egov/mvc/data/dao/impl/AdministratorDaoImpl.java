@@ -15,8 +15,12 @@ import java.util.List;
 @Repository
 public class AdministratorDaoImpl implements administrationDao {
 
+    private final SessionFactory sessionFactory;
+
     @Autowired
-    private SessionFactory sessionFactory;
+    public AdministratorDaoImpl(SessionFactory sessionFactory) {
+        this.sessionFactory = sessionFactory;
+    }
 
     @Override
     public void add(Administration administration) {
@@ -41,6 +45,11 @@ public class AdministratorDaoImpl implements administrationDao {
 
     @Override
     public List getAllAdministrators() {
-        return sessionFactory.getCurrentSession().createQuery("from Administration").list();
+        return sessionFactory.getCurrentSession().createQuery("from Administration order by id desc").list();
     }
+//
+//    @Override
+//    public Administration getLatestMember() {
+//        return (Administration) sessionFactory.getCurrentSession().createQuery("from Administration order by id desc").uniqueResult();
+//    }
 }

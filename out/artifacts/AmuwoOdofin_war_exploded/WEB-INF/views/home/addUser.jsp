@@ -11,12 +11,12 @@
 <html>
 <head>
     <title>E-Gov Register</title>
-    <jsp:include page="../fragments/imports.jsp" />
+    <jsp:include page="../../fragments/imports.jsp" />
     <script src="<spring:url value="/resources/js/custom-serv-reg.js"/>"></script>
 </head>
 <body>
 <section class="sec1">
-    <jsp:include page="../fragments/navbar-services.jsp"/>
+    <jsp:include page="../../fragments/navbar-services.jsp"/>
     <div class="jumbotron service-head">
         <div class="container service-inner">
             <h1><span class="mcc-icon-people-and-communities"></span></h1>

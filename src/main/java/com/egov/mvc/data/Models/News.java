@@ -82,4 +82,5 @@ public class News{
     public void setArticle(String article) {
         this.article = article;
     }
+
 }

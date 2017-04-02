@@ -1,5 +1,6 @@
 package com.egov.mvc.controllers.index.notDone;
 
+import com.egov.mvc.data.Models.Events;
 import com.egov.mvc.data.Models.Report;
 import com.egov.mvc.data.Models.components.RoleChange;
 import com.egov.mvc.data.dao.roleChangeDao;
@@ -31,16 +32,16 @@ public class HomeController {
 
     private final EventsService eventsService;
 
-    @Autowired
-    private roleChangeService roleService;
+    private final roleChangeService roleService;
 
     private Report rep = new Report();
 
     @Autowired
-    public HomeController(userDao userDao, ReportsService reportsService, EventsService eventsService) {
+    public HomeController(userDao userDao, ReportsService reportsService, EventsService eventsService, roleChangeService roleService) {
         this.userDao = userDao;
         this.reportsService = reportsService;
         this.eventsService = eventsService;
+        this.roleService = roleService;
     }
 
     @RequestMapping("/home")
@@ -103,6 +104,7 @@ public class HomeController {
             return "redirect:/home";
         }
     }
+
 
 }
 
