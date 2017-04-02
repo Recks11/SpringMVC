@@ -29,7 +29,8 @@
                 <div id="events" class="panel-collapse collapse">
                     <div class="side-content">
                         <ul>
-                            <li><a href="<spring:url value="/admin/events"/>"><i class="fa fa-tasks"></i> Add/Edit Events</a></li>
+                            <li><a href="<spring:url value="/admin/events"/>"><i class="fa fa-tasks"></i> Add Events</a></li>
+                            <li><a href="<spring:url value="/admin/events/allEvents"/>"><i class="fa fa-tasks"></i> all Events</a></li>
                         </ul>
                     </div>
                 </div>
@@ -52,6 +53,7 @@
                     <div class="side-content">
                         <ul>
                             <li><a href="<spring:url value="/admin/blogs"/>"><i class="fa fa-book"></i> View Blogs</a></li>
+                            <li><a href="<spring:url value="/admin/blogs/deleteRequests"/>"><i class="fa fa-book"></i> View Delete Requests</a></li>
                         </ul>
                     </div>
                 </div>
@@ -77,7 +79,6 @@
                     <div class="side-content">
                         <ul>
                             <li><a href="<spring:url value="/admin/addAdministration"/>"><i class="fa fa-plus"></i> Department</a></li>
-                            <li><a href="<spring:url value="/admin/removeAdministration"/>"><i class="fa fa-minus"></i> Department</a></li>
                             <li><a href="<spring:url value="/admin/viewAdministration"/>"><i class="fa fa-eye"></i> View Department</a></li>
                         </ul>
                     </div>
@@ -112,7 +113,7 @@
             <li class="dropdown user-dropdown">
                 <c:if test="${pageContext.request.userPrincipal.name != null}">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                    <i class="fa fa-user"></i>${pageContext.request.userPrincipal.name}<b class="caret"></b></a>
+                    <i class="fa fa-user"></i>  ${pageContext.request.userPrincipal.name}<b class="caret"></b></a>
 
                 <ul class="dropdown-menu">
                     <li><a href="#"><i class="fa fa-user"></i> Profile</a></li>

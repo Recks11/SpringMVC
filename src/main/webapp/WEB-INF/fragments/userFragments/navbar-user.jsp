@@ -26,27 +26,7 @@
             <li class="selected"><a href="<spring:url value="/${userAccess}/${activity1}"/>"><i class="fa fa-globe"></i>  ${activityName1}</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right navbar-user">
-            <li class="dropdown messages-dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-envelope"></i> Messages <span class="badge">2</span> <b class="caret"></b></a>
-                <ul class="dropdown-menu">
-                    <li class="dropdown-header">2 New Messages</li>
-                    <li class="message-preview">
-                        <a href="#">
-                            <span class="avatar"><i class="fa fa-bell"></i></span>
-                            <span class="message">Security alert</span>
-                        </a>
-                    </li>
-                    <li class="divider"></li>
-                    <li class="message-preview">
-                        <a href="#">
-                            <span class="avatar"><i class="fa fa-bell"></i></span>
-                            <span class="message">Security alert</span>
-                        </a>
-                    </li>
-                    <li class="divider"></li>
-                    <li><a href="#">Go to Inbox <span class="badge">2</span></a></li>
-                </ul>
-            </li>
+
             <li class="dropdown user-dropdown">
                 <c:if test="${pageContext.request.userPrincipal.name != null}">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">

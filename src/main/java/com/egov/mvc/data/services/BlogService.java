@@ -12,8 +12,8 @@ import java.util.List;
 public interface BlogService {
     void addBlog(Blog blog);
     void editBlog(Blog blog);
-    Blog getBlogById(int id);
-    void deleteBlog(int id);
+    Blog getBlogById(long id);
+    void deleteBlog(long id);
     List getAllBlogs();
     user findBlogUserByName(String name);
 }

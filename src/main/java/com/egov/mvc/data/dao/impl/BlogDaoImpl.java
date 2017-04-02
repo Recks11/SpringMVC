@@ -38,12 +38,12 @@ public class BlogDaoImpl implements BlogDao {
     }
 
     @Override
-    public Blog getBlogById(int id) {
+    public Blog getBlogById(long id) {
         return sessionFactory.getCurrentSession().get(Blog.class, id);
     }
 
     @Override
-    public void deleteBlog(int id) {
+    public void deleteBlog(long id) {
         sessionFactory.getCurrentSession().delete(getBlogById(id));
     }
 
@@ -58,6 +58,7 @@ public class BlogDaoImpl implements BlogDao {
         System.out.println(a);
         return a;
     }
+
     @Override
     public user findBlogUserByName(String name) {
         return sessionFactory.getCurrentSession().get(user.class, getusersha(name));

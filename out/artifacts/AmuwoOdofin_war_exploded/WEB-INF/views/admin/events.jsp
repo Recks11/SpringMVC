@@ -21,12 +21,6 @@
 <div id="wrapper">
 <jsp:include page="../../fragments/adminFragments/navbar-admin.jsp"/>
 
-    <jsp:useBean id="allEvent" scope="request"
-                 type="org.springframework.beans.support.PagedListHolder" />
-
-    <c:url value="/admin/events" var="pagedLink">
-        <c:param name="page" value="~"/>
-    </c:url>
 
     <div class="container custom-width">
         <div class="row topRow">
@@ -36,7 +30,7 @@
                         <form:form action="events.io" method="post" modelAttribute="Events">
                             <div class="form-group">
                                 <label for="ID">ID</label>
-                                <form:input path="id" cssClass="form-control" id="ID" placeholder="Event ID"/>
+                                <form:input path="id" cssClass="form-control" id="ID" placeholder="Event ID" disabled="true"/>
                             </div>
 
                             <label for="date">Date</label><!--outside becus of the input field-->
@@ -66,10 +60,7 @@
                             </div>
 
                             <div class="text-center">
-                                <div class= col-xs-3><form:button name="action" class= "btn btn-success btn-lg" value="post">Post</form:button> </div>
-                                <div class= col-xs-3><form:button name="action" class= "btn btn-info btn-lg" value="search">Search</form:button> </div>
-                                <div class= col-xs-3><form:button name="action" class="btn btn-primary btn-lg" value="edit">Update</form:button></div>
-                                <div class= col-xs-3><form:button name="action" class="btn btn-danger btn-lg" value="delete">Delete</form:button></div>
+                                <div class= col-xs-12><form:button class= "btn btn-success btn-lg">Post</form:button> </div>
                             </div>
                         </form:form>
                     </div>
@@ -79,24 +70,28 @@
             <div class="col-sm-4">
                 <div class="row">
                     <div class="col-xs-12">
+                        <c:if test="${not empty eventsObject}">
+                            <div class="alert alert-dismissable alert-success">
+                                <button data-dismiss="alert" class="close" type="button">&times;</button>
+                                Event Posted
+                                <br />
+                            </div>
+                        </c:if>
                         <h3 class="no-top-margin">Events</h3>
                         <div class="eventsection">
-                            <core:forEach items="${allEvent.pageList}" var="event">
-                                <div class="panel panel-default" id="events-panel">
-                                    <div class="panel-heading">${event.title}
-                                        <button type="button" class="close" data-target="#events-panel" data-dismiss="alert"> <span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
-                                        </button>
-                                    </div>
-                                    <div class="panel-body">
-                                        <p>${event.date}</p>
-                                        <p>${event.description}</p>
-                                    </div>
+                            <div class="panel panel-default" id="events-panel">
+                                <div class="panel-heading">${allEvent.title}
+                                    <button type="button" class="close" data-target="#events-panel" data-dismiss="alert"> <span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+                                    </button>
                                 </div>
-                            </core:forEach>
+                                <div class="panel-body">
+                                    <p>${allEvent.date}</p>
+                                    <p>${allEvent.description}</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <tg:pagination pagedList="${allEvent}" pagedLink="${pagedLink}"/>
             </div>
         </div>
     </div>

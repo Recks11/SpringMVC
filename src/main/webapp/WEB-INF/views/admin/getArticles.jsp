@@ -31,22 +31,22 @@
     <div class="container custom-width">
 
         <div class="col-sm-12">
-            <core:if test="${not empty deletedBlog}">
+            <core:if test="${not empty deletedArticle}">
                 <div class="alert alert-dismissable alert-success">
                     <button data-dismiss="alert" class="close" type="button">&times;</button>
-                     You deleted ${deletedBlog}
+                     You deleted ${deletedArticle}
                     <br />
                 </div>
 
             </core:if>
             <core:choose>
-                <core:when test="${empty blogList}">
-                    <h1> No Blogs </h1>
+                <core:when test="${empty articleList}">
+                    <h1> No Articles </h1>
                 </core:when>
                 <core:otherwise>
                     <div id="Resident Users" class="row">
                         <div class="col-xs-12 table-responsive">
-                            <h2>All Blogs</h2>
+                            <h2>All Articles</h2>
                             <table class="table table-striped table-bordered">
                                 <thead>
                                 <tr>
@@ -58,13 +58,13 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <core:forEach items="${blogList}" var="res">
+                                <core:forEach items="${articleList}" var="res">
                                     <tr>
-                                        <td>${blogList.indexOf(res)+1}</td>
+                                        <td>${articleList.indexOf(res)+1}</td>
                                         <td>${res.owner.username}</td>
                                         <td>${res.date}</td>
                                         <td>${res.headline}</td>
-                                        <td> <a href="<spring:url value="/admin/blogs/deleteBlog/${res.id}"/>">
+                                        <td> <a href="<spring:url value="/admin/articles/deleteArticle/${res.id}"/>">
                                             <i class="fa fa-minus-circle pull-left"></i></a>
                                     </tr>
                                 </core:forEach>

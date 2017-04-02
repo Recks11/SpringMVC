@@ -67,7 +67,7 @@ public class adminFunctionsController {
         authorities.setAuthority(role.getRole());
         userService.setRole(user, authorities);
         roleChangeService.deleteRoleRequest(roleid);
-        return "/admin/requests";
+        return "redirect:/admin/users/requests";
     }
 
     @RequestMapping("/deleteRole/{roleid}")

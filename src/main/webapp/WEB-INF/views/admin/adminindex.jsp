@@ -20,9 +20,9 @@
     <div class="row">
         <div class="col-lg-12">
             <h1>Dashboard <small>Statistics and more</small></h1>
-            <div class="alert alert-dismissable alert-warning">
+            <div class="alert alert-dismissable alert-success">
                 <button data-dismiss="alert" class="close" type="button">&times;</button>
-                Welcome to the admin dashboard!
+                Welcome to the admin dashboard ${pageContext.request.userPrincipal.name}!
                 <br />
             </div>
         </div>
@@ -38,11 +38,23 @@
                     </div>
                 </div>
                 <div class = "col-sm-6">
-                    <div class="admin-dashboard-item bg-red">
+                    <c:choose>
+                        <c:when test="${numberRequests == 0}">
+                    <div class="admin-dashboard-item bg-green" style="background-color: chartreuse;">
                         <p>Role change requests</p>
                         <i class="fa fa-user admin-icon pull-left"></i>
                         <div class="pull-right admin-number">${numberRequests}</div>
                     </div>
+                        </c:when>
+                    <c:otherwise>
+                        <div class="admin-dashboard-item bg-red">
+                            <p>Role change requests</p>
+                            <i class="fa fa-user admin-icon pull-left"></i>
+                            <div class="pull-right admin-number">${numberRequests}</div>
+                        </div>
+                    </c:otherwise>
+                    </c:choose>
+
                 </div>
             </div>
             <div class="col-md-6 no-pad">

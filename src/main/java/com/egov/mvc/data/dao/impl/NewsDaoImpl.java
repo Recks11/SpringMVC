@@ -29,7 +29,7 @@ public class NewsDaoImpl implements NewsDao {
     }
 
     @Override
-    public News getArticleById(int id) {
+    public News getArticleById(long id) {
         return sessionFactory.getCurrentSession().get(News.class, id);
     }
 

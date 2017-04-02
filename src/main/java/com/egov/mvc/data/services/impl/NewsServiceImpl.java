@@ -26,7 +26,7 @@ public class NewsServiceImpl implements NewsService {
     }
 
     @Transactional
-    public News getArticleById(int Id) {
+    public News getArticleById(long Id) {
         return newsDao.getArticleById(Id);
     }
 

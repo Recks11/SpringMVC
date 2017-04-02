@@ -80,7 +80,7 @@ public class BloggerController {
         return "redirect:/Blogger/newBlog";
     }
 
-    @ModelAttribute("Blogger")
+    @ModelAttribute
     public void setLinks(Model model){
         model.addAttribute("userAccess","Blogger");
         model.addAttribute("activity","newBlog");

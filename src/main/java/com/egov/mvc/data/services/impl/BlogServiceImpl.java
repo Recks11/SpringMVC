@@ -32,12 +32,12 @@ public class BlogServiceImpl implements BlogService {
     }
 
     @Transactional
-    public Blog getBlogById(int id) {
+    public Blog getBlogById(long id) {
         return blogDao.getBlogById(id);
     }
 
     @Transactional
-    public void deleteBlog(int id) {
+    public void deleteBlog(long id) {
         blogDao.deleteBlog(id);
     }
 

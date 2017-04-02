@@ -76,7 +76,7 @@ public class ReporterController {
         return "redirect:/Reporter/newArticle";
     }
 
-    @ModelAttribute("Reporter")
+    @ModelAttribute
     public void setLinks(Model model){
         model.addAttribute("userAccess","Reporter");
         model.addAttribute("activity","newArticle");

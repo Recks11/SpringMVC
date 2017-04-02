@@ -13,7 +13,7 @@ public interface NewsService {
 
     void newArticle(News news);
 
-    News getArticleById(int Id);
+    News getArticleById(long Id);
 
     void updateArticle(News news);
 
