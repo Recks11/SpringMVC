@@ -14,9 +14,13 @@ public interface roleChangeService {
 
     void deleteRoleRequest(long Id);
 
-    void getRoleRequestById(long Id);
+    RoleChange getRoleRequestById(long Id);
 
     user getUserByName(String name);
+
+    user getUserByRoleRequestId(Long id);
+
+    String getRoleByRoleId(Long RoleId);
 
     public RoleChange findRoleByUsername(String name);
 

@@ -19,7 +19,11 @@ public interface roleChangeDao {
 
     RoleChange getRoleRequestById(long Id);
 
+    String getRoleByRoleId(Long roleId);
+
     user getUserByName(String name);
+
+    user getUserByRoleRequestId(Long id);
 
     RoleChange findRoleByUsername(String name);
 

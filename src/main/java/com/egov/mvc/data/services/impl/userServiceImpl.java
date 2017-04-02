@@ -1,5 +1,6 @@
 package com.egov.mvc.data.services.impl;
 
+import com.egov.mvc.data.Models.security.authorities;
 import com.egov.mvc.data.Models.userClasses.user;
 import com.egov.mvc.data.dao.userDao;
 import com.egov.mvc.data.services.userService;
@@ -49,8 +50,9 @@ public class userServiceImpl implements userService {
     }
 
     @Transactional
-    public void setRole(String username, String role) {
-        userDao.setRole(username, role);
+    public void setRole(user user, authorities authorities) {
+
+        userDao.setRole(user, authorities);
     }
 
     @Transactional
@@ -61,5 +63,20 @@ public class userServiceImpl implements userService {
     @Transactional
     public int numberOfReporters() {
         return userDao.numberOfReporters();
+    }
+
+    @Transactional
+    public List bloggers() {
+        return userDao.bloggers();
+    }
+
+    @Transactional
+    public List reporters() {
+        return userDao.reporters();
+    }
+
+    @Transactional
+    public List resident() {
+        return userDao.resident();
     }
 }

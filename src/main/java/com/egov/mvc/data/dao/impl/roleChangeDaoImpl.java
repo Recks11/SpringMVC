@@ -39,10 +39,25 @@ public class roleChangeDaoImpl implements roleChangeDao {
     }
 
     @Override
+    public String getRoleByRoleId(Long roleId) {
+        return (String) sessionFactory.getCurrentSession().createQuery("SELECT role from RoleChange where id = ?")
+                .setParameter(0, roleId).uniqueResult();
+    }
+
+    @Override
     public user getUserByName(String name) {
         return (user) sessionFactory.getCurrentSession()
                 .createQuery("from user where username = ? ")
                 .setParameter(0,name).uniqueResult();
+    }
+
+    @Override
+    public user getUserByRoleRequestId(Long id) {
+
+        return (user) sessionFactory.getCurrentSession().createQuery
+                ("select r.usr from RoleChange as r where r.id = ?")
+                .setParameter(0, id)
+                .uniqueResult();
     }
 
     @Override
@@ -54,6 +69,6 @@ public class roleChangeDaoImpl implements roleChangeDao {
 
     @Override
     public List getAllRequests() {
-        return sessionFactory.getCurrentSession().createQuery("from RoleChange ").list();
+        return sessionFactory.getCurrentSession().createQuery("from RoleChange").list();
     }
 }

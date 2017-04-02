@@ -62,10 +62,10 @@
                 <div id="users" class="panel-collapse collapse">
                     <div class="side-content">
                         <ul>
-                            <li><a href="<spring:url value="/users/all"/>"><i class="fa fa-user"></i> All Users</a></li>
-                            <li><a href="<spring:url value="/users/roles"/>"><i class="fa fa-user"></i> Switch User Role</a></li>
-                            <li><a href="<spring:url value="/users/requests"/>"><i class="fa fa-user"></i> User Requests</a></li>
-                            <li><a href="<spring:url value="/users/delete"/>"><i class="fa fa-user"></i> Delete Users</a></li>
+                            <li><a href="<spring:url value="/admin/users/all"/>"><i class="fa fa-user"></i> All Users</a></li>
+                            <li><a href="<spring:url value="/admin/users/roles"/>"><i class="fa fa-user"></i> Switch User Role</a></li>
+                            <li><a href="<spring:url value="/admin/users/requests"/>"><i class="fa fa-user"></i> User Requests</a></li>
+                            <%--<li><a href="<spring:url value="/admin/users/delete"/>"><i class="fa fa-user"></i> Delete Users</a></li>--%>
                         </ul>
                     </div>
                 </div>
@@ -87,28 +87,28 @@
         </ul>
 
         <ul class="nav navbar-nav navbar-right navbar-user">
-            <li class="dropdown messages-dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                    <i class="fa fa-envelope"></i> Messages <span class="badge">2</span> <b class="caret"></b></a>
-                <ul class="dropdown-menu">
-                    <li class="dropdown-header">2 New Messages</li>
-                    <li class="message-preview">
-                        <a href="#">
-                            <span class="avatar"><i class="fa fa-bell"></i></span>
-                            <span class="message">Security alert</span>
-                        </a>
-                    </li>
-                    <li class="divider"></li>
-                    <li class="message-preview">
-                        <a href="#">
-                            <span class="avatar"><i class="fa fa-bell"></i></span>
-                            <span class="message">Security alert</span>
-                        </a>
-                    </li>
-                    <li class="divider"></li>
-                    <li><a href="#">Go to Inbox <span class="badge">2</span></a></li>
-                </ul>
-            </li>
+            <%--<li class="dropdown messages-dropdown">--%>
+                <%--<a href="#" class="dropdown-toggle" data-toggle="dropdown">--%>
+                    <%--<i class="fa fa-envelope"></i> Messages <span class="badge">2</span> <b class="caret"></b></a>--%>
+                <%--<ul class="dropdown-menu">--%>
+                    <%--<li class="dropdown-header">2 New Messages</li>--%>
+                    <%--<li class="message-preview">--%>
+                        <%--<a href="#">--%>
+                            <%--<span class="avatar"><i class="fa fa-bell"></i></span>--%>
+                            <%--<span class="message">Security alert</span>--%>
+                        <%--</a>--%>
+                    <%--</li>--%>
+                    <%--<li class="divider"></li>--%>
+                    <%--<li class="message-preview">--%>
+                        <%--<a href="#">--%>
+                            <%--<span class="avatar"><i class="fa fa-bell"></i></span>--%>
+                            <%--<span class="message">Security alert</span>--%>
+                        <%--</a>--%>
+                    <%--</li>--%>
+                    <%--<li class="divider"></li>--%>
+                    <%--<li><a href="#">Go to Inbox <span class="badge">2</span></a></li>--%>
+                <%--</ul>--%>
+            <%--</li>--%>
             <li class="dropdown user-dropdown">
                 <c:if test="${pageContext.request.userPrincipal.name != null}">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">

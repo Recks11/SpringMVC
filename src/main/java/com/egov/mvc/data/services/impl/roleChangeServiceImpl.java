@@ -39,13 +39,23 @@ public class roleChangeServiceImpl implements roleChangeService {
     }
 
     @Transactional
-    public void getRoleRequestById(long Id) {
-        roleChangeDao.getRoleRequestById(Id);
+    public RoleChange getRoleRequestById(long Id) {
+        return roleChangeDao.getRoleRequestById(Id);
     }
 
     @Transactional
     public user getUserByName(String name) {
         return userDao.getUserByUsername(name);
+    }
+
+    @Transactional
+    public user getUserByRoleRequestId(Long id) {
+        return roleChangeDao.getUserByRoleRequestId(id);
+    }
+
+    @Transactional
+    public String getRoleByRoleId(Long RoleId) {
+        return roleChangeDao.getRoleByRoleId(RoleId);
     }
 
     @Transactional

@@ -1,5 +1,6 @@
 package com.egov.mvc.data.dao;
 
+import com.egov.mvc.data.Models.security.authorities;
 import com.egov.mvc.data.Models.userClasses.user;
 
 import java.util.List;
@@ -22,9 +23,15 @@ public interface userDao {
 
     void deleteUser(int Id);
 
-    void setRole(String username, String role);
+    void setRole(user user, authorities authorities);
 
     int numberOfBloggers();
 
     int numberOfReporters();
+
+    List bloggers();
+
+    List reporters();
+
+    List resident();
 }

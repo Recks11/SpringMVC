@@ -1,13 +1,18 @@
 package com.egov.mvc.controllers.index;
 
+import com.egov.mvc.data.Models.Report;
 import com.egov.mvc.data.Models.security.logintimestamp;
 import com.egov.mvc.data.Models.userClasses.user;
+import com.egov.mvc.data.services.EventsService;
 import com.egov.mvc.data.services.userService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * Created by Ijiekhuamen Rex
@@ -17,6 +22,8 @@ import org.springframework.web.bind.annotation.*;
 public class loginController {
 
     private final userService userService;
+    @Autowired
+    private EventsService eventsService;
 
    private user userInstance = new user();
 
@@ -57,4 +64,10 @@ public class loginController {
     }
 
 
+    @ModelAttribute
+    public void init(Model model){
+        model.addAttribute("Report", new Report());
+        List event4List = (List) eventsService.getAllEvents().stream().limit(4).collect(Collectors.toList());
+        model.addAttribute("events", event4List);
+    }
 }

@@ -3,6 +3,7 @@ package com.egov.mvc.data.Models.userClasses;
 
 import com.egov.mvc.data.Models.components.houseAddress;
 import com.egov.mvc.data.Models.security.authorities;
+import com.egov.mvc.data.Models.security.users;
 import org.hibernate.validator.constraints.NotBlank;
 
 import javax.persistence.*;
@@ -49,8 +50,6 @@ public class user {
     @JoinColumn(name = "authorityId", nullable = false,
             foreignKey = @ForeignKey (name="AUTHORITY_FK"))
     private authorities authorities;
-
-
 
     public user() {
     }

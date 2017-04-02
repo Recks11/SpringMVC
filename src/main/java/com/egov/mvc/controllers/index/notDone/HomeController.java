@@ -46,9 +46,7 @@ public class HomeController {
 
     @RequestMapping("/home")
     public String showHome(Model model){
-        model.addAttribute("Report", new Report());
-        List event4List = (List) eventsService.getAllEvents().stream().limit(4).collect(Collectors.toList());
-        model.addAttribute("events", event4List);
+
         return "home/index";
     }
 
@@ -106,5 +104,11 @@ public class HomeController {
     }
 
 
+    @ModelAttribute
+    public void init(Model model){
+        model.addAttribute("Report", new Report());
+        List event4List = (List) eventsService.getAllEvents().stream().limit(4).collect(Collectors.toList());
+        model.addAttribute("events", event4List);
+    }
 }
 

@@ -1,6 +1,5 @@
 package com.egov.mvc.data.dao.impl;
 
-import com.egov.mvc.data.Models.components.houseAddress;
 import com.egov.mvc.data.Models.security.authorities;
 import com.egov.mvc.data.Models.security.users;
 import com.egov.mvc.data.Models.userClasses.user;
@@ -9,7 +8,6 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -57,6 +55,7 @@ public class UserDaoImpl implements userDao {
         int id = (int) sessionFactory.getCurrentSession()
                 .createQuery("select userID from user where username = ?")
                 .setParameter(0,username).uniqueResult();
+
         return sessionFactory.getCurrentSession().get(user.class, id);
     }
 
@@ -68,16 +67,26 @@ public class UserDaoImpl implements userDao {
     @Override
     public void deleteUser(int Id) {
         //modify to get authority and password
-        Session session = sessionFactory.getCurrentSession();
-        session.delete(getUserById(Id));
-        session.flush();
+        int usrRoleId = this.getUserById(Id).getAuthorities().getAuthorityId();
+
+        String username = this.getUserById(Id).getUsername();
+        long accountId = (long) sessionFactory.getCurrentSession().createQuery("SELECT id from users where username = ?")
+                .setParameter(0, username).uniqueResult();
+
+        sessionFactory.getCurrentSession().delete(
+                sessionFactory.getCurrentSession().get(users.class, accountId)
+        );
+        sessionFactory.getCurrentSession().delete(
+                sessionFactory.getCurrentSession().get(authorities.class, usrRoleId)
+        );
+
+        sessionFactory.getCurrentSession().delete(getUserById(Id));
     }
 
     @Override//TestIt
-    public void setRole(String username, String role){
-        user user = getUserByUsername(username);
-        authorities a = user.getAuthorities();
-        a.setAuthority(role);
+    public void setRole(user user, authorities authorities){
+
+        sessionFactory.getCurrentSession().update(authorities);
         sessionFactory.getCurrentSession().update(user);
     }
 
@@ -97,4 +106,45 @@ public class UserDaoImpl implements userDao {
                 .list()
                 .size();
     }
+
+    @Override
+    public List bloggers() {
+//        return sessionFactory.getCurrentSession().createQuery
+//                ("from  " +
+//                        "user as user inner join authorities as authorities on user.authorities.authorityId = authorities.authorityId " +
+//                        "where authorities.authority = ?").setParameter(0, "ROLE_BLOGGER").list();
+        return sessionFactory.getCurrentSession().createQuery
+                ("from user as user where user.authorities.authority = ?")
+                .setParameter(0, "ROLE_BLOGGER")
+                .list();
+    }
+
+    @Override
+    public List reporters() {
+
+
+//        return sessionFactory.getCurrentSession().createQuery
+//                 ("from  " +
+//                         "user as user  inner join authorities as authorities on user.authorities.authorityId = authorities.authorityId " +
+//                         "where authorities.authority = ?").setParameter(0, "ROLE_REPORTER").list();
+        return sessionFactory.getCurrentSession().createQuery
+                ("from user as user where user.authorities.authority = ?")
+                .setParameter(0, "ROLE_REPORTER")
+                .list();
+    }
+
+    @Override
+    public List resident() {
+//        return sessionFactory.getCurrentSession().createQuery
+//                ("from  " +
+//                        "user as user  inner join authorities as authorities on user.authorities.authorityId = authorities.authorityId " +
+//                        "where authorities.authority = ?").setParameter(0, "ROLE_USER").list();
+
+        return sessionFactory.getCurrentSession().createQuery
+                ("from user as user where user.authorities.authority = ?")
+                .setParameter(0, "ROLE_user")
+                .list();
+    }
 }
+
+//Select user.firstName, user.lastName, user.email, authorities.authority, user.contact, user.username from

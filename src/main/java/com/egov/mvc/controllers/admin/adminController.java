@@ -32,10 +32,11 @@ public class adminController {
     private final roleChangeService roleService;
     private PagedListHolder pagedListHolder;
     private Events event;
+    private BlogService blogService;
     @Autowired
     public adminController(roleChangeService roleService, EventsService eventsService, userService userService,
                            Events event, loggedinService loggedinService, PagedListHolder pagedListHolder,
-                           AdministrationService administrationService, Administration administration) {
+                           AdministrationService administrationService, Administration administration, BlogService blogService) {
         this.roleService = roleService;
         this.loggedinService = loggedinService;
         this.eventsService = eventsService;
@@ -44,6 +45,7 @@ public class adminController {
         this.pagedListHolder = pagedListHolder;
         this.administrationService = administrationService;
         this.administration = administration;
+        this.blogService = blogService;
     }
 
 
@@ -75,6 +77,12 @@ public class adminController {
         model.addAttribute("Events", event);
         model.addAttribute("allEvent", pagedListHolder);
         return "admin/events";
+    }
+
+    @RequestMapping("/blogs")
+    public String getAllBlogs(Model model){
+        model.addAttribute("blogList", blogService.getAllBlogs());
+        return "admin/getBlogs";
     }
 
     @RequestMapping("/addAdministration")
@@ -131,6 +139,13 @@ public class adminController {
         model.addAttribute("administration", admini);
         model.addAttribute("administrationList", administrationService.getAllAdministrators());
         return "redirect:/admin/addAdministration";
+    }
+
+    @RequestMapping("/blogs/deleteBlog/{blogId}")
+    public String deleteBlog(@PathVariable("blogId") int blogId){
+
+        blogService.deleteBlog(blogId);
+        return "redirect:/admin/blogs/deleteBlog";
     }
 
 }

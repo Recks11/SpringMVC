@@ -22,7 +22,7 @@
                 <form:form action="post.io" method="post" modelAttribute="Blog">
                     <div class="form-group">
                         <label for="headline">UserId</label>
-                        <form:input path="Id" cssClass="form-control" id="headline" placeholder="Id" disabled="true"/>
+                        <form:input path="id" cssClass="form-control" id="headline" placeholder="Id" disabled="true"/>
                     </div>
                     <div class="form-group">
                         <label for="headline">Headline</label>

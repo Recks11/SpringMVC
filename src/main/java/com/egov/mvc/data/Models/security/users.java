@@ -1,5 +1,7 @@
 package com.egov.mvc.data.Models.security;
 
+import com.egov.mvc.data.Models.userClasses.user;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
