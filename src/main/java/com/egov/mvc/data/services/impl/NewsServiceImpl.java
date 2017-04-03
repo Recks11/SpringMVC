@@ -17,8 +17,12 @@ import java.util.List;
 @Service
 public class NewsServiceImpl implements NewsService {
 
+    private final NewsDao newsDao;
+
     @Autowired
-    private NewsDao newsDao;
+    public NewsServiceImpl(NewsDao newsDao) {
+        this.newsDao = newsDao;
+    }
 
     @Transactional
     public void newArticle(News news) {

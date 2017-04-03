@@ -16,8 +16,12 @@ import java.util.List;
 @Service
 public class AdministrationServiceImpl implements AdministrationService {
 
+    private final administrationDao administrationDao;
+
     @Autowired
-    private administrationDao administrationDao;
+    public AdministrationServiceImpl(administrationDao administrationDao) {
+        this.administrationDao = administrationDao;
+    }
 
     @Transactional
     public void add(Administration administration) {

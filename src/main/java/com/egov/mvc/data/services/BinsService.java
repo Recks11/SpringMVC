@@ -1,6 +1,6 @@
 package com.egov.mvc.data.services;
 
-import com.egov.mvc.data.Models.Bins;
+import com.egov.mvc.data.Models.notDone.organisationsClasses.Bins;
 import com.egov.mvc.data.Models.userClasses.user;
 
 import java.util.List;
@@ -11,7 +11,7 @@ import java.util.List;
  */
 public interface BinsService {
 
-    void addRequest(Bins bins);
+    void addRequest(Bins bins, String username);
 
     void updateRequest(Bins bins);
 

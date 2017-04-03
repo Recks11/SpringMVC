@@ -17,8 +17,13 @@ import java.util.List;
 public class ReportsServiceImpl implements ReportsService {
 
 
+    private final ReportsDao reportsDao;
+
     @Autowired
-    private ReportsDao reportsDao;
+    public ReportsServiceImpl(ReportsDao reportsDao) {
+        this.reportsDao = reportsDao;
+    }
+
     @Transactional
     public void add(Report report) {
         reportsDao.add(report);

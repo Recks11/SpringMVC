@@ -1,4 +1,4 @@
-package com.egov.mvc.data.Models;
+package com.egov.mvc.data.Models.notDone.organisationsClasses;
 
 import com.egov.mvc.data.Models.userClasses.user;
 import org.hibernate.validator.constraints.NotBlank;

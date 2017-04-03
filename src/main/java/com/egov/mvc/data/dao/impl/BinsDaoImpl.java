@@ -1,6 +1,6 @@
 package com.egov.mvc.data.dao.impl;
 
-import com.egov.mvc.data.Models.Bins;
+import com.egov.mvc.data.Models.notDone.organisationsClasses.Bins;
 import com.egov.mvc.data.Models.userClasses.user;
 import com.egov.mvc.data.dao.BinsDao;
 import org.hibernate.Criteria;

@@ -19,12 +19,12 @@ import java.util.List;
 public class roleChangeServiceImpl implements roleChangeService {
 
     private final roleChangeDao roleChangeDao;
-    @Autowired
-    private userDao userDao;
+    private final userDao userDao;
 
     @Autowired
-    public roleChangeServiceImpl(roleChangeDao roleChangeDao) {
+    public roleChangeServiceImpl(roleChangeDao roleChangeDao, userDao userDao) {
         this.roleChangeDao = roleChangeDao;
+        this.userDao = userDao;
     }
 
 

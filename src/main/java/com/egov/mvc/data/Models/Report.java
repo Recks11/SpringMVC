@@ -15,7 +15,7 @@ public class Report {
     private int id;
 
     @Column
-    private String name;
+    private String name;//username
 
     @Column
     private String description;

@@ -1,8 +1,9 @@
 package com.egov.mvc.data.services.impl;
 
-import com.egov.mvc.data.Models.Bins;
+import com.egov.mvc.data.Models.notDone.organisationsClasses.Bins;
 import com.egov.mvc.data.Models.userClasses.user;
 import com.egov.mvc.data.dao.BinsDao;
+import com.egov.mvc.data.dao.userDao;
 import com.egov.mvc.data.services.BinsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,14 +21,18 @@ public class BinsServiceImpl implements BinsService{
 
     private final BinsDao binsDao;
 
+    private final userDao userdao;
+
     @Autowired
-    public BinsServiceImpl(BinsDao binsDao) {
+    public BinsServiceImpl(BinsDao binsDao, userDao userdao) {
         this.binsDao = binsDao;
+        this.userdao = userdao;
     }
 
     @Transactional
-    public void addRequest(Bins bins) {
+    public void addRequest(Bins bins, String username) {
         bins.setDate(new Date());
+        bins.setUser(userdao.getUserByUsername(username));
         binsDao.addRequest(bins);
     }
 

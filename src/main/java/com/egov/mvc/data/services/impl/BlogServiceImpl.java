@@ -18,8 +18,12 @@ import java.util.List;
 public class BlogServiceImpl implements BlogService {
 
 
+    private final BlogDao blogDao;
+
     @Autowired
-    private BlogDao blogDao;
+    public BlogServiceImpl(BlogDao blogDao) {
+        this.blogDao = blogDao;
+    }
 
     @Transactional
     public void addBlog(Blog blog) {

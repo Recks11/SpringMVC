@@ -17,8 +17,12 @@ import java.util.List;
 @Service
 public class EventsServiceImpl implements EventsService {
 
+    private final EventsDao eventsDao;
+
     @Autowired
-    private EventsDao eventsDao;
+    public EventsServiceImpl(EventsDao eventsDao) {
+        this.eventsDao = eventsDao;
+    }
 
     @Transactional
     public Events getEventById(Long id) {

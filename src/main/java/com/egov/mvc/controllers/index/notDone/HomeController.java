@@ -64,6 +64,7 @@ public class HomeController {
 
         switch(action.toLowerCase()){
             case "post":
+                report.setType("Home");
                 reportsService.add(report);
                 this.rep = report;
                 break;
