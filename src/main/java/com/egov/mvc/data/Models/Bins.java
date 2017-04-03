@@ -21,7 +21,7 @@ public class Bins {
     @ManyToOne
     @JoinColumn(name = "userID", nullable = false,
                 foreignKey = @ForeignKey(name = "USERID_FK"))
-    private user user;
+    private user usr;
 
     @NotBlank
     @Temporal(TemporalType.DATE)
@@ -36,8 +36,8 @@ public class Bins {
 
     public Bins(){}
 
-    public Bins(com.egov.mvc.data.Models.userClasses.user user, Date date, String requestType) {
-        this.user = user;
+    public Bins(user usr, Date date, String requestType) {
+        this.usr = usr;
         this.date = date;
         this.requestType = requestType;
     }
@@ -50,12 +50,12 @@ public class Bins {
         this.id = id;
     }
 
-    public com.egov.mvc.data.Models.userClasses.user getUser() {
-        return user;
+    public user getUser() {
+        return usr;
     }
 
-    public void setUser(com.egov.mvc.data.Models.userClasses.user user) {
-        this.user = user;
+    public void setUser(user user) {
+        this.usr = user;
     }
 
     public Date getDate() {

@@ -6,6 +6,7 @@ import com.egov.mvc.data.Models.components.RoleChange;
 import com.egov.mvc.data.dao.roleChangeDao;
 import com.egov.mvc.data.dao.userDao;
 import com.egov.mvc.data.services.EventsService;
+import com.egov.mvc.data.services.NewsService;
 import com.egov.mvc.data.services.ReportsService;
 import com.egov.mvc.data.services.roleChangeService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,16 +33,19 @@ public class HomeController {
 
     private final EventsService eventsService;
 
+    private final NewsService newsService;
+
     private final roleChangeService roleService;
 
     private Report rep = new Report();
 
     @Autowired
-    public HomeController(userDao userDao, ReportsService reportsService, EventsService eventsService, roleChangeService roleService) {
+    public HomeController(userDao userDao, ReportsService reportsService, EventsService eventsService, roleChangeService roleService, NewsService newsService) {
         this.userDao = userDao;
         this.reportsService = reportsService;
         this.eventsService = eventsService;
         this.roleService = roleService;
+        this.newsService = newsService;
     }
 
     @RequestMapping("/home")
@@ -108,7 +112,11 @@ public class HomeController {
     public void init(Model model){
         model.addAttribute("Report", new Report());
         List event4List = (List) eventsService.getAllEvents().stream().limit(4).collect(Collectors.toList());
+        List news4List = (List) newsService.getAllArticles().stream().limit(4).collect(Collectors.toList());
         model.addAttribute("events", event4List);
+        model.addAttribute("news", news4List);
+
+
     }
 }
 

@@ -185,8 +185,21 @@ home.html
 .pan-body{
     max-height:350px;
     min-height:350px;
-    overflow-y: scroll;
+    overflow-y: hidden;
     overflow-x: hidden;
+}
+.pan-body > .news-heading > h3{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.pan-body > .news-heading > h3:first-child{
+    margin-top: 3px;
+}
+.news-body{
+    height: 43px;
+    overflow-y: hidden;
+    border-bottom: 1px solid #5cb85c;
+    margin-bottom: 10px;
 }
 .sansita strong{
     font-size: 15px;

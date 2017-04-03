@@ -24,19 +24,37 @@
               <div class="col-md-4 col-sm-4">
                   <div class="panel panel-default serv-panel">
                       <div class="panel-heading serv-head text-center"><span class="mcc-icon-house-search"></span><div>HOTELS</div></div>
-                      <div class="panel-body serv-body">Panel Content</div>
+                      <div class="panel-body serv-body">
+                      <ul>
+                          <li><a href="#">Find a hotel</a></li>
+                          <li><a ></a></li>
+                          <li><a ></a></li>
+                      </ul>
+                      </div>
                   </div>
               </div>
               <div class="col-md-4 col-sm-4">
                   <div class="panel panel-default serv-panel">
                       <div class="panel-heading serv-head text-center"><span class="mcc-icon-health-and-wellbeing"></span><div class="spec-cas">MEDICAL CARE</div></div>
-                      <div class="panel-body serv-body">Panel Content</div>
+                      <div class="panel-body serv-body">
+                      <ul>
+                          <li><a href="#">Find Hospitals</a></li>
+                          <li><a href="#">Emergencies</a></li>
+                          <li><a ></a></li>
+                      </ul>
+                      </div>
                   </div>
               </div>
               <div class="col-md-4 col-sm-4">
                   <div class="panel panel-default serv-panel">
                       <div class="panel-heading serv-head text-center"><span class="mcc-icon-leisure"></span><div>LEISURE</div></div>
-                      <div class="panel-body serv-body">Panel Content</div>
+                      <div class="panel-body serv-body">
+                      <ul>
+                          <li><a href="#">Gyms</a></li>
+                          <li><a href="#">Parks & Pools</a></li>
+                          <li><a href="#">Sport Centers</a></li>
+                      </ul>
+                      </div>
                   </div>
               </div>
           </div>

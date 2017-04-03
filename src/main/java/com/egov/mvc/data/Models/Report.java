@@ -23,14 +23,16 @@ public class Report {
     @Column
     private String emailAddress;
 
-    public Report() {}
+    private String type;
 
-    public Report(int id, String name, String description, String emailAddress) {
-        this.id = id;
+    public Report(String name, String description, String emailAddress, String type) {
         this.name = name;
         this.description = description;
         this.emailAddress = emailAddress;
+        this.type = type;
     }
+
+    public Report() {}
 
     public int getId() {
         return id;
@@ -62,5 +64,24 @@ public class Report {
 
     public void setEmailAddress(String emailAddress) {
         this.emailAddress = emailAddress;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    @Override
+    public String toString() {
+        return "Report{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", description='" + description + '\'' +
+                ", emailAddress='" + emailAddress + '\'' +
+                ", type='" + type + '\'' +
+                '}';
     }
 }

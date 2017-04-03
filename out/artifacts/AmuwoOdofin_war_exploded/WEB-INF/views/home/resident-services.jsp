@@ -103,7 +103,7 @@
               </div>
           </div>
       </div>
-      <div class="row row-2">
+      <div class="row row-3">
           <div class="container">
               <div class="col-md-4 col-sm-4">
                   <div class="panel panel-default serv-panel">
@@ -140,21 +140,21 @@
               </div>
           </div>
       </div>
-      <div class="row row-3">
-          <div class="container">
-              <div class="col-md-4 col-sm-4">
-                  <div class="panel panel-default serv-panel">
-                      <div class="panel-heading serv-head text-center"><span class="mcc-icon-licences-and-permits"></span><div class="">LICENSING</div></div>
-                      <div class="panel-body serv-body">
-                          <ul>
-                              <li><a href="#">Get a license</a></li>
-                              <li><a href="#">Request Renewal</a></li>
-                          </ul>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </div>
+      <%--<div class="row row-3">--%>
+          <%--<div class="container">--%>
+              <%--<div class="col-md-4 col-sm-4">--%>
+                  <%--<div class="panel panel-default serv-panel">--%>
+                      <%--<div class="panel-heading serv-head text-center"><span class="mcc-icon-licences-and-permits"></span><div class="">LICENSING</div></div>--%>
+                      <%--<div class="panel-body serv-body">--%>
+                          <%--<ul>--%>
+                              <%--<li><a href="#">Get a license</a></li>--%>
+                              <%--<li><a href="#">Request Renewal</a></li>--%>
+                          <%--</ul>--%>
+                      <%--</div>--%>
+                  <%--</div>--%>
+              <%--</div>--%>
+          <%--</div>--%>
+      <%--</div>--%>
   </section>
   <jsp:include page="../../fragments/footer-1.jsp"/>
 </body>

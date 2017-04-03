@@ -112,27 +112,10 @@
                           </h2>
                       </div>
                       <div class="panel-body pan-body">
-                          <h4>This is the Heading</h4>
-                          <p>
-                              Lorem ipsum dolor sit amet,
-                              consectetur adipisicing elit,
-                              sed do eiusmod tempor incididunt
-                              ut labore et dolore magna aliqua...
-                          </p>
-                          <h4>Also thhe heading</h4>
-                          <p>
-                              Lorem ipsum dolor sit amet,
-                              consectetur adipisicing elit,
-                              sed do eiusmod tempor incididunt
-                              ut labore et dolore magna aliqua...
-                          </p>
-                          <h4>yup! another heading</h4>
-                          <p>
-                              Lorem ipsum dolor sit amet,
-                              consectetur adipisicing elit,
-                              sed do eiusmod tempor incididunt
-                              ut labore et dolore magna aliqua...
-                          </p>
+                          <core:forEach items="${news}" var="news">
+                              <div class="news-heading"> <h3>${news.headline}</h3> </div>
+                              <div class="news-body">${news.article}</div>
+                          </core:forEach>
                       </div>
                       <div class="panel-footer pan-heading no-pad"><p class="text-center no-bottom-margin">
                           <button class="btn btn-success">More News</button></p>
