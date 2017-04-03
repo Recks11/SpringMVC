@@ -42,6 +42,8 @@
         <!--<property name="entityManagerFactory" ref="entityManagerFactory"/>-->
     <!--</bean>-->
 
+
+
     <bean id="sessionFactory"
           class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
         <property name="dataSource" ref="dataSource"/>
@@ -98,7 +100,12 @@
 
     <bean id="authenticationSuccessHandler"
                 class= "com.egov.mvc.data.Models.components.UrlAuthenticationSuccessHandler" />
+<!--Multipart filter bean-->
+    <bean id="commonsMultiPartResolver"
+          class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <property name="maxUploadSize" value="2048000"/>
 
+    </bean>
     <security:authentication-manager>
         <security:authentication-provider>
             <security:jdbc-user-service data-source-ref="dataSource"

@@ -18,8 +18,6 @@ public class userOrganisation {
 
     private String organisationName;
 
-    private String roleAvailable;//(VACANCY)
-
     @OneToOne
     @JoinColumn(name="organisationAddress", nullable = false,
                 foreignKey = @ForeignKey(name="address_id"))
@@ -36,9 +34,8 @@ public class userOrganisation {
 
     public userOrganisation() {}
 
-    public userOrganisation(String organisationName, String roleAvailable, houseAddress address, String contact, String emailAddress, user usr) {
+    public userOrganisation(String organisationName, houseAddress address, String contact, String emailAddress, user usr) {
         this.organisationName = organisationName;
-        this.roleAvailable = roleAvailable;
         this.address = address;
         this.contact = contact;
         this.emailAddress = emailAddress;
@@ -62,12 +59,16 @@ public class userOrganisation {
         this.organisationName = organisationName;
     }
 
-    public String getRoleAvailable() {
-        return roleAvailable;
-    }
-
-    public void setRoleAvailable(String roleAvailable) {
-        this.roleAvailable = roleAvailable;
+    @Override
+    public String toString() {
+        return "userOrganisation{" +
+                "id=" + id +
+                ", organisationName='" + organisationName + '\'' +
+                ", address=" + address +
+                ", contact='" + contact + '\'' +
+                ", emailAddress='" + emailAddress + '\'' +
+                ", usr=" + usr +
+                '}';
     }
 
     public String getContact() {
@@ -102,16 +103,4 @@ public class userOrganisation {
         this.usr = usr;
     }
 
-    @Override
-    public String toString() {
-        return "userOrganisation{" +
-                "id=" + id +
-                ", organisationName='" + organisationName + '\'' +
-                ", roleAvailable='" + roleAvailable + '\'' +
-                ", address=" + address +
-                ", contact='" + contact + '\'' +
-                ", emailAddress='" + emailAddress + '\'' +
-                ", usr=" + usr +
-                '}';
-    }
 }

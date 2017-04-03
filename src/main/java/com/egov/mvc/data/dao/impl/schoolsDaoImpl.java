@@ -1,5 +1,6 @@
 package com.egov.mvc.data.dao.impl;
 
+import com.egov.mvc.data.Models.components.houseAddress;
 import com.egov.mvc.data.Models.notDone.organisationsClasses.schools;
 import com.egov.mvc.data.dao.schoolsDao;
 import org.hibernate.SessionFactory;
@@ -15,7 +16,7 @@ import java.util.List;
 @Repository
 public class schoolsDaoImpl implements schoolsDao {
 
-    private final SessionFactory sessionFactory;
+    private  SessionFactory sessionFactory;
 
     @Autowired
     public schoolsDaoImpl(SessionFactory sessionFactory) {
@@ -24,6 +25,9 @@ public class schoolsDaoImpl implements schoolsDao {
 
     @Override
     public void addSchool(schools school) {
+
+        houseAddress address = school.getAddress();
+        sessionFactory.getCurrentSession().save(address);
         sessionFactory.getCurrentSession().save(school);
     }
 

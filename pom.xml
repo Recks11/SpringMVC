@@ -65,6 +65,25 @@
         </dependency>
         <!--end Spring Dependencies-->
 
+        <!--FIle Upload-->
+        <dependency>
+            <groupId>commons-fileupload</groupId>
+            <artifactId>commons-fileupload</artifactId>
+            <version>LATEST</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>2.5</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>servlet-api</artifactId>
+            <version>2.5</version>
+            <scope>provided</scope>
+        </dependency>
+        <!--File Upload-->
+
         <!--Hibernate-->
         <dependency>
             <groupId>org.hibernate</groupId>

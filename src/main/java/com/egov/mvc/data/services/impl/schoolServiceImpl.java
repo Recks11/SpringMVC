@@ -16,7 +16,7 @@ import java.util.List;
 @Service
 public class schoolServiceImpl implements schoolService {
 
-    private final schoolsDao schoolDao;
+    private  schoolsDao schoolDao;
 
     @Autowired
     public schoolServiceImpl(schoolsDao schoolDao) {

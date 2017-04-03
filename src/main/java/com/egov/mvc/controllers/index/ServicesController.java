@@ -15,12 +15,12 @@ public class ServicesController {
 
     @RequestMapping("/resident")
     public String showServices(Model model){
-        return "home/resident-services";
+        return "services/resident-services";
     }
 
     @RequestMapping("/visitor")
     public String showVisitor(Model model){
-        return "home/visitor-services";
+        return "services/visitor-services";
     }
 
 }

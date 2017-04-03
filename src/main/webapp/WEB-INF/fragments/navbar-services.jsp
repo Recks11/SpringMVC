@@ -28,7 +28,8 @@
                         <ul class="dropdown-menu drop">
                             <li><a href="<spring:url value="/tests/administration"/>">CRUD</a></li>
                             <li><a href="<spring:url value="/council/directory"/>">other</a></li> <!--what is this ?-->
-                            <li><a href="<spring:url value="/errors/runtimeException"/>">RUNTIME ERROR</a></li> <!--what is this ?-->
+                            <li><a href="<spring:url value="/errors/runtimeException"/>">RUNTIME ERROR</a></li>
+                            <li><a href="<spring:url value="/tests/fileUpload"/>">image upload</a></li><!--what is this ?-->
                         </ul>
                     </li>
                     <li><a href="<spring:url value="/home"/>">Home</a></li>

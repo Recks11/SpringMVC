@@ -9,6 +9,8 @@
          pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="security" uri="http://www.springframework.org/security/tags" %>
 
 <footer id="footer">
     <div class="topfoot">
@@ -34,11 +36,12 @@
             </div>
             <%--<spring:url value="/report.io" var="report"/>--%>
             <div class="col-md-4">
+                <security:authorize access="hasAnyRole('ROLE_USER','ROLE_BLOGGER','ROLE_REPORTER')">
                 <form:form action="report.io" method="post" cssClass="contactForm" modelAttribute="Report">
-                    <div class="form-group">
-                        <form:input type="text" path="name" cssClass="form-control br-radius-zero" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars"/>
-                        <div class="validation"><form:errors path="name"/></div>
-                    </div>
+                    <%--<div class="form-group">--%>
+                        <%--<form:input type="text" path="name" cssClass="form-control br-radius-zero" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars"/>--%>
+                        <%--<div class="validation"><form:errors path="name"/></div>--%>
+                    <%--</div>--%>
                     <div class="form-group">
                        <form:input path="emailAddress" cssClass="form-control br-radius-zero" placeholder="E-mail Address"/>
                         <div class="validation"><form:errors path="emailAddress"/></div>
@@ -51,6 +54,7 @@
                         <form:button name="action" Class="btn btn-default msgbtn" value="post">Send Message</form:button>
                     </div>
                 </form:form>
+                </security:authorize>
                 <%--</form:form>--%>
             </div>
         </div>

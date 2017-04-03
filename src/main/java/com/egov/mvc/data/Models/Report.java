@@ -15,9 +15,6 @@ public class Report {
     private int id;
 
     @Column
-    private String name;//username
-
-    @Column
     private String description;
 
     @Column
@@ -25,13 +22,12 @@ public class Report {
 
     private String type;
 
-    public Report(String name, String description, String emailAddress, String type) {
-        this.name = name;
+    public Report(String description, String emailAddress, String type) {
+
         this.description = description;
         this.emailAddress = emailAddress;
         this.type = type;
     }
-
     public Report() {}
 
     public int getId() {
@@ -40,14 +36,6 @@ public class Report {
 
     public void setId(int id) {
         this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public String getDescription() {
@@ -78,7 +66,6 @@ public class Report {
     public String toString() {
         return "Report{" +
                 "id=" + id +
-                ", name='" + name + '\'' +
                 ", description='" + description + '\'' +
                 ", emailAddress='" + emailAddress + '\'' +
                 ", type='" + type + '\'' +

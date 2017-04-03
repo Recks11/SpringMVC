@@ -1,8 +1,10 @@
 package com.egov.mvc.data.Models.notDone.organisationsClasses;
 
 import com.egov.mvc.data.Models.components.houseAddress;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.persistence.*;
+import java.util.Date;
 
 /**
  * Created by Ijiekhuamen Rex
@@ -29,18 +31,29 @@ public class schools {
 
     private String website;
 
+    private Date resumptionDate;
 
-    private String image;
+    @Transient
+    private MultipartFile image;
 
     public schools(){}
 
-    public schools(String name, houseAddress address, String number, String emailAddress, String website, String image) {
+    public schools(String name, houseAddress address, String number, String emailAddress, String website, Date resumptionDate, MultipartFile image) {
         this.name = name;
         this.address = address;
         this.number = number;
         this.emailAddress = emailAddress;
         this.website = website;
+        this.resumptionDate = resumptionDate;
         this.image = image;
+    }
+
+    public Date getResumptionDate() {
+        return resumptionDate;
+    }
+
+    public void setResumptionDate(Date resumptionDate) {
+        this.resumptionDate = resumptionDate;
     }
 
     public long getId() {
@@ -91,11 +104,11 @@ public class schools {
         this.emailAddress = emailAddress;
     }
 
-    public String getImage() {
+    public MultipartFile getImage() {
         return image;
     }
 
-    public void setImage(String image) {
+    public void setImage(MultipartFile image) {
         this.image = image;
     }
 
@@ -108,7 +121,8 @@ public class schools {
                 ", number='" + number + '\'' +
                 ", emailAddress='" + emailAddress + '\'' +
                 ", website='" + website + '\'' +
-                ", image='" + image + '\'' +
+                ", resumptionDate=" + resumptionDate +
+                ", image=" + image +
                 '}';
     }
 }
