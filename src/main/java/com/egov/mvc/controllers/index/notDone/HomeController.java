@@ -118,6 +118,7 @@ public class HomeController {
     public String persistOrganisation(@ModelAttribute("userOrganisation") userOrganisation usrO, Principal principal){
 
         userOrg.addUserOrganisationForUser(usrO, principal.getName());
+
         return "redirect:/home";
     }
     @ModelAttribute

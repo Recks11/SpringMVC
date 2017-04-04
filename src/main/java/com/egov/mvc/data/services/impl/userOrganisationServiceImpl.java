@@ -29,12 +29,12 @@ public class userOrganisationServiceImpl implements userOrganisationService {
     }
 
     @Transactional
-    public void deleteUserOrganisationForUser(long id) {
+    public void deleteUserOrganisationForUser(int id) {
         userOrganisationDao.deleteUserOrganisationForUser(id);
     }
 
     @Transactional
-    public userOrganisation getUserOrganisationById(long id) {
+    public userOrganisation getUserOrganisationById(int id) {
         return userOrganisationDao.getUserOrganisationById(id);
     }
 

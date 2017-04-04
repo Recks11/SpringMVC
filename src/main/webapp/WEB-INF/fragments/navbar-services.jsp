@@ -33,8 +33,8 @@
                         </ul>
                     </li>
                     <li><a href="<spring:url value="/home"/>">Home</a></li>
-                    <li><a href="<spring:url value="/news"/>">News</a></li>
-                    <li><a href="<spring:url value="/blogs"/>">Blog</a></li>
+                    <li><a href="<spring:url value="/Blogger/"/> "> BLOG </a> </li>
+
                     <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">Your Council<span class="caret"></span></a>
                         <ul class="dropdown-menu drop">

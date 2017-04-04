@@ -38,7 +38,7 @@
                       <div class="panel-heading serv-head text-center"><span class="mcc-icon-health-and-wellbeing"></span><div class="spec-cas">MEDICAL CARE</div></div>
                       <div class="panel-body serv-body">
                       <ul>
-                          <li><a href="#">Find Hospitals</a></li>
+                          <li><a href="/health/viewHospitals">Find Hospitals</a></li>
                           <li><a href="#">Emergencies</a></li>
                           <li><a ></a></li>
                       </ul>
@@ -50,9 +50,9 @@
                       <div class="panel-heading serv-head text-center"><span class="mcc-icon-leisure"></span><div>LEISURE</div></div>
                       <div class="panel-body serv-body">
                       <ul>
-                          <li><a href="#">Gyms</a></li>
-                          <li><a href="#">Parks & Pools</a></li>
-                          <li><a href="#">Sport Centers</a></li>
+                          <li><a href="<spring:url value="/services/leisure/all"/>">Gyms</a></li>
+                          <li><a href="<spring:url value="/services/leisure/all"/>">Parks & Pools</a></li>
+                          <li><a href="<spring:url value="/services/leisure/all"/>">Sport Centers</a></li>
                       </ul>
                       </div>
                   </div>

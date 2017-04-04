@@ -28,7 +28,7 @@
               <div class="col-md-6 col-sm-6">
                   <div class="panel panel-default serv-panel">
                       <div class="panel-heading serv-head userserv-head text-center">
-                          <a href="<spring:url value="/services/jobs/addVacancy"/>">
+                          <a href="<spring:url value="/services/jobs/AddVacancy"/>">
                           <div class="inPanel">
                             <span class="mcc-icon-business"></span>
                             <div>Declare Vacancy</div>
@@ -40,7 +40,7 @@
               <div class="col-md-6 col-sm-6">
                   <div class="panel panel-default serv-panel">
                       <div class="panel-heading serv-head userserv-head text-center">
-                          <a href="<spring:url value="/services/jobs/viewJobs"/>">
+                          <a href="<spring:url value="/services/jobs/viewJobs#menu0"/>">
                           <div class="inPanel">
                               <span class="mcc-icon-business"></span>
                               <div class="spec-cas">View Vacancies</div>

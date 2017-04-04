@@ -30,16 +30,17 @@ public class userOrganisationDaoImpl implements userOrganisationDao {
     public void addUserOrganisationForUser(userOrganisation userOrganisation, String username) {
 
         userOrganisation.setUsr(userDao.getUserByUsername(username));
+        sessionFactory.getCurrentSession().save(userOrganisation.getAddress());
         sessionFactory.getCurrentSession().save(userOrganisation);
     }
 
     @Override
-    public void deleteUserOrganisationForUser(long id) {
+    public void deleteUserOrganisationForUser(int id) {
         sessionFactory.getCurrentSession().delete(getUserOrganisationById(id));
     }
 
     @Override
-    public userOrganisation getUserOrganisationById(long id) {
+    public userOrganisation getUserOrganisationById(int id) {
         return sessionFactory.getCurrentSession().get(userOrganisation.class, id);
     }
 
@@ -53,7 +54,7 @@ public class userOrganisationDaoImpl implements userOrganisationDao {
 
 
         return (userOrganisation) sessionFactory.getCurrentSession().createQuery
-                ("from userOrganisation where id = ?").setParameter(0,userId)
+                ("from userOrganisation where usr.id = ?").setParameter(0,userId)
                 .uniqueResult();
     }
 }

@@ -24,6 +24,7 @@ public class jobsDaoImpl implements jobsDao {
 
     @Override
     public void newJob(jobs job) {
+        sessionFactory.getCurrentSession().save(job.getOrganisation());
         sessionFactory.getCurrentSession().save(job);
     }
 

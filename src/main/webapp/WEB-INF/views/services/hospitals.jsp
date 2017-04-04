@@ -32,7 +32,7 @@
                 <c:forEach items="${hospital}" var="schools">
                 <div class="row">schools
                     <div class="col-sm-3 image-responsive">
-                        <img src="<c:url value="/resources/images/schools/${schools.id}.png"/> " width="100%" height="auto" class="service-Image"/>
+                        <img src="<c:url value="/resources/images/hospital/${schools.id}.png"/> " width="100%" height="auto" class="service-Image"/>
                     </div>
                     <div class="col-sm-9  image-body">
                         <p>Name: ${schools.name}</p>

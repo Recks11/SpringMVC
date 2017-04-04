@@ -13,7 +13,7 @@ public class jobs {
     @GeneratedValue
     private long id;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name="organisationId", nullable = false,
                 foreignKey = @ForeignKey(name="ORGID_FK"))
     private userOrganisation organisation;

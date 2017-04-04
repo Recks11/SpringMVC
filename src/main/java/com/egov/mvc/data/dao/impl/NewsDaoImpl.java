@@ -45,7 +45,7 @@ public class NewsDaoImpl implements NewsDao {
 
     @Override
     public List getAllArticles() {
-        return sessionFactory.getCurrentSession().createQuery("from News").list();
+        return sessionFactory.getCurrentSession().createQuery("from News order by date desc").list();
     }
 
     private int getusersha(String name){

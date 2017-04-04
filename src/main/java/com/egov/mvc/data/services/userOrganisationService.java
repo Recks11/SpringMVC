@@ -12,9 +12,9 @@ public interface userOrganisationService {
 
     void addUserOrganisationForUser(userOrganisation userOrganisation, String username);
 
-    void deleteUserOrganisationForUser(long id);
+    void deleteUserOrganisationForUser(int id);
 
-    userOrganisation getUserOrganisationById(long id);
+    userOrganisation getUserOrganisationById(int id);
 
     List getAllUserOrganisations();
 
