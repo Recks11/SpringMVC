@@ -1,6 +1,6 @@
 package com.egov.mvc.data.dao;
 
-import com.egov.mvc.data.Models.notDone.organisationsClasses.hospitals;
+import com.egov.mvc.data.Models.organisationsClasses.hospitals;
 
 import java.util.List;
 

@@ -1,7 +1,7 @@
 package com.egov.mvc.data.dao.impl;
 
 import com.egov.mvc.data.Models.components.houseAddress;
-import com.egov.mvc.data.Models.notDone.organisationsClasses.schools;
+import com.egov.mvc.data.Models.organisationsClasses.schools;
 import com.egov.mvc.data.dao.schoolsDao;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,6 +39,11 @@ public class schoolsDaoImpl implements schoolsDao {
     @Override
     public void deleteSchool(long Id) {
         sessionFactory.getCurrentSession().delete(Id);
+    }
+
+    @Override
+    public List getResumptionDates() {
+        return sessionFactory.getCurrentSession().createQuery("select name, resumptionDate from schools").list();
     }
 
     @Override

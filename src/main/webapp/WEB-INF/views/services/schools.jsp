@@ -28,25 +28,22 @@
 <section class="">
     <div class="row row-1 row-3">
         <div class="container">
-            <div class="container">
-                <h1>all schools</h1>
+                <h1>All Schools</h1>
                 <c:forEach items="${school}" var="schools">
                 <div class="row">
-                    <div class="col-sm-5">
-                        <img src="images/The_Neighbourhood.png" width="100%" height="auto" class="service-Image"/>
+                    <div class="col-sm-3 image-responsive">
+                        <img src="<c:url value="/resources/images/schools/${schools.id}.png"/> " width="100%" height="auto" class="service-Image"/>
                     </div>
-                    <div class="col-sm-6">
+                    <div class="col-sm-9  image-body">
                         <p>Name: ${schools.name}</p>
-                        <p>Address: ${schools.houseAddress.housenumber}</p>
-                        <p>Address: ${schools.houseAddress.streetName}</p>
-                        <p>Address: ${schools.houseAddress.city}</p>
-                        <p>Phone Number: ${schools.phoneNumber}</p>
+                        <p>Address: <br/>${schools.address.housenumber},<br/> ${schools.address.city}, <br/>${schools.address.streetName}</p>
+
+                        <p>Phone Number: ${schools.number}</p>
                         <p>email-address: ${schools.emailAddress}</p>
                         <p>Website: ${schools.website}</p>
                     </div>
                 </div>
                 </c:forEach>
-            </div>
         </div>
     </div>
 </section>

@@ -1,7 +1,7 @@
 package com.egov.mvc.data.services;
 
-import com.egov.mvc.data.Models.notDone.jobs;
-import com.egov.mvc.data.Models.notDone.organisationsClasses.userOrganisation;
+import com.egov.mvc.data.Models.organisationsClasses.jobs;
+import com.egov.mvc.data.Models.organisationsClasses.userOrganisation;
 
 import java.util.List;
 
@@ -17,5 +17,5 @@ public interface jobsService {
 
     void deleteJob(long id);
 
-    List getAllJobs();
+    List<jobs> getAllJobs();
 }

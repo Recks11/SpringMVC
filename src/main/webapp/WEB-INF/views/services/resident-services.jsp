@@ -27,9 +27,9 @@
                       <div class="panel-heading serv-head text-center"><span class="mcc-icon-maths-tools"></span><div>SCHOOLS</div></div>
                       <div class="panel-body serv-body">
                           <ul>
-                              <li><a href="#">School resumption Dates</a></li>
-                              <li><a href="#">Find a School</a></li>
-                              <li><a href="#">Find a Daycare</a></li>
+                              <li><a href="<spring:url value="/schools/resumptionDates"/>">School resumption Dates</a></li>
+                              <li><a href="<spring:url value="/schools/findSchools"/> ">Find a School</a></li>
+                              <li><a href="<spring:url value="/schools/findDaycare"/>">Find a Daycare</a></li>
                           </ul>
                       </div>
                   </div>
@@ -67,10 +67,10 @@
                       <div class="panel-heading serv-head text-center"><span class="mcc-icon-people-and-communities"></span><div class="">MY ENVIRONMENT</div></div>
                       <div class="panel-body serv-body">
                           <ul>
-                              <li><a href="">Report Damages</a></li>
-                              <li><a href="">Report Misconduct</a></li>
-                              <li><a href="">Report Noise Pollution</a></li>
-                              <li><a href="">Report Other</a></li>
+                              <li><a href="<spring:url value="/services/reports/all"/>">Report Damages</a></li>
+                              <li><a href="<spring:url value="/services/reports/all"/>">Report Misconduct</a></li>
+                              <li><a href="<spring:url value="/services/reports/all"/>">Report Noise Pollution</a></li>
+                              <li><a href="<spring:url value="/services/reports/all"/>">Report Other</a></li>
                           </ul>
                       </div>
                   </div>
@@ -80,10 +80,10 @@
                       <div class="panel-heading serv-head text-center"><span class="mcc-icon-bin-wagon"></span><div class="">BINS</div></div>
                       <div class="panel-body serv-body">
                           <ul>
-                              <li><a href="#">Get new bin</a></li>
-                              <li><a href="#">Bin Collection Days</a></li>
-                              <li><a href="#">Get rid of an item</a></li>
-                              <li><a href="#">Replace bin</a></li>
+                              <li><a href="<spring:url value="/services/bins/"/>">Get new bin</a></li>
+                              <li><a href="<spring:url value="/services/bins/"/>">Bin Collection Days</a></li>
+                              <li><a href="<spring:url value="/services/bins/"/>">Get rid of an item</a></li>
+                              <li><a href="<spring:url value="/services/bins/"/>">Replace bin</a></li>
                           </ul>
                       </div>
                   </div>
@@ -93,10 +93,10 @@
                       <div class="panel-heading serv-head text-center"><span class="mcc-icon-leisure"></span><div>LEISURE</div></div>
                       <div class="panel-body serv-body">
                           <ul>
-                              <li><a href="#">Gyms</a></li>
-                              <li><a href="#">Parks & Pools</a></li>
-                              <li><a href="#">Sport Centers</a></li>
-                              <li><a href="#">Fitness</a></li>
+                              <li><a href="<spring:url value="/services/leisure/all"/>">Gyms</a></li>
+                              <li><a href="<spring:url value="/services/leisure/all"/>">Parks & Pools</a></li>
+                              <li><a href="<spring:url value="/services/leisure/all"/>">Sport Centers</a></li>
+                              <li><a href="<spring:url value="/services/leisure/all"/>">Fitness</a></li>
                           </ul>
                       </div>
                   </div>
@@ -110,7 +110,7 @@
                       <div class="panel-heading serv-head text-center"><span class="mcc-icon-health-and-wellbeing"></span><div class="">HEALTH</div></div>
                       <div class="panel-body serv-body">
                           <ul>
-                              <li><a href="#">Find Hospitals</a></li>
+                              <li><a href="<spring:url value="/health/viewHospitals"/> ">Find Hospitals</a></li>
                               <li><a href="#">Emergencies</a></li>
                           </ul>
                       </div>

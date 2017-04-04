@@ -1,6 +1,6 @@
 package com.egov.mvc.data.services.impl;
 
-import com.egov.mvc.data.Models.notDone.organisationsClasses.leisure;
+import com.egov.mvc.data.Models.leisure;
 import com.egov.mvc.data.dao.leisureDao;
 import com.egov.mvc.data.services.leisureService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,6 +37,26 @@ public class leisureServiceImpl implements leisureService {
     @Transactional
     public List getAllLeisure() {
         return leisureDao.getAllLeisure();
+    }
+
+    @Transactional
+    public List getGyms() {
+        return leisureDao.getGyms();
+    }
+
+    @Transactional
+    public List getParks() {
+        return leisureDao.getParks();
+    }
+
+    @Transactional
+    public List getSport() {
+        return leisureDao.getSport();
+    }
+
+    @Transactional
+    public List getFitness() {
+        return leisureDao.getFitness();
     }
 
     @Transactional

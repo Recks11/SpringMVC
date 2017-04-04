@@ -1,6 +1,6 @@
 package com.egov.mvc.data.dao.impl;
 
-import com.egov.mvc.data.Models.notDone.organisationsClasses.userOrganisation;
+import com.egov.mvc.data.Models.organisationsClasses.userOrganisation;
 import com.egov.mvc.data.dao.userDao;
 import com.egov.mvc.data.dao.userOrganisationDao;
 import org.hibernate.SessionFactory;

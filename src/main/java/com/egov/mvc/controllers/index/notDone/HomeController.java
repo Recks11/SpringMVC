@@ -1,14 +1,10 @@
 package com.egov.mvc.controllers.index.notDone;
 
-import com.egov.mvc.data.Models.Events;
 import com.egov.mvc.data.Models.Report;
 import com.egov.mvc.data.Models.components.RoleChange;
-import com.egov.mvc.data.dao.roleChangeDao;
+import com.egov.mvc.data.Models.organisationsClasses.userOrganisation;
 import com.egov.mvc.data.dao.userDao;
-import com.egov.mvc.data.services.EventsService;
-import com.egov.mvc.data.services.NewsService;
-import com.egov.mvc.data.services.ReportsService;
-import com.egov.mvc.data.services.roleChangeService;
+import com.egov.mvc.data.services.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -36,6 +32,9 @@ public class HomeController {
     private final NewsService newsService;
 
     private final roleChangeService roleService;
+
+    @Autowired
+    private userOrganisationService userOrg;
 
     private Report rep = new Report();
 
@@ -109,6 +108,18 @@ public class HomeController {
     }
 
 
+    @RequestMapping("/registerOrganisation")
+    public String newOrganisation(Model model){
+        model.addAttribute("userOrganisation", new userOrganisation());
+        return "home/addOrganisation";
+    }
+
+    @PostMapping("/register.io")
+    public String persistOrganisation(@ModelAttribute("userOrganisation") userOrganisation usrO, Principal principal){
+
+        userOrg.addUserOrganisationForUser(usrO, principal.getName());
+        return "redirect:/home";
+    }
     @ModelAttribute
     public void init(Model model){
         model.addAttribute("Report", new Report());

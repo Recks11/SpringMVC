@@ -1,5 +1,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="core" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%--
   Created by IntelliJ IDEA.
   User: Ijiekhuamen Rex
@@ -19,30 +21,58 @@
     <div class="container custom-width">
         <div class="row">
             <div class="col-xs-12">
-
-                <div class="panel panel-default">
-                    <div class="panel-heading">Advanced Table</div>
-                    <div class="panel-body">
-                        <table data-toggle="table" data-url="<c:url value="/Bins/responseBody"/>"  data-show-refresh="true"
-                               data-show-toggle="true" data-show-columns="true" data-search="true"
-                               data-select-item-name="toolbar1" data-pagination="true" data-sort-name="date" data-sort-order="desc">
-                            <thead>
-                            <tr>
-                                <th data-field="state" data-checkbox="true" >ID</th>
-                                <th data-field="date" data-sortable="true">Date</th>
-                                <th data-field="requestType"  data-sortable="true">RequestType</th>
-                                <th data-field="owner.username" data-formatter="IdFormatter" data-sortable="true">Publisher</th>
-                            </tr>
-                            </thead>
-                        </table>
-
+                <core:if test="${not empty action}">
+                    <div class="alert alert-dismissable alert-success">
+                        <button data-dismiss="alert" class="close" type="button">&times;</button>
+                        ${action}
+                        <br />
                     </div>
-                </div>
-                <script>
-                function IdFormatter(value, row){
-                return row.user.username;
-                }
-                </script>
+
+                </core:if>
+                <core:choose>
+                    <core:when test="${empty BinRequest}">
+                        <h1> No bin requests </h1>
+                    </core:when>
+                    <core:otherwise>
+                        <div id="Resident Users" class="row">
+                            <div class="col-xs-12 table-responsive">
+                                <h2>Role change requests</h2>
+                                <table class="table table-striped table-bordered">
+                                    <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Request Date</th>
+                                        <th>Username</th>
+                                        <th>Full Name</th>
+                                        <th>Address</th>
+                                        <th>request type</th>
+                                        <th>Action</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <core:forEach items="${BinRequest}" var="res">
+                                        <tr>
+                                            <td>${BinRequest.indexOf(res)+1}</td>
+                                            <td>${res.date}</td>
+                                            <td>${res.user.username}</td>
+                                            <td>${res.user.firstName} ${res.user.lastName}</td>
+                                            <td>${res.user.houseaddress.housenumber},
+                                                    ${res.user.houseaddress.streetName}, ${res.user.houseaddress.city} </td>
+                                            <td>${res.requestType}</td>
+                                            <td> <a href="<spring:url value="/Bins/approve/${res.id}"/>">
+                                                <i class="fa fa-plus-circle pull-left"></i></a>
+
+                                                <a href="<spring:url value="/Bins/declined/${res.id}"/>">
+                                                    <i class="fa fa-minus-circle pull-right"></i></a> </td>
+                                        </tr>
+                                    </core:forEach>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <hr />
+                    </core:otherwise>
+                </core:choose>
             </div>
         </div>
     </div>

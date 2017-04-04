@@ -1,6 +1,6 @@
 package com.egov.mvc.data.services;
 
-import com.egov.mvc.data.Models.notDone.organisationsClasses.userOrganisation;
+import com.egov.mvc.data.Models.organisationsClasses.userOrganisation;
 
 import java.util.List;
 

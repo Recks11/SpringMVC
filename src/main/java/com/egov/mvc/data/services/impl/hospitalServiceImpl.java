@@ -1,6 +1,6 @@
 package com.egov.mvc.data.services.impl;
 
-import com.egov.mvc.data.Models.notDone.organisationsClasses.hospitals;
+import com.egov.mvc.data.Models.organisationsClasses.hospitals;
 import com.egov.mvc.data.dao.hospitalDao;
 import com.egov.mvc.data.services.hospitalService;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,6 +1,6 @@
 package com.egov.mvc.data.dao.impl;
 
-import com.egov.mvc.data.Models.notDone.jobs;
+import com.egov.mvc.data.Models.organisationsClasses.jobs;
 import com.egov.mvc.data.dao.jobsDao;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,7 +38,7 @@ public class jobsDaoImpl implements jobsDao {
     }
 
     @Override
-    public List getAllJobs() {
+    public List<jobs> getAllJobs() {
         return sessionFactory.getCurrentSession().createQuery("from jobs").list();
     }
 }

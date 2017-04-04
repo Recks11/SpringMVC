@@ -1,6 +1,6 @@
 package com.egov.mvc.data.dao;
 
-import com.egov.mvc.data.Models.notDone.organisationsClasses.leisure;
+import com.egov.mvc.data.Models.leisure;
 
 import java.util.List;
 
@@ -18,5 +18,13 @@ public interface leisureDao {
     void deleteLeisure(long id);
 
     List getAllLeisure();
+
+    List getGyms();
+
+    List getParks();
+
+    List getSport();
+
+    List getFitness();
 
 }

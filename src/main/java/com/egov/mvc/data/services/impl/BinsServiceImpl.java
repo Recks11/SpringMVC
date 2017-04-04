@@ -1,6 +1,6 @@
 package com.egov.mvc.data.services.impl;
 
-import com.egov.mvc.data.Models.notDone.organisationsClasses.Bins;
+import com.egov.mvc.data.Models.Bins;
 import com.egov.mvc.data.Models.userClasses.user;
 import com.egov.mvc.data.dao.BinsDao;
 import com.egov.mvc.data.dao.userDao;
@@ -61,4 +61,13 @@ public class BinsServiceImpl implements BinsService{
         return binsDao.getAllRequests();
     }
 
+    @Override
+    public List<Bins> getApprovecRequests() {
+        return binsDao.getApprovecRequests();
+    }
+
+    @Override
+    public List<Bins> getdeniedRequests() {
+        return binsDao.getdeniedRequests();
+    }
 }

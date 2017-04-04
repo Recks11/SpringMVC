@@ -1,7 +1,7 @@
 package com.egov.mvc.data.services.impl;
 
-import com.egov.mvc.data.Models.notDone.jobs;
-import com.egov.mvc.data.Models.notDone.organisationsClasses.userOrganisation;
+import com.egov.mvc.data.Models.organisationsClasses.jobs;
+import com.egov.mvc.data.Models.organisationsClasses.userOrganisation;
 import com.egov.mvc.data.dao.jobsDao;
 import com.egov.mvc.data.services.jobsService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,7 +41,7 @@ public class jobsServiceImpl implements jobsService {
     }
 
     @Transactional
-    public List getAllJobs() {
+    public List<jobs> getAllJobs() {
         return jobsDao.getAllJobs();
     }
 }

@@ -18,6 +18,10 @@
 .services-image{
     margin-bottom: 20px;
 }
+.image-body > p{
+    font-family: 'fedra', 'Helvetica Neue', 'Helvetica';
+    font-size: 20px;
+}
 /*********************************
 Not really mine :)
 *********************************/

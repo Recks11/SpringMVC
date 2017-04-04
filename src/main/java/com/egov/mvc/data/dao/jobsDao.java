@@ -1,6 +1,6 @@
 package com.egov.mvc.data.dao;
 
-import com.egov.mvc.data.Models.notDone.jobs;
+import com.egov.mvc.data.Models.organisationsClasses.jobs;
 
 import java.util.List;
 
@@ -16,5 +16,5 @@ public interface jobsDao {
 
     void deleteJob(long id);
 
-    List getAllJobs();
+    List<jobs> getAllJobs();
 }

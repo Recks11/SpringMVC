@@ -1,6 +1,6 @@
 package com.egov.mvc.data.services.impl;
 
-import com.egov.mvc.data.Models.notDone.organisationsClasses.userOrganisation;
+import com.egov.mvc.data.Models.organisationsClasses.userOrganisation;
 import com.egov.mvc.data.dao.userOrganisationDao;
 import com.egov.mvc.data.services.userOrganisationService;
 import org.springframework.beans.factory.annotation.Autowired;

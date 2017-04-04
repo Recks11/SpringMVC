@@ -1,6 +1,6 @@
 package com.egov.mvc.data.dao;
 
-import com.egov.mvc.data.Models.notDone.organisationsClasses.schools;
+import com.egov.mvc.data.Models.organisationsClasses.schools;
 
 import java.util.List;
 
@@ -17,5 +17,7 @@ public interface schoolsDao {
     void deleteSchool(long Id);
 
     List getAllSchools();
+
+    List getResumptionDates();
 
 }

@@ -85,6 +85,20 @@
                 </div>
             </li>
 
+            <li class="">
+                <a data-toggle="collapse" data-parent="#accordion" href="#organisation"><i class="fa fa-building"></i> Organisations</a>
+                <div id="organisation" class="panel-collapse collapse">
+                    <div class="side-content">
+                        <ul>
+                            <li><a href="<spring:url value="/admin/organisation/school"/>"><i class="fa fa-plus"></i> Schools</a></li>
+                            <li><a href="<spring:url value="/admin/organisation/hospital"/>"><i class="fa fa-plus"></i> hospitals</a></li>
+                            <li><a href="<spring:url value="/admin/organisation/leisure"/>"><i class="fa fa-plus"></i> Leisure</a></li>
+                            <li><a href="<spring:url value="/admin/organisation/viewAll"/>"><i class="fa fa-eye"></i> View All</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </li>
+
         </ul>
 
         <ul class="nav navbar-nav navbar-right navbar-user">

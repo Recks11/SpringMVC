@@ -1,6 +1,6 @@
 package com.egov.mvc.data.services;
 
-import com.egov.mvc.data.Models.notDone.organisationsClasses.hospitals;
+import com.egov.mvc.data.Models.organisationsClasses.hospitals;
 
 import java.util.List;
 

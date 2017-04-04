@@ -49,7 +49,6 @@
                             <li><a href="<spring:url value="/services/visitor"/> ">Visitor</a></li>
                         </ul>
                     </li>
-                    <li><a href="<spring:url value="/gallery"/>">Gallery</a></li>
                     <li><a href="<spring:url value="/about"/>">About</a></li>
                     <security:authorize access="hasAnyRole('ROLE_USER','ROLE_BLOGGER','ROLE_ADMIN','ROLE_REPORTER')">
                         <li class="dropdown">
@@ -58,6 +57,7 @@
                             <ul class="dropdown-menu drop logout-drop">
                                 <security:authorize access="hasRole('ROLE_USER')">
                                 <li><a href="<spring:url value="/newRole"/>">Change Role</a></li>
+                                <li><a href="<spring:url value="/registerOrganisation"/>">Register Organisation</a></li>
                                 </security:authorize>
                                 <li><a>
                                     <c:url var="logoutUrl" value="/logout"/>

@@ -1,6 +1,6 @@
 package com.egov.mvc.data.services;
 
-import com.egov.mvc.data.Models.notDone.organisationsClasses.schools;
+import com.egov.mvc.data.Models.organisationsClasses.schools;
 
 import java.util.List;
 
@@ -17,4 +17,6 @@ public interface schoolService {
     void deleteSchool(long Id);
 
     List getAllSchools();
+
+    List getResumptionDates();
 }

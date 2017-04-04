@@ -1,6 +1,6 @@
 package com.egov.mvc.data.dao;
 
-import com.egov.mvc.data.Models.notDone.organisationsClasses.Bins;
+import com.egov.mvc.data.Models.Bins;
 import com.egov.mvc.data.Models.userClasses.user;
 
 import java.util.List;
@@ -24,4 +24,7 @@ public interface BinsDao{
 
     List<Bins> getAllRequests();
 
+    List<Bins> getApprovecRequests();
+
+    List<Bins> getdeniedRequests();
 }

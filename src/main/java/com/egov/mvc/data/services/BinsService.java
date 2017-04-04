@@ -1,6 +1,6 @@
 package com.egov.mvc.data.services;
 
-import com.egov.mvc.data.Models.notDone.organisationsClasses.Bins;
+import com.egov.mvc.data.Models.Bins;
 import com.egov.mvc.data.Models.userClasses.user;
 
 import java.util.List;
@@ -22,4 +22,8 @@ public interface BinsService {
     Bins getRequestByUser(user usr);
 
     List<Bins> getAllRequests();
+
+    List<Bins> getApprovecRequests();
+
+    List<Bins> getdeniedRequests();
 }

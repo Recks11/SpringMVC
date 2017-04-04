@@ -1,6 +1,6 @@
 package com.egov.mvc.data.services.impl;
 
-import com.egov.mvc.data.Models.notDone.organisationsClasses.schools;
+import com.egov.mvc.data.Models.organisationsClasses.schools;
 import com.egov.mvc.data.dao.schoolsDao;
 import com.egov.mvc.data.services.schoolService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +15,11 @@ import java.util.List;
  */
 @Service
 public class schoolServiceImpl implements schoolService {
+
+    @Transactional
+    public List getResumptionDates() {
+        return schoolDao.getResumptionDates();
+    }
 
     private  schoolsDao schoolDao;
 

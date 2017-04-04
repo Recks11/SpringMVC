@@ -1,6 +1,6 @@
 package com.egov.mvc.data.dao.impl;
 
-import com.egov.mvc.data.Models.notDone.organisationsClasses.hospitals;
+import com.egov.mvc.data.Models.organisationsClasses.hospitals;
 import com.egov.mvc.data.dao.hospitalDao;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,6 +24,7 @@ public class hospitalDaoImpl implements hospitalDao {
 
     @Override
     public void addHospitals(hospitals hospitals) {
+        sessionFactory.getCurrentSession().save(hospitals.getAddress());
         sessionFactory.getCurrentSession().save(hospitals);
     }
 
