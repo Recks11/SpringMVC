@@ -7,13 +7,12 @@ import com.egov.mvc.data.services.schoolService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
-import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpServletRequest;
-import java.io.File;
 import java.nio.file.Path;
-import java.nio.file.Paths;
 
 
 /**
@@ -24,7 +23,7 @@ import java.nio.file.Paths;
 @RequestMapping("/tests")
 public class CRUDcontroller {
 
-    private Path path;
+//    private Path path;
     private AdministrationService administrationService;
 
     private Administration administration;
@@ -56,20 +55,20 @@ public class CRUDcontroller {
     public String addSchool(@ModelAttribute("school") schools school,
                             HttpServletRequest request){
 
-        schoolService.addSchool(school);
-        MultipartFile image = school.getImage();
-        String rootDirectory = request.getSession().getServletContext().getRealPath("/");
-        path = Paths.get(rootDirectory + "\\resources\\images\\schools\\"+school.getId()+".png");
-
-        if(image != null && !image.isEmpty()){
-            try{
-                image.transferTo(new File(path.toString()));
-            }catch(Exception e){
-                e.printStackTrace();
-                throw new RuntimeException("error uploading image");
-
-            }
-        }
+//        schoolService.addSchool(school);
+//        MultipartFile image = school.getImage();
+//        String rootDirectory = request.getSession().getServletContext().getRealPath("/");
+//        path = Paths.get(rootDirectory + "\\resources\\images\\schools\\"+school.getId()+".png");
+//
+//        if(image != null && !image.isEmpty()){
+//            try{
+//                image.transferTo(new File(path.toString()));
+//            }catch(Exception e){
+//                e.printStackTrace();
+//                throw new RuntimeException("error uploading image");
+//
+//            }
+//        }
 
 
         return "redirect:/tests/fileUpload";

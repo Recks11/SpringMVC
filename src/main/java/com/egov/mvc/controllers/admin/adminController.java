@@ -3,6 +3,7 @@ package com.egov.mvc.controllers.admin;
 import com.egov.mvc.data.Models.Events;
 import com.egov.mvc.data.Models.userClasses.Administration;
 import com.egov.mvc.data.services.*;
+import com.egov.mvc.tools.paginationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.support.PagedListHolder;
 import org.springframework.security.core.Authentication;
@@ -10,12 +11,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.Errors;
-import org.springframework.web.bind.ServletRequestUtils;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
-import java.util.List;
 
 /**
  * Created by Ijiekhuamen Rex
@@ -25,41 +24,43 @@ import java.util.List;
 @RequestMapping(value = "/admin")
 public class adminController {
 
+    private paginationService pagination;
     private final AdministrationService administrationService;
     private Administration administration;
     private final EventsService eventsService;
     private final userService userService;
     private final loggedinService loggedinService;
     private final roleChangeService roleService;
-    private PagedListHolder pagedListHolder;
+
     private Events event;
     private BlogService blogService;
     private final NewsService newsService;
     @Autowired
     public adminController(roleChangeService roleService, EventsService eventsService, userService userService,
-                           Events event, loggedinService loggedinService, PagedListHolder pagedListHolder,
+                           Events event, loggedinService loggedinService,
                            AdministrationService administrationService, Administration administration, BlogService blogService,
-                           NewsService newsService) {
+                           NewsService newsService, paginationService pagination) {
         this.roleService = roleService;
         this.loggedinService = loggedinService;
         this.eventsService = eventsService;
         this.userService = userService;
         this.event = event;
-        this.pagedListHolder = pagedListHolder;
+
         this.administrationService = administrationService;
         this.administration = administration;
         this.blogService = blogService;
         this.newsService = newsService;
+        this.pagination = pagination;
     }
 
-    /**********PAGED LIST HOLDER DECLARATION**********************/
-    public PagedListHolder pagedListImpl(int size, HttpServletRequest request, List pageSource){
-
-        pagedListHolder = new PagedListHolder(pageSource);
-        pagedListHolder.setPage(ServletRequestUtils.getIntParameter(request, "page", 0));
-        pagedListHolder.setPageSize(size);
-        return pagedListHolder;
-    }
+    /********PAGED LIST HOLDER DECLARATION**/
+//    public PagedListHolder pagedListImpl(int size, HttpServletRequest request, List pageSource){
+//
+//        pagedListHolder = new PagedListHolder(pageSource);
+//        pagedListHolder.setPage(ServletRequestUtils.getIntParameter(request, "page", 0));
+//        pagedListHolder.setPageSize(size);
+//        return pagedListHolder;
+//    }
     /*********************************/
 
     @RequestMapping
@@ -95,10 +96,9 @@ public class adminController {
     @RequestMapping("/events/allEvents")
     public String allEvents(HttpServletRequest request,Model model){
 
-        PagedListHolder pagedList = pagedListImpl(8, request, eventsService.getAllEvents());
+        PagedListHolder pagedList = pagination.pagedListImpl(8, request, eventsService.getAllEvents());
         model.addAttribute("Events", event);
         model.addAttribute("allEvent", pagedList);
-
         return "admin/allEvents";
     }
 
@@ -173,7 +173,7 @@ public class adminController {
     public String viewDepartment(Model model, HttpServletRequest request,
                                  @RequestParam(value = "deletedDepartment", required = false)String DeletedMember){
 
-        PagedListHolder pagedList = pagedListImpl(8,request, administrationService.getAllAdministrators());
+        PagedListHolder pagedList = pagination.pagedListImpl(8,request, administrationService.getAllAdministrators());
 
         model.addAttribute("deletedDepartment", DeletedMember);
         model.addAttribute("departmentPagedList", pagedList);
