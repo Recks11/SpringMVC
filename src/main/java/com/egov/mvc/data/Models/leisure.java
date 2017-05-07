@@ -23,7 +23,7 @@ public class leisure {
 
     @OneToOne
     @JoinColumn(name = "organisation_address", nullable = false,
-            foreignKey = @ForeignKey(name = "ADDRESSID_FK"))
+            foreignKey = @ForeignKey(name = "ORGANISATION_ADDRESS_FK"))
     private houseAddress address;
 
     @Column(name = "phone_num")

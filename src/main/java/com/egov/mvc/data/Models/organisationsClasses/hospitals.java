@@ -20,7 +20,7 @@ public class hospitals {
 
     @OneToOne
     @JoinColumn(name = "hospital_address", nullable = false,
-            foreignKey = @ForeignKey(name = "ADDRESSID_FK"))
+            foreignKey = @ForeignKey(name = "HOSPITAL_ADDRESS_FK"))
     private houseAddress address;
 
     @Column(name = "phone_num")

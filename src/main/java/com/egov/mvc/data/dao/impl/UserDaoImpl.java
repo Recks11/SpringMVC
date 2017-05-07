@@ -109,10 +109,7 @@ public class UserDaoImpl implements userDao {
 
     @Override
     public List bloggers() {
-//        return sessionFactory.getCurrentSession().createQuery
-//                ("from  " +
-//                        "user as user inner join authorities as authorities on user.authorities.authorityId = authorities.authorityId " +
-//                        "where authorities.authority = ?").setParameter(0, "ROLE_BLOGGER").list();
+
         return sessionFactory.getCurrentSession().createQuery
                 ("from user as user where user.authorities.authority = ?")
                 .setParameter(0, "ROLE_BLOGGER")
@@ -122,11 +119,6 @@ public class UserDaoImpl implements userDao {
     @Override
     public List reporters() {
 
-
-//        return sessionFactory.getCurrentSession().createQuery
-//                 ("from  " +
-//                         "user as user  inner join authorities as authorities on user.authorities.authorityId = authorities.authorityId " +
-//                         "where authorities.authority = ?").setParameter(0, "ROLE_REPORTER").list();
         return sessionFactory.getCurrentSession().createQuery
                 ("from user as user where user.authorities.authority = ?")
                 .setParameter(0, "ROLE_REPORTER")
@@ -135,10 +127,6 @@ public class UserDaoImpl implements userDao {
 
     @Override
     public List resident() {
-//        return sessionFactory.getCurrentSession().createQuery
-//                ("from  " +
-//                        "user as user  inner join authorities as authorities on user.authorities.authorityId = authorities.authorityId " +
-//                        "where authorities.authority = ?").setParameter(0, "ROLE_USER").list();
 
         return sessionFactory.getCurrentSession().createQuery
                 ("from user as user where user.authorities.authority = ?")
@@ -147,4 +135,3 @@ public class UserDaoImpl implements userDao {
     }
 }
 
-//Select user.firstName, user.lastName, user.email, authorities.authority, user.contact, user.username from

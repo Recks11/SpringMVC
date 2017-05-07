@@ -15,7 +15,7 @@ public class jobs {
 
     @ManyToOne
     @JoinColumn(name="organisationId", nullable = false,
-                foreignKey = @ForeignKey(name="ORGID_FK"))
+                foreignKey = @ForeignKey(name="JOB_ORGANISATION_FK"))
     private userOrganisation organisation;
 
     private String role;

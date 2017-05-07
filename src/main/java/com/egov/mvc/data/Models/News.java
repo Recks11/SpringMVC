@@ -22,7 +22,7 @@ public class News{
 
     @ManyToOne
     @JoinColumn(name = "ownerName", nullable = false,
-                foreignKey = @ForeignKey(name = "OWNERNAME_FK"))
+                foreignKey = @ForeignKey(name = "REPORTER_ID_FK"))
     private user owner;
 
     @Temporal(TemporalType.TIMESTAMP)

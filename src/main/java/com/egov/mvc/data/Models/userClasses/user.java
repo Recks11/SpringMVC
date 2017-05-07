@@ -43,12 +43,12 @@ public class user {
 
     @OneToOne
     @JoinColumn(name = "addressId", nullable = false,
-                foreignKey = @ForeignKey (name="ADDRESS_FK"))
+                foreignKey = @ForeignKey (name="HOUSE_ADDRESS_FK"))
     private houseAddress houseaddress;
 
     @OneToOne
     @JoinColumn(name = "authorityId", nullable = false,
-            foreignKey = @ForeignKey (name="AUTHORITY_FK"))
+            foreignKey = @ForeignKey (name="USER_AUTHORITY_FK"))
     private authorities authorities;
 
     public user() {

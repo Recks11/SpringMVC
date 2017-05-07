@@ -18,7 +18,7 @@ public class RoleChange {
 
     @ManyToOne
     @JoinColumn(name="userID", nullable = false,
-                foreignKey = @ForeignKey(name = "USERID_FK"))
+                foreignKey = @ForeignKey(name = "USER_ROLE_FK"))
     private user usr;
 
     private String role;

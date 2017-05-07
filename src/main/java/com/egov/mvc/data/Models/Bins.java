@@ -19,7 +19,7 @@ public class Bins {
 
     @ManyToOne
     @JoinColumn(name = "userID", nullable = false,
-                foreignKey = @ForeignKey(name = "USERID_FK"))
+                foreignKey = @ForeignKey(name = "BIN_USER_ID_FK"))
     private user usr;
 
     @Temporal(TemporalType.DATE)

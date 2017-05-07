@@ -31,7 +31,7 @@ public class userOrganisation {
 
     @ManyToOne
     @JoinColumn( name= "organisationOwner", nullable = false,
-    foreignKey = @ForeignKey(name="ORGANISATION_OWNERID_FK"))
+    foreignKey = @ForeignKey(name="ORGANISATION_OWNER_FK"))
     private user usr;
 
     public userOrganisation() {}

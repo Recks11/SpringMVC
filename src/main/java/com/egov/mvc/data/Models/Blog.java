@@ -19,7 +19,7 @@ public class Blog {
 
     @ManyToOne
     @JoinColumn(name = "userID", nullable = false,
-            foreignKey = @ForeignKey(name = "USER_ID_FK"))
+            foreignKey = @ForeignKey(name = "BLOD_OWNER_ID_FK"))
     private user owner;
 
     @Temporal(TemporalType.DATE)

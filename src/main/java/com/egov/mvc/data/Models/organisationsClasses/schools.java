@@ -21,7 +21,7 @@ public class schools {
 
     @OneToOne
     @JoinColumn(name = "school_address", nullable = false,
-            foreignKey = @ForeignKey(name = "ADDRESSID_FK"))
+            foreignKey = @ForeignKey(name = "SCHOOL_ADDRESS_FK"))
     private houseAddress address;
 
     @Column(name = "phone_num")

@@ -38,7 +38,10 @@ public class adminOrganisationController {
     private final leisureService leisureService;
 
     @Autowired
-    public adminOrganisationController(schoolService school, hospitalService hospital, leisureService leisureService, imageUpload img) {
+    public adminOrganisationController(schoolService school,
+                                       hospitalService hospital,
+                                       leisureService leisureService,
+                                       imageUpload img) {
         this.school = school;
         this.hospital = hospital;
         this.leisureService = leisureService;
