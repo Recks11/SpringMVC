@@ -38,7 +38,7 @@
                       <div class="panel-heading serv-head text-center"><span class="mcc-icon-health-and-wellbeing"></span><div class="spec-cas">MEDICAL CARE</div></div>
                       <div class="panel-body serv-body">
                       <ul>
-                          <li><a href="/health/viewHospitals">Find Hospitals</a></li>
+                          <li><a href="<spring:url value="/health/viewHospitals"/>">Find Hospitals</a></li>
                           <li><a href="#">Emergencies</a></li>
                           <li><a ></a></li>
                       </ul>

@@ -68,11 +68,9 @@ public class adminOrganisationController {
     @PostMapping("/hospital.io")
     public String addHospital(@ModelAttribute("hospital") hospitals hospitals,
                               HttpServletRequest request){
-
-
-        img.setId(hospitals.getId());
         img.setImage(hospitals.getImage());
         hospital.addHospitals(hospitals);
+        img.setId(hospitals.getId());
         img.upload(request, "hospitals");
 
         return "redirect:/admin/organisation/hospital";
@@ -80,11 +78,10 @@ public class adminOrganisationController {
     @PostMapping("/leisure.io")
     public String addleisure(@ModelAttribute("leisure") leisure leisure,
                              HttpServletRequest request){
-
-
-        img.setId(leisure.getId());
         img.setImage(leisure.getImage());
         leisureService.addLeisure(leisure);
+        img.setId(leisure.getId());
+
         img.upload(request,"leisure");
 //
         return "redirect:/admin/organisation/leisure";
@@ -93,11 +90,13 @@ public class adminOrganisationController {
     public String addSchool(@ModelAttribute("school") schools schools,
                             HttpServletRequest request){
 
-        img.setId(schools.getId());
+        String link = "https://"+schools.getWebsite().toLowerCase().trim();
         img.setImage(schools.getImage());
+        schools.setWebsite("<a href= \""+link+"\"> "+link+" </a>");
         school.addSchool(schools);
+        img.setId(schools.getId());
         img.upload(request, "schools");
-
+        System.out.println(schools.getId());
         return "redirect:/admin/organisation/school";
     }
 

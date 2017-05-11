@@ -9,6 +9,7 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="tg" tagdir="/WEB-INF/tags" %>
 <html lang=>
 <head>
     <title>E-gov</title>
@@ -16,6 +17,15 @@
     <script src="<spring:url value="/resources/js/custom-serv-reg.js"/>"></script>
 </head>
 <body id="myPage" class="about">
+
+<jsp:useBean id="school" scope="request"
+             type="org.springframework.beans.support.PagedListHolder" />
+<c:url value="/schools/findSchools" var="pagedLink">
+    <c:param name="page" value="~"/>
+</c:url>
+
+
+
 <section class="sec1">
     <jsp:include page="../../fragments/navbar-services.jsp"/>
     <div class="jumbotron service-head">
@@ -28,8 +38,13 @@
 <section class="">
     <div class="row row-1 row-3">
         <div class="container">
-                <h1>All Schools</h1>
-                <c:forEach items="${school}" var="schools">
+            <c:choose>
+                <c:when test="${empty school.pageList}">
+                    <h1>No Schools</h1>
+                </c:when>
+            <c:otherwise>
+                <h1>${school.pageList.size()} Schools</h1>
+                <c:forEach items="${school.pageList}" var="schools">
                 <div class="row">
                     <div class="col-sm-3 image-responsive">
                         <img src="<c:url value="/resources/images/schools/${schools.id}.png"/> " width="100%" height="auto" class="service-Image"/>
@@ -40,11 +55,15 @@
 
                         <p>Phone Number: ${schools.number}</p>
                         <p>email-address: ${schools.emailAddress}</p>
-                        <p>Website: ${schools.website}</p>
+                        <p>Website: <c:url value="${schools.website}"/> </p>
                     </div>
                 </div>
                 </c:forEach>
+            <tg:pagination pagedList="${school}" pagedLink="${pagedLink}"/>
+            </c:otherwise>
+            </c:choose>
         </div>
+
     </div>
 </section>
 <jsp:include page="../../fragments/footer-1.jsp"/>

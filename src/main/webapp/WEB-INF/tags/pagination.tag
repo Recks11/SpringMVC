@@ -14,7 +14,7 @@
 --%>
 <c:if test="${pagedList.pageCount > 1}">
 
-    <ul class="pagination">
+    <ul class="pagination pageStyle">
         <c:if test="${!pagedList.firstPage}">
             <li class="previous">
             <a href="<%= StringUtils.replace(pagedLink,"~",String.valueOf(pagedList.getPage() - 1))%>"> < </a></li>
