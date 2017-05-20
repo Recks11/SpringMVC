@@ -1,558 +1,568 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dataSource name="amuwo_odofin@localhost">
-  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.1">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.2">
     <root id="1"/>
     <schema id="2" parent="1" name="amuwo_odofin">
       <Current>1</Current>
       <Visible>1</Visible>
     </schema>
-    <schema id="3" parent="1" name="hb_student_tracker"/>
-    <schema id="4" parent="1" name="hospital_management"/>
-    <schema id="5" parent="1" name="information_schema"/>
-    <schema id="6" parent="1" name="mysql"/>
-    <schema id="7" parent="1" name="performance_schema"/>
-    <schema id="8" parent="1" name="phpblog"/>
-    <schema id="9" parent="1" name="ruby"/>
-    <schema id="10" parent="1" name="sys"/>
-    <schema id="11" parent="1" name="virtualassistantdb"/>
-    <table id="12" parent="2" name="administration"/>
-    <table id="13" parent="2" name="authorities"/>
-    <table id="14" parent="2" name="bins"/>
-    <table id="15" parent="2" name="blog"/>
-    <table id="16" parent="2" name="events"/>
-    <table id="17" parent="2" name="hibernate_sequence"/>
-    <table id="18" parent="2" name="hospitals"/>
-    <table id="19" parent="2" name="houseaddress"/>
-    <table id="20" parent="2" name="jobs"/>
-    <table id="21" parent="2" name="leisure"/>
-    <table id="22" parent="2" name="loggedin"/>
-    <table id="23" parent="2" name="news"/>
-    <table id="24" parent="2" name="report"/>
-    <table id="25" parent="2" name="rolechange"/>
-    <table id="26" parent="2" name="schools"/>
-    <table id="27" parent="2" name="user"/>
-    <table id="28" parent="2" name="userorganisation"/>
-    <table id="29" parent="2" name="users"/>
-    <column id="30" parent="12" name="administratorId">
+    <schema id="3" parent="1" name="information_schema"/>
+    <schema id="4" parent="1" name="mysql"/>
+    <schema id="5" parent="1" name="performance_schema"/>
+    <schema id="6" parent="1" name="sys"/>
+    <table id="7" parent="2" name="administration"/>
+    <table id="8" parent="2" name="authorities"/>
+    <table id="9" parent="2" name="bins"/>
+    <table id="10" parent="2" name="blog"/>
+    <table id="11" parent="2" name="events"/>
+    <table id="12" parent="2" name="hibernate_sequence"/>
+    <table id="13" parent="2" name="hospitals"/>
+    <table id="14" parent="2" name="houseaddress"/>
+    <table id="15" parent="2" name="jobs"/>
+    <table id="16" parent="2" name="leisure"/>
+    <table id="17" parent="2" name="loggedin"/>
+    <table id="18" parent="2" name="news"/>
+    <table id="19" parent="2" name="report"/>
+    <table id="20" parent="2" name="rolechange"/>
+    <table id="21" parent="2" name="schools"/>
+    <table id="22" parent="2" name="user"/>
+    <table id="23" parent="2" name="userorganisation"/>
+    <table id="24" parent="2" name="users"/>
+    <column id="25" parent="7" name="administratorId">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="31" parent="12" name="designation">
+    <column id="26" parent="7" name="designation">
       <Position>2</Position>
       <DataType>varchar(255)|0</DataType>
     </column>
-    <column id="32" parent="12" name="email">
+    <column id="27" parent="7" name="email">
       <Position>3</Position>
       <DataType>varchar(255)|0</DataType>
     </column>
-    <column id="33" parent="12" name="name">
+    <column id="28" parent="7" name="name">
       <Position>4</Position>
       <DataType>varchar(255)|0</DataType>
     </column>
-    <column id="34" parent="12" name="phoneNumber">
+    <column id="29" parent="7" name="phoneNumber">
       <Position>5</Position>
       <DataType>varchar(15)|0</DataType>
     </column>
-    <key id="35" parent="12" name="PRIMARY">
+    <key id="30" parent="7" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>administratorId</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="36" parent="13" name="username">
+    <column id="31" parent="8" name="username">
       <Position>1</Position>
       <DataType>varchar(50)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="37" parent="13" name="authority">
+    <column id="32" parent="8" name="authority">
       <Position>2</Position>
       <DataType>varchar(50)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="38" parent="13" name="authorityId">
+    <column id="33" parent="8" name="authorityId">
       <Position>3</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="39" parent="13" name="ix_auth_username">
+    <index id="34" parent="8" name="ix_auth_username">
       <ColNames>username
 authority</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="40" parent="13" name="ix_auth_username">
+    <key id="35" parent="8" name="ix_auth_username">
       <ColNames>username
 authority</ColNames>
       <UnderlyingIndexName>ix_auth_username</UnderlyingIndexName>
     </key>
-    <column id="41" parent="14" name="id">
+    <column id="36" parent="9" name="id">
       <Position>1</Position>
       <DataType>bigint(20)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="42" parent="14" name="request">
+    <column id="37" parent="9" name="request">
       <Position>2</Position>
       <DataType>varchar(255)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="43" parent="14" name="userID">
+    <column id="38" parent="9" name="userID">
       <Position>3</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="44" parent="14" name="requestDate">
+    <column id="39" parent="9" name="requestDate">
       <Position>4</Position>
       <DataType>date|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="45" parent="14" name="USERID_FK">
+    <column id="40" parent="9" name="status">
+      <Position>5</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <index id="41" parent="9" name="BIN_USER_ID_FK">
       <ColNames>userID</ColNames>
     </index>
-    <key id="46" parent="14" name="PRIMARY">
+    <key id="42" parent="9" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="47" parent="15" name="id">
+    <column id="43" parent="10" name="id">
       <Position>1</Position>
       <DataType>bigint(20)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="48" parent="15" name="article">
+    <column id="44" parent="10" name="article">
       <Position>2</Position>
       <DataType>longtext|0</DataType>
     </column>
-    <column id="49" parent="15" name="date">
+    <column id="45" parent="10" name="date">
       <Position>3</Position>
       <DataType>datetime|0</DataType>
     </column>
-    <column id="50" parent="15" name="headline">
+    <column id="46" parent="10" name="headline">
       <Position>4</Position>
       <DataType>varchar(255)|0</DataType>
     </column>
-    <column id="51" parent="15" name="userID">
+    <column id="47" parent="10" name="userID">
       <Position>5</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="52" parent="15" name="USER_ID_FK">
+    <index id="48" parent="10" name="BLOD_OWNER_ID_FK">
       <ColNames>userID</ColNames>
     </index>
-    <key id="53" parent="15" name="PRIMARY">
+    <key id="49" parent="10" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="54" parent="16" name="id">
+    <column id="50" parent="11" name="id">
       <Position>1</Position>
       <DataType>bigint(20)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="55" parent="16" name="Date">
+    <column id="51" parent="11" name="Date">
       <Position>2</Position>
       <DataType>varchar(15)|0</DataType>
     </column>
-    <column id="56" parent="16" name="Description">
+    <column id="52" parent="11" name="Description">
       <Position>3</Position>
       <DataType>varchar(500)|0</DataType>
     </column>
-    <column id="57" parent="16" name="title">
+    <column id="53" parent="11" name="title">
       <Position>4</Position>
       <DataType>varchar(255)|0</DataType>
     </column>
-    <column id="58" parent="16" name="content">
+    <column id="54" parent="11" name="content">
       <Position>5</Position>
       <DataType>varchar(255)|0</DataType>
     </column>
-    <key id="59" parent="16" name="PRIMARY">
+    <key id="55" parent="11" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="60" parent="17" name="next_val">
+    <column id="56" parent="12" name="next_val">
       <Position>1</Position>
       <DataType>bigint(20)|0</DataType>
     </column>
-    <column id="61" parent="18" name="id">
+    <column id="57" parent="13" name="id">
       <Position>1</Position>
       <DataType>bigint(20)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="62" parent="18" name="emailAddress">
+    <column id="58" parent="13" name="emailAddress">
       <Position>2</Position>
       <DataType>varchar(255)|0</DataType>
     </column>
-    <column id="63" parent="18" name="image">
+    <column id="59" parent="13" name="image">
       <Position>3</Position>
       <DataType>varchar(255)|0</DataType>
     </column>
-    <column id="64" parent="18" name="name">
+    <column id="60" parent="13" name="name">
       <Position>4</Position>
       <DataType>varchar(255)|0</DataType>
     </column>
-    <column id="65" parent="18" name="phone_num">
+    <column id="61" parent="13" name="phone_num">
       <Position>5</Position>
       <DataType>varchar(255)|0</DataType>
     </column>
-    <column id="66" parent="18" name="hospital_address">
+    <column id="62" parent="13" name="hospital_address">
       <Position>6</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="67" parent="18" name="ADDRESSID_FK">
+    <index id="63" parent="13" name="HOSPITAL_ADDRESS_FK">
       <ColNames>hospital_address</ColNames>
     </index>
-    <key id="68" parent="18" name="PRIMARY">
+    <key id="64" parent="13" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="69" parent="19" name="addressId">
+    <column id="65" parent="14" name="addressId">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="70" parent="19" name="city">
+    <column id="66" parent="14" name="city">
       <Position>2</Position>
       <DataType>varchar(255)|0</DataType>
     </column>
-    <column id="71" parent="19" name="housenumber">
+    <column id="67" parent="14" name="housenumber">
       <Position>3</Position>
       <DataType>varchar(255)|0</DataType>
     </column>
-    <column id="72" parent="19" name="streetName">
+    <column id="68" parent="14" name="streetName">
       <Position>4</Position>
       <DataType>varchar(255)|0</DataType>
     </column>
-    <key id="73" parent="19" name="PRIMARY">
+    <key id="69" parent="14" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>addressId</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="74" parent="20" name="id">
+    <column id="70" parent="15" name="id">
       <Position>1</Position>
       <DataType>bigint(20)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="75" parent="20" name="role">
+    <column id="71" parent="15" name="role">
       <Position>2</Position>
       <DataType>varchar(255)|0</DataType>
     </column>
-    <column id="76" parent="20" name="startingSalary">
+    <column id="72" parent="15" name="startingSalary">
       <Position>3</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="77" parent="20" name="organisationId">
+    <column id="73" parent="15" name="organisationId">
       <Position>4</Position>
       <DataType>bigint(20)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="78" parent="20" name="ORGID_FK">
+    <column id="74" parent="15" name="jobId">
+      <Position>5</Position>
+      <DataType>bigint(20)|0</DataType>
+    </column>
+    <index id="75" parent="15" name="JOB_FK">
+      <ColNames>jobId</ColNames>
+    </index>
+    <index id="76" parent="15" name="JOB_ORGANISATION_FK">
       <ColNames>organisationId</ColNames>
     </index>
-    <key id="79" parent="20" name="PRIMARY">
+    <key id="77" parent="15" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="80" parent="21" name="id">
+    <column id="78" parent="16" name="id">
       <Position>1</Position>
       <DataType>bigint(20)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="81" parent="21" name="emailAddress">
+    <column id="79" parent="16" name="emailAddress">
       <Position>2</Position>
       <DataType>varchar(255)|0</DataType>
     </column>
-    <column id="82" parent="21" name="image">
+    <column id="80" parent="16" name="image">
       <Position>3</Position>
       <DataType>varchar(255)|0</DataType>
     </column>
-    <column id="83" parent="21" name="name">
+    <column id="81" parent="16" name="name">
       <Position>4</Position>
       <DataType>varchar(255)|0</DataType>
     </column>
-    <column id="84" parent="21" name="phone_num">
+    <column id="82" parent="16" name="phone_num">
       <Position>5</Position>
       <DataType>varchar(255)|0</DataType>
     </column>
-    <column id="85" parent="21" name="type">
+    <column id="83" parent="16" name="type">
       <Position>6</Position>
       <DataType>varchar(255)|0</DataType>
     </column>
-    <column id="86" parent="21" name="organisation_address">
+    <column id="84" parent="16" name="organisation_address">
       <Position>7</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="87" parent="21" name="ADDRESSID_FK">
+    <index id="85" parent="16" name="ORGANISATION_ADDRESS_FK">
       <ColNames>organisation_address</ColNames>
     </index>
-    <key id="88" parent="21" name="PRIMARY">
+    <key id="86" parent="16" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="89" parent="22" name="id">
+    <column id="87" parent="17" name="id">
       <Position>1</Position>
       <DataType>bigint(20)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="90" parent="22" name="date">
+    <column id="88" parent="17" name="date">
       <Position>2</Position>
       <DataType>datetime|0</DataType>
     </column>
-    <column id="91" parent="22" name="username">
+    <column id="89" parent="17" name="username">
       <Position>3</Position>
       <DataType>varchar(255)|0</DataType>
     </column>
-    <key id="92" parent="22" name="PRIMARY">
+    <key id="90" parent="17" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="93" parent="23" name="id">
+    <column id="91" parent="18" name="id">
       <Position>1</Position>
       <DataType>bigint(20)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="94" parent="23" name="article">
+    <column id="92" parent="18" name="article">
       <Position>2</Position>
       <DataType>longtext|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="95" parent="23" name="date">
+    <column id="93" parent="18" name="date">
       <Position>3</Position>
       <DataType>datetime|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="96" parent="23" name="headline">
+    <column id="94" parent="18" name="headline">
       <Position>4</Position>
       <DataType>varchar(255)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="97" parent="23" name="ownerName">
+    <column id="95" parent="18" name="ownerName">
       <Position>5</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="98" parent="23" name="OWNERNAME_FK">
+    <index id="96" parent="18" name="REPORTER_ID_FK">
       <ColNames>ownerName</ColNames>
     </index>
-    <key id="99" parent="23" name="PRIMARY">
+    <key id="97" parent="18" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="100" parent="24" name="id">
+    <column id="98" parent="19" name="id">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="101" parent="24" name="description">
+    <column id="99" parent="19" name="description">
       <Position>2</Position>
       <DataType>varchar(255)|0</DataType>
     </column>
-    <column id="102" parent="24" name="name">
+    <column id="100" parent="19" name="name">
       <Position>3</Position>
       <DataType>varchar(255)|0</DataType>
     </column>
-    <column id="103" parent="24" name="emailAddress">
+    <column id="101" parent="19" name="emailAddress">
       <Position>4</Position>
       <DataType>varchar(255)|0</DataType>
     </column>
-    <column id="104" parent="24" name="type">
+    <column id="102" parent="19" name="type">
       <Position>5</Position>
       <DataType>varchar(255)|0</DataType>
     </column>
-    <key id="105" parent="24" name="PRIMARY">
+    <key id="103" parent="19" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="106" parent="25" name="id">
+    <column id="104" parent="20" name="id">
       <Position>1</Position>
       <DataType>bigint(20)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="107" parent="25" name="role">
+    <column id="105" parent="20" name="role">
       <Position>2</Position>
       <DataType>varchar(255)|0</DataType>
     </column>
-    <column id="108" parent="25" name="userID">
+    <column id="106" parent="20" name="userID">
       <Position>3</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="109" parent="25" name="USERID_FK">
+    <index id="107" parent="20" name="USER_ROLE_FK">
       <ColNames>userID</ColNames>
     </index>
-    <key id="110" parent="25" name="PRIMARY">
+    <key id="108" parent="20" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="111" parent="26" name="id">
+    <column id="109" parent="21" name="id">
       <Position>1</Position>
       <DataType>bigint(20)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="112" parent="26" name="emailAddress">
+    <column id="110" parent="21" name="emailAddress">
       <Position>2</Position>
       <DataType>varchar(255)|0</DataType>
     </column>
-    <column id="113" parent="26" name="image">
+    <column id="111" parent="21" name="image">
       <Position>3</Position>
       <DataType>varchar(255)|0</DataType>
     </column>
-    <column id="114" parent="26" name="name">
+    <column id="112" parent="21" name="name">
       <Position>4</Position>
       <DataType>varchar(255)|0</DataType>
     </column>
-    <column id="115" parent="26" name="phone_num">
+    <column id="113" parent="21" name="phone_num">
       <Position>5</Position>
       <DataType>varchar(255)|0</DataType>
     </column>
-    <column id="116" parent="26" name="website">
+    <column id="114" parent="21" name="website">
       <Position>6</Position>
       <DataType>varchar(255)|0</DataType>
     </column>
-    <column id="117" parent="26" name="school_address">
+    <column id="115" parent="21" name="school_address">
       <Position>7</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="118" parent="26" name="ADDRESSID_FK">
+    <column id="116" parent="21" name="resumptionDate">
+      <Position>8</Position>
+      <DataType>datetime|0</DataType>
+    </column>
+    <index id="117" parent="21" name="SCHOOL_ADDRESS_FK">
       <ColNames>school_address</ColNames>
     </index>
-    <key id="119" parent="26" name="PRIMARY">
+    <key id="118" parent="21" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="120" parent="27" name="userID">
+    <column id="119" parent="22" name="userID">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="121" parent="27" name="contact">
+    <column id="120" parent="22" name="contact">
       <Position>2</Position>
       <DataType>varchar(255)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="122" parent="27" name="email">
+    <column id="121" parent="22" name="email">
       <Position>3</Position>
       <DataType>varchar(255)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="123" parent="27" name="enabled">
+    <column id="122" parent="22" name="enabled">
       <Position>4</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="124" parent="27" name="firstName">
+    <column id="123" parent="22" name="firstName">
       <Position>5</Position>
       <DataType>varchar(255)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="125" parent="27" name="lastName">
+    <column id="124" parent="22" name="lastName">
       <Position>6</Position>
       <DataType>varchar(255)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="126" parent="27" name="password">
+    <column id="125" parent="22" name="password">
       <Position>7</Position>
       <DataType>varchar(255)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="127" parent="27" name="username">
+    <column id="126" parent="22" name="username">
       <Position>8</Position>
       <DataType>varchar(255)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="128" parent="27" name="authorityId">
+    <column id="127" parent="22" name="authorityId">
       <Position>9</Position>
       <DataType>int(11)|0</DataType>
     </column>
-    <column id="129" parent="27" name="addressId">
+    <column id="128" parent="22" name="addressId">
       <Position>10</Position>
       <DataType>int(11)|0</DataType>
     </column>
-    <index id="130" parent="27" name="ADDRESS_FK">
+    <index id="129" parent="22" name="HOUSE_ADDRESS_FK">
       <ColNames>addressId</ColNames>
     </index>
-    <index id="131" parent="27" name="AUTHORITY_FK">
+    <index id="130" parent="22" name="USER_AUTHORITY_FK">
       <ColNames>authorityId</ColNames>
     </index>
-    <key id="132" parent="27" name="PRIMARY">
+    <key id="131" parent="22" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>userID</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="133" parent="28" name="id">
+    <column id="132" parent="23" name="id">
       <Position>1</Position>
       <DataType>bigint(20)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="134" parent="28" name="contact">
+    <column id="133" parent="23" name="contact">
       <Position>2</Position>
       <DataType>varchar(255)|0</DataType>
     </column>
-    <column id="135" parent="28" name="emailAddress">
+    <column id="134" parent="23" name="emailAddress">
       <Position>3</Position>
       <DataType>varchar(255)|0</DataType>
     </column>
-    <column id="136" parent="28" name="organisationName">
+    <column id="135" parent="23" name="organisationName">
       <Position>4</Position>
       <DataType>varchar(255)|0</DataType>
     </column>
-    <column id="137" parent="28" name="roleAvailable">
+    <column id="136" parent="23" name="roleAvailable">
       <Position>5</Position>
       <DataType>varchar(255)|0</DataType>
     </column>
-    <column id="138" parent="28" name="organisationOwner">
+    <column id="137" parent="23" name="organisationOwner">
       <Position>6</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="139" parent="28" name="organisationAddress">
+    <column id="138" parent="23" name="organisationAddress">
       <Position>7</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="140" parent="28" name="ORGANISATION_OWNERID_FK">
-      <ColNames>organisationOwner</ColNames>
-    </index>
-    <index id="141" parent="28" name="address_id">
+    <index id="139" parent="23" name="address_id">
       <ColNames>organisationAddress</ColNames>
     </index>
-    <key id="142" parent="28" name="PRIMARY">
+    <index id="140" parent="23" name="ORGANISATION_OWNER_FK">
+      <ColNames>organisationOwner</ColNames>
+    </index>
+    <key id="141" parent="23" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="143" parent="29" name="username">
+    <column id="142" parent="24" name="username">
       <Position>1</Position>
       <DataType>varchar(50)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="144" parent="29" name="password">
+    <column id="143" parent="24" name="password">
       <Position>2</Position>
       <DataType>varchar(50)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="145" parent="29" name="enabled">
+    <column id="144" parent="24" name="enabled">
       <Position>3</Position>
       <DataType>tinyint(1)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="146" parent="29" name="userId">
+    <column id="145" parent="24" name="userId">
       <Position>4</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <key id="147" parent="29" name="PRIMARY">
+    <key id="146" parent="24" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>username</ColNames>
       <Primary>1</Primary>

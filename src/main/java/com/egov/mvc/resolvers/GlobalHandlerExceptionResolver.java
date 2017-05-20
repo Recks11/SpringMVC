@@ -14,7 +14,7 @@ import java.util.Arrays;
  * Created by Ijiekhuamen Rex
  * on 3/12/2017.
  */
-@Component
+//@Component
 public class GlobalHandlerExceptionResolver implements HandlerExceptionResolver {
 
     @Override
