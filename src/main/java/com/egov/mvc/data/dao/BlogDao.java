@@ -15,6 +15,9 @@ public interface BlogDao {
     void editBlog(Blog blog);
     Blog getBlogById(long id);
     void deleteBlog(long id);
+    void deleteUserBlogs(int userId);
     List getAllBlogs();
     user findBlogUserByName(String name);
+    List getBlogsForUserByUserID(int userId);
+    Boolean BlogExists(int userID);
 }

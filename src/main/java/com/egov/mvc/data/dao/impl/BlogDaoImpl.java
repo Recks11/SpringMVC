@@ -43,6 +43,14 @@ public class BlogDaoImpl implements BlogDao {
     }
 
     @Override
+    public void deleteUserBlogs(int userId) {
+        sessionFactory.getCurrentSession()
+                .createQuery("DELETE Blog where owner.id = :userIdNo")
+                .setParameter("userIdNo", userId).executeUpdate();
+        System.out.println("DEL METHOD");
+    }
+
+    @Override
     public void deleteBlog(long id) {
         sessionFactory.getCurrentSession().delete(getBlogById(id));
     }
@@ -53,10 +61,22 @@ public class BlogDaoImpl implements BlogDao {
     }
 
     private int getusersha(String name){
-        int a = (int) sessionFactory.getCurrentSession().createQuery("select userID from user where username = ?").setParameter(0,name).uniqueResult();
+
+        int a = (int) sessionFactory.getCurrentSession()
+                .createQuery("select userID from user where username = ?")
+                .setParameter(0,name).uniqueResult();
         System.out.println(name);
         System.out.println(a);
         return a;
+    }
+
+    @Override
+    public List getBlogsForUserByUserID(int userID){
+        return sessionFactory.getCurrentSession().createQuery("from Blog where owner.userID = ?").setParameter(0, userID).list();
+    }
+    @Override
+    public Boolean BlogExists(int userID){
+        return !this.getBlogsForUserByUserID(userID).isEmpty();
     }
 
     @Override

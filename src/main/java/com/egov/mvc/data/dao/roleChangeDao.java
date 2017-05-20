@@ -19,6 +19,8 @@ public interface roleChangeDao {
 
     RoleChange getRoleRequestById(long Id);
 
+    RoleChange getRoleRequestByUserID(int userId);
+
     String getRoleByRoleId(Long roleId);
 
     user getUserByName(String name);
@@ -26,6 +28,8 @@ public interface roleChangeDao {
     user getUserByRoleRequestId(Long id);
 
     RoleChange findRoleByUsername(String name);
+
+    Boolean RoleRequestExists(int userId);
 
     List getAllRequests();
 

@@ -41,6 +41,11 @@ public class BlogServiceImpl implements BlogService {
     }
 
     @Transactional
+    public void deleteUserBlogs(int userId) {
+        blogDao.deleteUserBlogs(userId);
+    }
+
+    @Transactional
     public void deleteBlog(long id) {
         blogDao.deleteBlog(id);
     }
@@ -48,6 +53,16 @@ public class BlogServiceImpl implements BlogService {
     @Transactional
     public List getAllBlogs() {
         return blogDao.getAllBlogs();
+    }
+
+    @Transactional
+    public List getBlogsForUserByUserID(int userId) {
+        return blogDao.getBlogsForUserByUserID(userId);
+    }
+
+    @Transactional
+    public Boolean BlogExists(int userID) {
+        return blogDao.BlogExists(userID);
     }
 
     @Transactional

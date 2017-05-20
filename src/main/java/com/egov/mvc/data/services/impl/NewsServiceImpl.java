@@ -40,8 +40,23 @@ public class NewsServiceImpl implements NewsService {
     }
 
     @Transactional
+    public void deleteArticlesForUser(int userID) {
+        newsDao.deleteArticlesForUser(userID);
+    }
+
+    @Transactional
     public void deleteArticle(int id) {
         newsDao.deleteArticle(id);
+    }
+
+    @Transactional
+    public List getArticlesForUserByUserID(int userId) {
+        return newsDao.getArticlesForUserByUserID(userId);
+    }
+
+    @Transactional
+    public Boolean articleExists(int userID) {
+        return newsDao.articleExists(userID);
     }
 
     @Transactional

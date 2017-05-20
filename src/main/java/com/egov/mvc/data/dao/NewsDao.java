@@ -19,7 +19,13 @@ public interface NewsDao {
 
     void deleteArticle(int id);
 
+    void deleteArticlesForUser(int userID);
+
     List getAllArticles();
+
+    List getArticlesForUserByUserID(int userId);
+
+    Boolean articleExists(int userID);
 
     user findArticleUserByName(String name);
 }

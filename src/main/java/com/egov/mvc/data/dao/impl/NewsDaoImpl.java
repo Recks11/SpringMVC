@@ -39,21 +39,47 @@ public class NewsDaoImpl implements NewsDao {
     }
 
     @Override
+    public void deleteArticlesForUser(int userID) {
+        sessionFactory.getCurrentSession()
+                .createQuery("delete from News where owner.userID = :user")
+                .setParameter("user", userID)
+                .executeUpdate();
+    }
+
+    @Override
     public void deleteArticle(int id) {
         sessionFactory.getCurrentSession().delete(getArticleById(id));
     }
 
     @Override
     public List getAllArticles() {
-        return sessionFactory.getCurrentSession().createQuery("from News order by date desc").list();
+        return sessionFactory.getCurrentSession()
+                .createQuery("from News order by date desc")
+                .list();
     }
 
     private int getusersha(String name){
-        int a = (int) sessionFactory.getCurrentSession().createQuery("select userID from user where username = ?").setParameter(0,name).uniqueResult();
+        int a = (int) sessionFactory.getCurrentSession()
+                .createQuery("select userID from user where username = ?")
+                .setParameter(0,name)
+                .uniqueResult();
         System.out.println(name);
         System.out.println(a);
         return a;
     }
+
+    //
+    @Override
+    public List getArticlesForUserByUserID(int userId) {
+        return sessionFactory.getCurrentSession().createQuery("from News where owner.userID = ?")
+                .setParameter(0, userId).list();
+    }
+
+    @Override
+    public Boolean articleExists(int userID) {
+        return !this.getArticlesForUserByUserID(userID).isEmpty();
+    }
+    //
     @Override
     public user findArticleUserByName(String name) {
         return sessionFactory.getCurrentSession().get(user.class, getusersha(name));

@@ -34,4 +34,6 @@ public interface userDao {
     List reporters();
 
     List resident();
+
+    //check user roles
 }

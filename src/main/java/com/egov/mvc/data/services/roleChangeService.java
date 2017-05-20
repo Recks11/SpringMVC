@@ -16,13 +16,17 @@ public interface roleChangeService {
 
     RoleChange getRoleRequestById(long Id);
 
+    RoleChange getRoleRequestByUserID(int userId);
+
     user getUserByName(String name);
 
     user getUserByRoleRequestId(Long id);
 
     String getRoleByRoleId(Long RoleId);
 
-    public RoleChange findRoleByUsername(String name);
+    RoleChange findRoleByUsername(String name);
+
+    Boolean RoleRequestExists(int userId);
 
     List getAllRequests();
 }

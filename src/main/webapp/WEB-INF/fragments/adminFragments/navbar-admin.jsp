@@ -67,7 +67,7 @@
                             <li><a href="<spring:url value="/admin/users/all"/>"><i class="fa fa-user"></i> All Users</a></li>
                             <li><a href="<spring:url value="/admin/users/roles"/>"><i class="fa fa-user"></i> Switch User Role</a></li>
                             <li><a href="<spring:url value="/admin/users/requests"/>"><i class="fa fa-user"></i> User Requests</a></li>
-                            <%--<li><a href="<spring:url value="/admin/users/delete"/>"><i class="fa fa-user"></i> Delete Users</a></li>--%>
+                            <li><a href="<spring:url value="/admin/users/delete"/>"><i class="fa fa-user"></i> Delete Users</a></li>
                         </ul>
                     </div>
                 </div>

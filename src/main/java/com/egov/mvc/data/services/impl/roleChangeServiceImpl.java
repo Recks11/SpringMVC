@@ -18,6 +18,7 @@ import java.util.List;
 @Service
 public class roleChangeServiceImpl implements roleChangeService {
 
+
     private final roleChangeDao roleChangeDao;
     private final userDao userDao;
 
@@ -44,6 +45,11 @@ public class roleChangeServiceImpl implements roleChangeService {
     }
 
     @Transactional
+    public RoleChange getRoleRequestByUserID(int userId){
+        return roleChangeDao.getRoleRequestByUserID(userId);
+    }
+
+    @Transactional
     public user getUserByName(String name) {
         return userDao.getUserByUsername(name);
     }
@@ -61,6 +67,11 @@ public class roleChangeServiceImpl implements roleChangeService {
     @Transactional
     public RoleChange findRoleByUsername(String name){
         return roleChangeDao.findRoleByUsername(name);
+    }
+
+    @Transactional
+    public Boolean RoleRequestExists(int userId) {
+        return roleChangeDao.RoleRequestExists(userId);
     }
 
     @Transactional
